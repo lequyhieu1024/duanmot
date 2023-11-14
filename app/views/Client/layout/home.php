@@ -1,7 +1,7 @@
 home
 <a href="index.php?redirect=login">đăng nhập</a>
 <a href="index.php?redirect=logout">đăng xuất</a>
-<a href="index.php?redirect=forgotco">đăng xuất vĩnh viễn</a>
+<a href="index.php?redirect=unsetcookie">đăng xuất vĩnh viễn</a>
 <?php echo $_SESSION['id_role']; echo "<br/>";
  echo $_SESSION['ten_tai_khoan']; echo "<br/>";?>
  =============================================
