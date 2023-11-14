@@ -195,7 +195,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php=addtaikhoan" class="nav-link">
+                <a href="index.php?act=addtaikhoan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tạo tài khoản</p>
                 </a>
