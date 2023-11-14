@@ -189,7 +189,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?act=taikhoanhv&table=tai_khoan" class="nav-link">
+                <a href="index.php?act=taikhoanhv&table=tai_khoan&col=id_role&condition=1" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tài khoản học viên</p>
                 </a>

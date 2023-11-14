@@ -44,12 +44,12 @@
             case 'addkhuyenmai':
                 include('../../models/AdminModel/khuyenmai/addkhuyenmai.php');
                 break;
-            // case 'taikhoanqtv':
-            //     include('layout/taikhoanqtv.php');
-            //     break;
-            // case 'taikhoanhv':
-            //     include('layout/taikhoanhv.php');
-            //     break;
+            case 'taikhoanqtv':
+                include('../../models/AdminModel/taikhoan/taikhoanqtv.php');
+                break;
+            case 'taikhoanhv':
+                include('../../models/AdminModel/taikhoan/taikhoanhv.php');
+                break;
            
         }
     }else{
