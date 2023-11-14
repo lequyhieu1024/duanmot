@@ -26,9 +26,9 @@
             <td><?=$ten_khuyen_mai ?></td>
             <td><?=$ngay_bat_dau ?></td>
             <td><?=$ngay_ket_thuc ?></td>
-            <td><?=$noi_dung ?></td>
+            <td><?=$noi_dung ?>%</td>
             <td><a href=""><button class="btn btn-warning">Sửa</button></a>
-                <a href="index.php?act=delete&header=allkhoahoc&table=khuyen_mai&id=id_khuyen_mai&iddl=<?=$id_khuyen_mai;?>"><button class="btn btn-danger">Xóa</button></a>
+                <a href="index.php?act=delete&header=allkhuyenmai&table=khuyen_mai&id=id_khuyen_mai&iddl=<?=$id_khuyen_mai;?>"><button class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>
         <?php endforeach; ?>

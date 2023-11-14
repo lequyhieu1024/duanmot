@@ -6,7 +6,7 @@ $err = "";
     $sql = "SELECT * FROM tai_khoan WHERE ten_tai_khoan='$ten_tai_khoan'";
     $result = pdo_query_one($sql);
     if($ten_tai_khoan == $result['ten_tai_khoan'] && $mat_khau == $result['mat_khau']){
-      $_SESSION['role']=$result['role'];
+      $_SESSION['id_role']=$result['id_role'];
       $_SESSION['ten_tai_khoan']=$result['ten_tai_khoan'];
       if(isset($_POST['remember'])){
         setcookie('remember', $mat_khau, time()+60*60*24*365,"/") ;

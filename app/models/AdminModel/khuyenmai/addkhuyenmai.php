@@ -23,15 +23,15 @@ if (isset($_POST["addkhuyenmai"])) {
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Ngày bắt đầu chương trình khuyến mại</label>
-                <input type="date" class="form-control" required name="ngay_bat_dau" id="exampleInputPassword1" placeholder="Mô tả khuyến mãi">
+                <input type="date" class="form-control" required name="ngay_bat_dau" id="exampleInputPassword1" placeholder="Ngày bắt đầu">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Ngày kết thúc chương trình khuyến mại</label>
-                <input type="date" class="form-control" required name="ngay_ket_thuc" id="exampleInputPassword1" placeholder="Mô tả khuyến mãi">
+                <input type="date" class="form-control" required name="ngay_ket_thuc" id="exampleInputPassword1" placeholder="Ngày kết thúc">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Ngày bắt đầu chương trình khuyến mại</label>
-                <input type="text" class="form-control" required name="ngay_bat_dau" id="exampleInputPassword1" placeholder="Mô tả khuyến mãi">
+                <label for="exampleInputPassword1">Nội dung</label>
+                <input type="number" class="form-control" required name="noi_dung" id="exampleInputPassword1" placeholder="% Khuyến Mãi">
             </div>
         </div>
         <!-- /.card-body -->

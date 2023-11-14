@@ -1,7 +1,7 @@
 <?php 
 session_start();
-if(isset($_SESSION['role'])){
-    if($_SESSION['role']==3){
+if(isset($_SESSION['id_role'])){
+    if($_SESSION['id_role']==3){
         include("../../../config.php");
         include("layout/header.php");
         include("../../controllers/AdminController/AdminController.php");

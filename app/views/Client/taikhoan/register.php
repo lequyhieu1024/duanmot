@@ -5,10 +5,10 @@ if(isset($_POST['register'])){
   $ten_tai_khoan = $_POST['ten_tai_khoan'];
   $email = $_POST['email'];
   $mat_khau = $_POST['mat_khau'];
-  $role = $_POST['role'];
+  $id_role = $_POST['id_role'];
   $xn_mat_khau = $_POST['xn_mat_khau'];
   if($mat_khau === $xn_mat_khau){
-    $sql = "INSERT INTO tai_khoan(ten_tai_khoan, email, mat_khau,role) VALUES ('$ten_tai_khoan','$email','$mat_khau','$role')";
+    $sql = "INSERT INTO tai_khoan(ten_tai_khoan, email, mat_khau,id_role) VALUES ('$ten_tai_khoan','$email','$mat_khau','$id_role')";
     pdo_execute($sql);
     $_COOKIE['ten_tai_khoan'] = $ten_tai_khoan;
     $success = "Register Success";  
@@ -78,7 +78,7 @@ if(isset($_POST['register'])){
           </div>
         </div>
         <span style="color:red"><?php echo $err ;?></span> <span style="color:green;"><?php echo $success;?></span>
-        <input type="hidden" name="role" value="1">
+        <input type="hidden" name="id_role" value="1">
         <div class="row">
           <div class="col-4">
            
