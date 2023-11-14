@@ -110,4 +110,9 @@ function select_condition() {
         return $result;
     }
 }
+function role(){
+    $sql = "SELECT * FROM role";
+        $result = pdo_query($sql);
+        return $result;
+}
 ?>
