@@ -50,6 +50,9 @@
             case 'taikhoanhv':
                 include('../../models/AdminModel/taikhoan/taikhoanhv.php');
                 break;
+            case 'addtaikhoan':
+                include('../../models/AdminModel/taikhoan/addtaikhoan.php');
+                break;
            
         }
     }else{

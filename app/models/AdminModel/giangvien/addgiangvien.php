@@ -12,7 +12,6 @@ if (isset($_POST["addgiangvien"])) {
     }else{
         $avt ="";
     }
-    $so_dt = $_POST['so_dt'];
     $mo_ta = $_POST['mo_ta'];
     $sql = "INSERT INTO giang_vien(ma_giang_vien,ten_giang_vien,email,avt,so_dien_thoai,mo_ta) VALUES ('$ma_giang_vien','$ten_giang_vien','$email','$avt','$so_dien_thoai','$mo_ta')";
     pdo_execute($sql);
