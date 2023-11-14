@@ -100,16 +100,6 @@ function delete() {
         pdo_execute($sql);
     }
 }
-function select_condition() {
-    if(isset($_GET["table"])&& isset($_GET["col"]) && isset($_GET['condition'])){
-        $table = $_GET['table'];
-        $col = $_GET['col'];
-        $condition = $_GET['condition'];
-        $sql = "SELECT * FROM $table WHERE $col = '$condition'";
-        $result = pdo_query($sql);
-        return $result;
-    }
-}
 function role(){
     $sql = "SELECT * FROM role";
         $result = pdo_query($sql);

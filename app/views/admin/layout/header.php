@@ -183,15 +183,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?act=taikhoanqtv&table=tai_khoan" class="nav-link">
+                <a href="index.php?act=alltaikhoan&table=tai_khoan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tài khoản Admin & NV</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?act=taikhoanhv&table=tai_khoan&col=id_role&condition=1" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tài khoản học viên</p>
+                  <p>Tất cả tài khoản</p>
                 </a>
               </li>
               <li class="nav-item">

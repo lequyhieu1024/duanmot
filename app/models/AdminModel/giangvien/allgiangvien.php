@@ -17,6 +17,7 @@
             <th scope="col">AVT</th>
             <th scope="col">Số Điện Thoại</th>
             <th scope="col">Mô Tả</th>
+            <th scope="col">Năm sinh</th>
             <th scope="col">Thao tác</th>
         </tr>
     </thead>
@@ -33,6 +34,7 @@
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt ?>" alt=""></td>       
             <td><?=$so_dien_thoai ?></td>       
             <td><?=$mo_ta ?></td>       
+            <td><?=$nam_sinh ?></td>             
             <td><a href=""><button class="btn btn-warning">Sửa</button></a>
                 <a href="index.php?act=delete&header=allgiangvien&id=id_giang_vien&table=giang_vien&iddl=<?=$id_giang_vien;?>"><button class="btn btn-danger">Xóa</button></a>
             </td>       

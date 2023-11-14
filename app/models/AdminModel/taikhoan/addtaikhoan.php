@@ -1,9 +1,9 @@
 <?php
 if (isset($_POST["addtaikhoan"])) {
-    $ma_tai_khoan = $_POST['ma_tai_khoan'];
     $ten_tai_khoan = $_POST['ten_tai_khoan'];
     $email = $_POST['email'];
     $so_dien_thoai = $_POST['so_dien_thoai'];
+    $ho_va_ten = $_POST['ho_va_ten'];
     if($_FILES['avt']['name'] != ""){
         $avt = basename($_FILES["avt"]["name"]);
         $target_dir = "../../../public/images/";
@@ -15,7 +15,7 @@ if (isset($_POST["addtaikhoan"])) {
     $nam_sinh = $_POST['nam_sinh'];
     $mo_ta = $_POST['mo_ta'];
     $id_role = $_POST['id_role'];
-    $sql = "INSERT INTO tai_khoan(ma_tai_khoan,ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,mo_ta,id_role) VALUES ('$ma_tai_khoan','$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$mo_ta','$id_role')";
+    $sql = "INSERT INTO tai_khoan(ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,id_role,ho_va_ten) VALUES ('$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$id_role','$ho_va_ten')";
     pdo_execute($sql);
     header("location:index.php?act=alltaikhoan&table=tai_khoan");
 }
@@ -29,12 +29,12 @@ if (isset($_POST["addtaikhoan"])) {
     <form method="post" enctype="multipart/form-data">
         <div class="card-body">
             <div class="form-group">
-                <label for="exampleInputEmail1">Mã tài khoản</label>
-                <input type="text" class="form-control" required id="exampleInputEmail1" name="ma_tai_khoan" placeholder="Mã tài khoản">
-            </div>
-            <div class="form-group">
                 <label for="exampleInputPassword1">Tên tài khoản</label>
                 <input type="text" class="form-control" required name="ten_tai_khoan" id="exampleInputPassword1" placeholder="Tên tài khoản">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Họ Và Tên</label>
+                <input type="text" class="form-control" required name="ho_va_ten" id="exampleInputPassword1" placeholder="Họ và tên">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
@@ -42,7 +42,7 @@ if (isset($_POST["addtaikhoan"])) {
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Năm sinh</label>
-                <input type="text" class="form-control" required id="exampleInputEmail1" name="nam_sinh" placeholder="Năm sinh tài khoản">
+                <input type="date" class="form-control" required id="exampleInputEmail1" name="nam_sinh" placeholder="Năm sinh tài khoản">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Avatar</label>
@@ -51,10 +51,6 @@ if (isset($_POST["addtaikhoan"])) {
             <div class="form-group">
                 <label for="exampleInputEmail1">Số điện thoại</label>
                 <input type="text" class="form-control" required id="exampleInputEmail1" name="so_dien_thoai" placeholder="Số điện thoại tài khoản">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Mô tả</label>
-                <input type="text" class="form-control" required id="exampleInputEmail1" name="mo_ta" placeholder="Kinh nghiệm tài khoản">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Tên role</label>
