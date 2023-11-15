@@ -35,10 +35,10 @@
             <td><?=$mo_ta ?></td>
             <td><?=$so_luot_xem ?></td>
             <td><?=$trang_thai ?></td>
-            <td><?=$id_giang_vien ?></td>
+            <td><?=$ma_giang_vien ?></td>
             <td><?=$ten_danh_muc ?></td>       
             <td><?=$slideshow ?></td>       
-            <td><a href=""><button class="btn btn-warning">Sửa</button></a>
+            <td><a href="index.php?act=editkhoahoc&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc;?>"><button class="btn btn-warning">Sửa</button></a>
                 <a href="index.php?act=delete&header=allkhoahoc&table=khoa_hoc&id=id_khoa_hoc&iddl=<?=$id_khoa_hoc;?>"><button class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>

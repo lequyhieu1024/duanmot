@@ -68,6 +68,16 @@ function select_all_table() {
         return $result;
     }
 }
+function select_all_table_fetch_one() {
+    if(isset($_GET['table']) && isset($_GET['id']) && isset($_GET['id_edit'])){
+        $id = $_GET['id'];
+        $id_edit = $_GET['id_edit'];
+        $table = $_GET['table'];
+        $sql = "SELECT * FROM $table WHERE $id = '$id_edit'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+}
 function danh_muc() {
         $sql = "SELECT * FROM danh_muc_khoa_hoc";
         $result = pdo_query($sql);
@@ -79,7 +89,10 @@ function giang_vien() {
     return $result;
 }
 function khoahoc() {
-    $sql = "SELECT *,khoa_hoc.trang_thai FROM khoa_hoc join danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc";
+    $sql = "SELECT *, khoa_hoc.trang_thai,giang_vien.ma_giang_vien,khoa_hoc.avt
+    FROM khoa_hoc
+    JOIN danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc
+    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien;";
     $result = pdo_query($sql);
     return $result;
 }
@@ -104,5 +117,11 @@ function role(){
     $sql = "SELECT * FROM role";
         $result = pdo_query($sql);
         return $result;
+}
+function giangvien_join_khoahoc(){
+    $sql = "SELECT *, giang_vien.ma_giang_vien FROM khoa_hoc JOIN giang_vien ON khoa_hoc.id_giang_vien=giang_vien.id_giang_vien";
+    $result = pdo_query($sql);
+    return $result;
+    
 }
 ?>

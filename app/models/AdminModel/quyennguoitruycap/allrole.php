@@ -17,15 +17,15 @@
     </thead>
     <tbody>
         <?php
-        $danhmuc = select_all_table();
-        foreach($danhmuc as $row):
+        $role = select_all_table();
+        foreach($role as $row):
         extract($row); ?>
         <tr>
             <th scope="row"><?=$id_role ?></th>
             <td><?=$name_role ?></td>
             <td><?=$mo_ta ?></td>    
             <td>
-                <a href=""><button class="btn btn-warning">Sửa</button></a>
+                <a href="index.php?act=editrole&id=id_role&table=role&id_edit=<?=$id_role;?>"><button class="btn btn-warning">Sửa</button></a>
                 <a href="index.php?act=delete&header=allrole&id=id_role&table=role&iddl=<?=$id_role;?>"><button class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>
