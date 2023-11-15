@@ -3,6 +3,7 @@ if (isset($_POST["addgiangvien"])) {
     $ma_giang_vien = $_POST['ma_giang_vien'];
     $ten_giang_vien = $_POST['ten_giang_vien'];
     $email = $_POST['email'];
+    $nam_sinh = $_POST['nam_sinh'];
     $so_dien_thoai = $_POST['so_dien_thoai'];
     if($_FILES['avt']['name'] != ""){
         $avt = basename($_FILES["avt"]["name"]);
@@ -13,7 +14,7 @@ if (isset($_POST["addgiangvien"])) {
         $avt ="";
     }
     $mo_ta = $_POST['mo_ta'];
-    $sql = "INSERT INTO giang_vien(ma_giang_vien,ten_giang_vien,email,avt,so_dien_thoai,mo_ta) VALUES ('$ma_giang_vien','$ten_giang_vien','$email','$avt','$so_dien_thoai','$mo_ta')";
+    $sql = "INSERT INTO giang_vien(ma_giang_vien,ten_giang_vien,email,avt,so_dien_thoai,mo_ta,nam_sinh) VALUES ('$ma_giang_vien','$ten_giang_vien','$email','$avt','$so_dien_thoai','$mo_ta','$nam_sinh')";
     pdo_execute($sql);
     header("location:index.php?act=allgiangvien&table=giang_vien");
 }
@@ -49,6 +50,10 @@ if (isset($_POST["addgiangvien"])) {
             <div class="form-group">
                 <label for="exampleInputEmail1">Mô tả</label>
                 <input type="text" class="form-control" required id="exampleInputEmail1" name="mo_ta" placeholder="Kinh nghiệm giảng viên">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Năm sinh</label>
+                <input type="date" class="form-control" required id="exampleInputEmail1" name="nam_sinh" placeholder="Năm sinh của giảng viên">
             </div>
         </div>
         <!-- /.card-body -->

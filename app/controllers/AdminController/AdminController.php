@@ -44,11 +44,8 @@
             case 'addkhuyenmai':
                 include('../../models/AdminModel/khuyenmai/addkhuyenmai.php');
                 break;
-            case 'taikhoanqtv':
-                include('../../models/AdminModel/taikhoan/taikhoanqtv.php');
-                break;
-            case 'taikhoanhv':
-                include('../../models/AdminModel/taikhoan/taikhoanhv.php');
+            case 'alltaikhoan':
+                include('../../models/AdminModel/taikhoan/alltaikhoan.php');
                 break;
             case 'addtaikhoan':
                 include('../../models/AdminModel/taikhoan/addtaikhoan.php');

@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +19,15 @@
             <th scope="col">Năm Sinh</th>
             <th scope="col">Mật khẩu</th>
             <th scope="col">Số Điện Thoại</th>
+            <th scope="col">Chức vụ</th>
             <th scope="col">Thao tác</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $danhmuc = select_condition();
-        foreach($danhmuc as $row):
-        extract($row); ?>
+        $result = select_all_table();
+        foreach ($result as $row):
+            extract($row);?>
         <tr>
             <th scope="col"><?=$id_tai_khoan?></th>
             <th scope="col"><?=$ten_tai_khoan?></th>
@@ -35,8 +37,9 @@
             <th scope="col"><?=$nam_sinh ?></th>
             <th scope="col"><?=$mat_khau?></th>
             <th scope="col"><?=$so_dien_thoai?></th>
+            <td><?=$id_role ?></td> 
             <td><a href=""><button class="btn btn-warning">Sửa</button></a>
-                <a href="index.php?act=delete&table=tai_khoan&header=taikhoanhv&id=id_tai_khoan&iddl=<?=$id_tai_khoan;?>"><button class="btn btn-danger">Xóa</button></a>
+                <a href="index.php?act=delete&header=alltaikhoan&id=id_tai_khoan&table=tai_khoan&iddl=<?=$id_tai_khoan;?>"><button class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>
         <?php endforeach; ?>
