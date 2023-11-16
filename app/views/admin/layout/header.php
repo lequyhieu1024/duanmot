@@ -127,8 +127,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-danger">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Danh mục khóa học
@@ -150,8 +150,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Khóa học
@@ -173,8 +173,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-warning">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Tài khoản
@@ -196,8 +196,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-info">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Bình luận
@@ -213,8 +213,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-gradient-maroon">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Giảng viên
@@ -236,8 +236,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-success">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Chương trình khuyến mãi
@@ -259,8 +259,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-fuchsia">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Quyền người truy cập
@@ -282,8 +282,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link bg-gradient-lightblue">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
                 Liên hệ
