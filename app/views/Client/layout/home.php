@@ -4,10 +4,10 @@ home
 <a href="index.php?redirect=unsetcookie">đăng xuất vĩnh viễn</a>
 <?php echo $_SESSION['id_role']; echo "<br/>";
  echo $_SESSION['ten_tai_khoan']; echo "<br/>";?>
- =============================================
+ ============================================= <br>
  <?php 
  if($_SESSION['id_role']==3){
-    echo '<a href="app/views/admin/index.php">đến tragn quản trị viên</a> ';
- }
+    echo '<a href="app/views/admin/index.php">Đến trang quản trị viên</a> ';
+ } echo "<br/>";
 //  include'app/models/clientmodel/loadallsp.php';
  ?>
