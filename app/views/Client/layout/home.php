@@ -7,7 +7,7 @@
  ============================================= <br>
  <?php 
  if($_SESSION['id_role']==3){
-    echo '<a href="app/views/admin/index.php">đến tragn quản trị viên</a> ';
+    echo '<a href="app/views/admin/index.php">đến trang quản trị viên</a> ';
  }
  include'app/models/clientmodel/loadallsp.php';
  ?>
