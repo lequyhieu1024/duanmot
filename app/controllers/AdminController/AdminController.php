@@ -3,71 +3,75 @@
         $act = $_GET['act'];
         switch ($act) {
             case 'alldanhmuc':
-                include('../../models/AdminModel/danhmuc/alldanhmuc.php');
+                include('../../views/admin/danhmuc/alldanhmuc.php');
                 break;
             case 'adddanhmuc':
-                include('../../models/AdminModel/danhmuc/adddanhmuc.php');
+                include('../../views/admin/danhmuc/adddanhmuc.php');
                 break;
             case 'editdanhmuc':
-                include('../../models/AdminModel/danhmuc/editdanhmuc.php');
+                include('../../views/admin/danhmuc/editdanhmuc.php');
                 break;
             case 'delete':
-                include('../../models/AdminModel/delete.php');
+                include('../../models/adminmodel/delete.php');
                 break;
             case 'allkhoahoc':
-                include('../../models/AdminModel/khoahoc/allkhoahoc.php');
+                include('../../views/admin/khoahoc/allkhoahoc.php');
                 break;
             case 'khtheodm':
-                include('../../models/AdminModel/khoahoc/khtheodm.php');
+                include('../../views/admin/khoahoc/khtheodm.php');
                 break;
             case 'addkhoahoc':
-                include('../../models/AdminModel/khoahoc/addkhoahoc.php');
+                include('../../views/admin/khoahoc/addkhoahoc.php');
                 break;
             case 'editkhoahoc':
-                include('../../models/AdminModel/khoahoc/editkhoahoc.php');
+                include('../../views/admin/khoahoc/editkhoahoc.php');
                 break;
             case 'allgiangvien':
-                include('../../models/AdminModel/giangvien/allgiangvien.php');
+                include('../../views/admin/giangvien/allgiangvien.php');
                 break;
             case 'addgiangvien':
-                include('../../models/AdminModel/giangvien/addgiangvien.php');
+                include('../../views/admin/giangvien/addgiangvien.php');
                 break;
             case 'editgiangvien':
-                include('../../models/AdminModel/giangvien/editgiangvien.php');
+                include('../../views/admin/giangvien/editgiangvien.php');
                 break;
             case 'allbinhluan':
-                include('../../models/AdminModel/binhluan/allbinhluan.php');
+                include('../../views/admin/binhluan/allbinhluan.php');
                 break;
             case 'addrole':
-                include('../../models/AdminModel/quyennguoitruycap/addrole.php');
+                include('../../views/admin/quyennguoitruycap/addrole.php');
                 break;
             case 'allrole':
-                include('../../models/AdminModel/quyennguoitruycap/allrole.php');
+                include('../../views/admin/quyennguoitruycap/allrole.php');
                 break;
             case 'editrole':
-                include('../../models/AdminModel/quyennguoitruycap/editrole.php');
+                include('../../views/admin/quyennguoitruycap/editrole.php');
                 break;
             case 'alllienhe':
-                include('../../models/AdminModel/lienhe/alllienhe.php');
+                include('../../views/admin/lienhe/alllienhe.php');
                 break;
             case 'allkhuyenmai':
-                include('../../models/AdminModel/khuyenmai/allkhuyenmai.php');
+                include('../../views/admin/khuyenmai/allkhuyenmai.php');
                 break;
             case 'addkhuyenmai':
-                include('../../models/AdminModel/khuyenmai/addkhuyenmai.php');
+                include('../../views/admin/khuyenmai/addkhuyenmai.php');
                 break;
             case 'editkhuyenmai':
-                include('../../models/AdminModel/khuyenmai/editkhuyenmai.php');
+                include('../../views/admin/khuyenmai/editkhuyenmai.php');
                 break;
             case 'alltaikhoan':
-                include('../../models/AdminModel/taikhoan/alltaikhoan.php');
+                include('../../views/admin/taikhoan/alltaikhoan.php');
                 break;
-                case 'addtaikhoan':
-                    include('../../models/AdminModel/taikhoan/addtaikhoan.php');
-                break;case 'edittaikhoan':
-                    include('../../models/AdminModel/taikhoan/edittaikhoan.php');
-                    break;
-           
+            case 'addtaikhoan':
+                include('../../views/admin/taikhoan/addtaikhoan.php');
+                break;
+            case 'edittaikhoan':
+                include('../../views/admin/taikhoan/edittaikhoan.php');
+                break;
+            case 'contact':
+                include('../../views/admin/layout/contact.php');
+                break;
+                    
         }
     }else{
         include("layout/home.php");

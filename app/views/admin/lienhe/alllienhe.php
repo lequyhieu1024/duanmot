@@ -19,14 +19,14 @@
     </thead>
     <tbody>
         <?php
-        $alllienhe = select_all_table();
+        $alllienhe = all_lien_he();
         foreach($alllienhe as $row):
         extract($row); ?>
         <tr>
             <th scope="row"><?=$id_lien_he ?></th>
             <td><?=$noi_dung ?></td>
             <td><?=$ngay_lien_he ?></td>    
-            <td><?=$id_tai_khoan ?></td>    
+            <td><?=$ten_tai_khoan ?></td>    
             <td>
                 <a href="index.php?act=delete&id=id_lien_he&iddl=<?=$id_lien_he?>&table=lien_he&header=alllienhe"><button class="btn btn-danger">Xóa</button></a>    
                 <a href=""><button class="btn btn-danger">Phản Hồi</button></a></td>       

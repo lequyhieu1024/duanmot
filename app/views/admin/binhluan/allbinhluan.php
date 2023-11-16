@@ -11,8 +11,8 @@
     <thead>
         <tr>
             <th scope="col">Mã Bình Luận</th>
-            <th scope="col">Tên Tài Khoản Bình Luận</th>
-            <th scope="col">Mã Khóa Học Được Bình Luận</th>
+            <th scope="col">Tên Tài Khoản</th>
+            <th scope="col">Tên Khóa Học</th>
             <th scope="col">Nội Dung</th>
             <th scope="col">Ngày Bình Luận</th>
             <th scope="col">Đánh Giá</th>
@@ -21,13 +21,13 @@
     </thead>
     <tbody>
         <?php
-        $binhluan = select_all_table();
+        $binhluan = all_binh_luan();
         foreach($binhluan as $row):
         extract($row); ?>
         <tr>
             <th scope="row"><?=$id_binh_luan ?></th>
-            <td><?=$id_tai_khoan ?></td>
-            <td><?=$id_khoa_hoc ?></td>
+            <td><?=$ten_tai_khoan ?></td>
+            <td><?=$ten_khoa_hoc ?></td>
             <td><?=$noi_dung_binh_luan ?></td>       
             <td><?=$ngay_binh_luan ?></td>       
             <td><?=$danh_gia ?></td>       

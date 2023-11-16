@@ -78,32 +78,6 @@ function select_all_table_fetch_one() {
         return $result;
     }
 }
-function danh_muc() {
-        $sql = "SELECT * FROM danh_muc_khoa_hoc";
-        $result = pdo_query($sql);
-        return $result;
-}
-function giang_vien() {
-    $sql = "SELECT * FROM giang_vien";
-    $result = pdo_query($sql);
-    return $result;
-}
-function khoahoc() {
-    $sql = "SELECT *, khoa_hoc.trang_thai,giang_vien.ma_giang_vien,khoa_hoc.avt
-    FROM khoa_hoc
-    JOIN danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc
-    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien;";
-    $result = pdo_query($sql);
-    return $result;
-}
-function kh_theo_dm(){
-    if(isset($_GET['id_danh_muc'])){
-        $id_danh_muc = $_GET['id_danh_muc'];
-        $sql = "SELECT * FROM khoa_hoc WHERE id_danh_muc = '$id_danh_muc'";
-        $result = pdo_query($sql);
-        return $result;
-    }
-}
 function delete() {
     if(isset($_GET["table"])&& isset($_GET['id'])&& isset($_GET['iddl'])){
         $table = $_GET['table'];
@@ -112,16 +86,5 @@ function delete() {
         $sql = "DELETE FROM $table WHERE $id = '$iddl'";
         pdo_execute($sql);
     }
-}
-function role(){
-    $sql = "SELECT * FROM role";
-        $result = pdo_query($sql);
-        return $result;
-}
-function giangvien_join_khoahoc(){
-    $sql = "SELECT *, giang_vien.ma_giang_vien FROM khoa_hoc JOIN giang_vien ON khoa_hoc.id_giang_vien=giang_vien.id_giang_vien";
-    $result = pdo_query($sql);
-    return $result;
-    
 }
 ?>
