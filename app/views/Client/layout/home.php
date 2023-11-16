@@ -1,7 +1,7 @@
 <h1>HOME</h1>
-<a href="index.php?redirect=login">đăng nhập</a><br>
-<a href="index.php?redirect=logout">đăng xuất</a><br>
-<a href="index.php?redirect=unsetcookie">đăng xuất vĩnh viễn</a><br>
+<a href="index.php?redirect=login">Đăng nhập</a><br>
+<a href="index.php?redirect=logout">Đăng xuất</a><br>
+<a href="index.php?redirect=unsetcookie">Đăng xuất vĩnh viễn</a><br>
 <?php echo $_SESSION['id_role']; echo "<br/>";
  echo $_SESSION['ten_tai_khoan']; echo "<br/>";?>
  ============================================= <br>
