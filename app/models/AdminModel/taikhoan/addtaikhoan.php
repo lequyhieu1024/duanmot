@@ -4,6 +4,7 @@ if (isset($_POST["addtaikhoan"])) {
     $email = $_POST['email'];
     $so_dien_thoai = $_POST['so_dien_thoai'];
     $ho_va_ten = $_POST['ho_va_ten'];
+    $mat_khau = $_POST['mat_khau'];
     if($_FILES['avt']['name'] != ""){
         $avt = basename($_FILES["avt"]["name"]);
         $target_dir = "../../../public/images/";
@@ -15,7 +16,7 @@ if (isset($_POST["addtaikhoan"])) {
     $nam_sinh = $_POST['nam_sinh'];
     $mo_ta = $_POST['mo_ta'];
     $id_role = $_POST['id_role'];
-    $sql = "INSERT INTO tai_khoan(ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,id_role,ho_va_ten) VALUES ('$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$id_role','$ho_va_ten')";
+    $sql = "INSERT INTO tai_khoan(ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,id_role,ho_va_ten,mat_khau) VALUES ('$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$id_role','$ho_va_ten','$mat_khau')";
     pdo_execute($sql);
     header("location:index.php?act=alltaikhoan&table=tai_khoan");
 }
@@ -43,6 +44,10 @@ if (isset($_POST["addtaikhoan"])) {
             <div class="form-group">
                 <label for="exampleInputEmail1">Năm sinh</label>
                 <input type="date" class="form-control" required id="exampleInputEmail1" name="nam_sinh" placeholder="Năm sinh tài khoản">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Mật khẩu</label>
+                <input type="text" class="form-control" required id="exampleInputEmail1" name="mat_khau" placeholder="Mật khẩu">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Avatar</label>
