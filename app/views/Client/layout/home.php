@@ -9,5 +9,5 @@ home
  if($_SESSION['id_role']==3){
     echo '<a href="app/views/admin/index.php">đến tragn quản trị viên</a> ';
  }
- include'app/models/clientmodel/loadallsp.php';
+//  include'app/models/clientmodel/loadallsp.php';
  ?>
