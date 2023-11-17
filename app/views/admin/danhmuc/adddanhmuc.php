@@ -1,6 +1,4 @@
-<?php
-    $insert_dm = adddanhmuc($ten_danh_muc,$trang_thai,$mo_ta);
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm danh mục</h3>

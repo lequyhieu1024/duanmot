@@ -1,12 +1,4 @@
-<?php
-if (isset($_POST["addrole"])) {
-    $name_role = $_POST['name_role'];
-    $mo_ta = $_POST['mo_ta'];
-    $sql = "INSERT INTO role(name_role,mo_ta) VALUES ('$name_role','$mo_ta')";
-    pdo_execute($sql);
-    header("location:index.php?act=allrole&table=role");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm danh mục</h3>

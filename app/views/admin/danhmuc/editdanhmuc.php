@@ -1,14 +1,4 @@
-<?php
-    if (isset($_POST["editdanhmuc"])) {
-        $id_danh_muc = $_POST['id_danh_muc'];
-        $trang_thai = $_POST['trang_thai'];
-        $mo_ta = $_POST['mo_ta'];
-        $ten_danh_muc = $_POST['ten_danh_muc'];
-        $sql = "UPDATE danh_muc_khoa_hoc SET id_danh_muc='$id_danh_muc', ten_danh_muc='$ten_danh_muc',mo_ta='$mo_ta',trang_thai='$trang_thai' WHERE id_danh_muc = '$id_danh_muc'";
-        pdo_execute($sql);
-        header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
-    }
-?>
+
 <?php 
     $editdm = select_all_table_fetch_one();
     extract($editdm);

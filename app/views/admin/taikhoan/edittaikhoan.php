@@ -1,27 +1,4 @@
-<?php
-if (isset($_POST["edittaikhoan"])) {
-    $id_tai_khoan = $_POST["id_tai_khoan"];
-    $ten_tai_khoan = $_POST['ten_tai_khoan'];
-    $email = $_POST['email'];
-    $mat_khau = $_POST['mat_khau'];
-    $so_dien_thoai = $_POST['so_dien_thoai'];
-    $ho_va_ten = $_POST['ho_va_ten'];
-    if($_FILES['avt']['name'] != ""){
-        $avt = basename($_FILES["avt"]["name"]);
-        $target_dir = "../../../public/images/";
-        $target_file = $target_dir . $avt;
-        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
-    }else{
-        $avt ="";
-    }
-    $nam_sinh = $_POST['nam_sinh'];
-    $mo_ta = $_POST['mo_ta'];
-    $id_role = $_POST['id_role'];
-    $sql = "UPDATE tai_khoan SET `id_tai_khoan`='$id_tai_khoan',`ten_tai_khoan`='$ten_tai_khoan',`ho_va_ten`='$ho_va_ten',`email`='$email',`nam_sinh`='$nam_sinh',`mat_khau`='$mat_khau',`avt`='$avt',`so_dien_thoai`='$so_dien_thoai',`id_role`='$id_role' WHERE id_tai_khoan ='$id_tai_khoan'";
-    pdo_execute($sql);
-    header("location:index.php?act=alltaikhoan&table=tai_khoan");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Cập nhật tài khoản</h3>

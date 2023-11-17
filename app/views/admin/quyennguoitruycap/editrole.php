@@ -1,13 +1,4 @@
-<?php
-if (isset($_POST["editrole"])) {
-    $id_role=$_POST['id_role'];
-    $name_role = $_POST['name_role'];
-    $mo_ta = $_POST['mo_ta'];
-    $sql = "UPDATE `role` SET id_role='$id_role', name_role='$name_role',mo_ta='$mo_ta' WHERE id_role = '$id_role'";
-    pdo_execute($sql);
-    header("location:index.php?act=allrole&table=role");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm danh mục</h3>

@@ -1,14 +1,4 @@
-<?php
-    if (isset($_POST["addkhuyenmai"])) {
-        $ten_khuyen_mai = $_POST['ten_khuyen_mai'];
-        $ngay_bat_dau = $_POST['ngay_bat_dau'];
-        $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
-        $noi_dung = $_POST['noi_dung'];
-        $sql = "INSERT INTO khuyen_mai(ngay_ket_thuc,ten_khuyen_mai,ngay_bat_dau,noi_dung) VALUES ('$ngay_ket_thuc','$ten_khuyen_mai','$ngay_bat_dau','$noi_dung')";
-        pdo_execute($sql);
-        header("location:index.php?act=allkhuyenmai&table=khuyen_mai");
-    }
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm khuyến mãi</h3>

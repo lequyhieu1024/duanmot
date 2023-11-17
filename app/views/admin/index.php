@@ -10,6 +10,7 @@ if(isset($_SESSION['id_role'])){
         include("../../models/AdminModel/giangvien.php");
         include("../../models/AdminModel/quyen.php");
         include("../../models/AdminModel/taikhoan.php");
+        include("../../models/AdminModel/khuyenmai.php");
 
 
         include("layout/header.php");

@@ -1,15 +1,4 @@
-<?php
-if (isset($_POST["editkhuyenmai"])) {
-    $id_khuyen_mai = $_POST['id_khuyen_mai'];
-    $ten_khuyen_mai = $_POST['ten_khuyen_mai'];
-    $ngay_bat_dau = $_POST['ngay_bat_dau'];
-    $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
-    $noi_dung = $_POST['noi_dung'];
-    $sql = "UPDATE khuyen_mai SET id_khuyen_mai='$id_khuyen_mai', ten_khuyen_mai='$ten_khuyen_mai', ngay_bat_dau='$ngay_bat_dau', ngay_ket_thuc='$ngay_ket_thuc', noi_dung='$noi_dung' WHERE id_khuyen_mai ='$id_khuyen_mai'";
-    pdo_execute($sql);
-    header("location:index.php?act=allkhuyenmai&table=khuyen_mai");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm khuyến mãi</h3>
