@@ -62,11 +62,12 @@
             case 'alltaikhoan':
                 include('../../models/AdminModel/taikhoan/alltaikhoan.php');
                 break;
-                case 'addtaikhoan':
-                    include('../../models/AdminModel/taikhoan/addtaikhoan.php');
-                break;case 'edittaikhoan':
-                    include('../../models/AdminModel/taikhoan/edittaikhoan.php');
-                    break;
+            case 'addtaikhoan':
+                include('../../models/AdminModel/taikhoan/addtaikhoan.php');
+                break;
+            case 'edittaikhoan':
+                include('../../models/AdminModel/taikhoan/edittaikhoan.php');
+                break;
            
         }
     }else{
