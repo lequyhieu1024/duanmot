@@ -87,4 +87,5 @@ function delete() {
         pdo_execute($sql);
     }
 }
+
 ?>
