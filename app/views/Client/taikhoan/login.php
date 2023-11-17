@@ -1,21 +1,9 @@
-<?php
-$err = "";
-  if(isset($_POST["login"])){
-    $ten_tai_khoan = $_POST['ten_tai_khoan'];
-    $mat_khau = $_POST['mat_khau'];
-    $sql = "SELECT * FROM tai_khoan WHERE ten_tai_khoan='$ten_tai_khoan'";
-    $result = pdo_query_one($sql);
-    if($ten_tai_khoan == $result['ten_tai_khoan'] && $mat_khau == $result['mat_khau']){
-      $_SESSION['id_role']=$result['id_role'];
-      $_SESSION['ten_tai_khoan']=$result['ten_tai_khoan'];
-      if(isset($_POST['remember'])){
-        setcookie('remember', $mat_khau, time()+60*60*24*365,"/") ;
-      }
-      header("location:index.php");
-    }else{
-      $err = "UserName or Password isn't true";
-    } 
-  }
+<?php 
+if(isset($_GET['loginErr'])){
+    $err = "Sai thông tin đăng nhập";
+}else{
+  $err = "";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +48,7 @@ $err = "";
             </div>
           </div>
         </div>
-        <span style="color:red"><?php echo $err;?></span>
+        <span></span>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
@@ -74,6 +62,7 @@ $err = "";
           <div class="col-4">
             <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
           </div>
+          <p style="color:red"><?php echo $err; ?></p>
           <!-- /.col -->
         </div>
       </form>

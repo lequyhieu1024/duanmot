@@ -1,26 +1,4 @@
-<?php
-if (isset($_POST["addtaikhoan"])) {
-    $ten_tai_khoan = $_POST['ten_tai_khoan'];
-    $email = $_POST['email'];
-    $so_dien_thoai = $_POST['so_dien_thoai'];
-    $ho_va_ten = $_POST['ho_va_ten'];
-    $mat_khau = $_POST['mat_khau'];
-    if($_FILES['avt']['name'] != ""){
-        $avt = basename($_FILES["avt"]["name"]);
-        $target_dir = "../../../public/images/";
-        $target_file = $target_dir . $avt;
-        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
-    }else{
-        $avt ="";
-    }
-    $nam_sinh = $_POST['nam_sinh'];
-    $mo_ta = $_POST['mo_ta'];
-    $id_role = $_POST['id_role'];
-    $sql = "INSERT INTO tai_khoan(ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,id_role,ho_va_ten,mat_khau) VALUES ('$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$id_role','$ho_va_ten','$mat_khau')";
-    pdo_execute($sql);
-    header("location:index.php?act=alltaikhoan&table=tai_khoan");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm tài khoản</h3>

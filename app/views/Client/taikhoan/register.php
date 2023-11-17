@@ -1,23 +1,4 @@
 
-<?php
-$err = $success= "";
-if(isset($_POST['register'])){
-  $ten_tai_khoan = $_POST['ten_tai_khoan'];
-  $email = $_POST['email'];
-  $mat_khau = $_POST['mat_khau'];
-  $id_role = $_POST['id_role'];
-  $xn_mat_khau = $_POST['xn_mat_khau'];
-  if($mat_khau === $xn_mat_khau){
-    $sql = "INSERT INTO tai_khoan(ten_tai_khoan, email, mat_khau,id_role) VALUES ('$ten_tai_khoan','$email','$mat_khau','$id_role')";
-    pdo_execute($sql);
-    $_COOKIE['ten_tai_khoan'] = $ten_tai_khoan;
-    $success = "Register Success";  
-  }else{
-    $err = "Password Confirmation Error";
-  }
-  
-}
-  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +28,7 @@ if(isset($_POST['register'])){
       <form action="" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" required name="ten_tai_khoan" placeholder="User Name">
+          <input type="hidden" class="form-control" required name="id_tai_khoan" placeholder="User Name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -77,7 +59,6 @@ if(isset($_POST['register'])){
             </div>
           </div>
         </div>
-        <span style="color:red"><?php echo $err ;?></span> <span style="color:green;"><?php echo $success;?></span>
         <input type="hidden" name="id_role" value="1">
         <div class="row">
           <div class="col-4">

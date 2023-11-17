@@ -1,20 +1,11 @@
-<?php
-if (isset($_POST["adddanhmuc"])) {
-    $trang_thai = $_POST['trang_thai'];
-    $mo_ta = $_POST['mo_ta'];
-    $ten_danh_muc = $_POST['ten_danh_muc'];
-    $sql = "INSERT INTO danh_muc_khoa_hoc(ten_danh_muc,trang_thai,mo_ta) VALUES ('$ten_danh_muc','$trang_thai','$mo_ta')";
-    pdo_execute($sql);
-    header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
-}
-?>
+
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Thêm danh mục</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form method="post">
+    <form action="index.php?act=adddanhmuc" method="post">
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên danh mục</label>

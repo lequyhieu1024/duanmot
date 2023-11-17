@@ -1,27 +1,4 @@
-<?php
-if (isset($_POST["editkhoahoc"])) {
-    $trang_thai = $_POST['trang_thai'];
-    $id_khoa_hoc = $_POST['id_khoa_hoc'];
-    $mo_ta = $_POST['mo_ta'];
-    $ten_khoa_hoc = $_POST['ten_khoa_hoc'];
-    if($_FILES['avt']['name'] != ""){
-        $avt = basename($_FILES["avt"]["name"]);
-        $target_dir = "../../../public/images/";
-        $target_file = $target_dir . $avt;
-        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
-    }else{
-        $avt ="";
-    }
-    $tien_hoc = $_POST['tien_hoc'];
-    $id_giang_vien = $_POST['id_giang_vien'];
-    $id_danh_muc = $_POST['id_danh_muc'];
-    $slideshow = $_POST['slideshow'];
-    $sql = "UPDATE khoa_hoc SET ten_khoa_hoc='$ten_khoa_hoc', id_khoa_hoc='$id_khoa_hoc', avt='$avt', tien_hoc='$tien_hoc', mo_ta='$mo_ta', trang_thai='$trang_thai', id_giang_vien='$id_giang_vien', id_danh_muc='$id_danh_muc', slideshow='$slideshow' WHERE id_khoa_hoc ='$id_khoa_hoc'";
-    pdo_execute($sql);
-    header("location:index.php?act=allkhoahoc&table=khoa_hoc");
-}
 
-?>
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Sửa Khóa Học</h3>
