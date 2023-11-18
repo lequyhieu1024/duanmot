@@ -29,7 +29,7 @@
             <td><?=$ten_tai_khoan ?></td>    
             <td>
                 <a href="index.php?act=delete&id=id_lien_he&iddl=<?=$id_lien_he?>&table=lien_he&header=alllienhe"><button class="btn btn-danger">Xóa</button></a>    
-                <a href=""><button class="btn btn-danger">Phản Hồi</button></a></td>       
+                <a href=""><button class="btn btn-success">Phản Hồi</button></a></td>       
             </tr>
         <?php endforeach; ?>
     </tbody>
