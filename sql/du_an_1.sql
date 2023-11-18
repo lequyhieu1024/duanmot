@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 15, 2023 lúc 05:49 PM
+-- Thời gian đã tạo: Th10 18, 2023 lúc 09:25 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -33,7 +33,7 @@ CREATE TABLE `binh_luan` (
   `id_khoa_hoc` int(11) NOT NULL,
   `noi_dung_binh_luan` varchar(225) NOT NULL,
   `ngay_binh_luan` date NOT NULL,
-  `danh_gia` int(1) NOT NULL DEFAULT 5
+  `danh_gia` float NOT NULL DEFAULT 5
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -41,7 +41,8 @@ CREATE TABLE `binh_luan` (
 --
 
 INSERT INTO `binh_luan` (`id_binh_luan`, `id_tai_khoan`, `id_khoa_hoc`, `noi_dung_binh_luan`, `ngay_binh_luan`, `danh_gia`) VALUES
-(3, '1', 1, 'hjhj', '0000-00-00', 5);
+(4, '1', 23, 'hay', '2023-11-16', 5),
+(5, '1', 23, 'hay', '2023-11-16', 4);
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,10 @@ CREATE TABLE `danh_muc_khoa_hoc` (
 INSERT INTO `danh_muc_khoa_hoc` (`id_danh_muc`, `ten_danh_muc`, `mo_ta`, `trang_thai`) VALUES
 (1, 'Lập Trình Web Backend', 'Hướng học theo ngành backend', 'show'),
 (29, 'Tự động hóa', 'xin chào1', 'show'),
-(30, 'Tester12', 'xin chào12', 'none');
+(30, 'Tester12', 'xin chào12', 'none'),
+(34, 'Tester', 'xin chào', 'show'),
+(35, 'Game', 'xin chào', 'show'),
+(41, 'Tự động hóa', 'xin chào', 'show');
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,9 @@ CREATE TABLE `khoa_hoc` (
 
 INSERT INTO `khoa_hoc` (`id_khoa_hoc`, `ten_khoa_hoc`, `avt`, `tien_hoc`, `mo_ta`, `so_luot_xem`, `so_luot_dang_ky`, `lo_trinh_hoc`, `trang_thai`, `id_giang_vien`, `id_danh_muc`, `slideshow`) VALUES
 (22, 'C#', 'cSharp.png', 100, 'Mô tả sản phẩm: Tivi (viết tắt của Television) là một thiết bị điện tử dùng để truyền hình và hiển thị hình ảnh chuyển động và âm thanh. Nó đã trở thành một phần quan trọng trong cuộc sống hàng ngày của mọi người trên khắp thế giới. Một số tivi mới hỗ trợ công nghệ tương tác, cho phép người dùng điều khiển bằng giọng nói hoặc cử chỉ. Tóm lại, tivi đã trở thành một phần không thể thiếu trong hầu hết các hộ gia đình và đóng vai trò quan trọng trong việc mang lại giải trí và thông tin cho mọi người.', 0, 0, '', 'yes', 4, 1, 'show'),
-(23, 'PHP', 'php.png', 2000, 'PHP viết là viết tắt của Hypertext Preprocessor', 0, 0, '', 'yes', 4, 1, 'show');
+(23, 'PHP', 'php.png', 2000, 'PHP viết là viết tắt của Hypertext Preprocessor', 0, 0, '', 'yes', 4, 1, 'show'),
+(25, 'CTGL & GT', 'ctglgt.jpg', 123, 'xin chào', 0, 0, '2', 'yes', 4, 29, 'show'),
+(26, 'CTGL & GT', 'ctglgt.jpg', 123, 'xin chào', 0, 0, '2', 'yes', 4, 1, 'show');
 
 -- --------------------------------------------------------
 
@@ -156,7 +162,8 @@ CREATE TABLE `khuyen_mai` (
 
 INSERT INTO `khuyen_mai` (`id_khuyen_mai`, `ten_khuyen_mai`, `ngay_bat_dau`, `ngay_ket_thuc`, `noi_dung`) VALUES
 (3, 'sake', '2022-12-11', '2023-12-14', '-80'),
-(4, 'Best sale', '2023-11-02', '2023-11-30', '30');
+(4, 'Best sale', '2023-11-02', '2023-11-30', '30'),
+(5, 'Kh sao', '2023-11-17', '2023-12-17', '50');
 
 -- --------------------------------------------------------
 
@@ -177,8 +184,9 @@ CREATE TABLE `lien_he` (
 --
 
 INSERT INTO `lien_he` (`id_lien_he`, `noi_dung`, `ngay_lien_he`, `id_tai_khoan`, `trang_thai`) VALUES
-(10, 'hay', '2023-11-14', 0, ''),
-(12, 'liên hệ mới', '2023-11-14', 0, 'Chưa phản hồi');
+(15, 'chả ra cái đéo gì', '2023-11-18', 1, 'Chưa phản hồi'),
+(16, 'liên hệ 1', '2023-11-18', 1, 'Chưa phản hồi'),
+(17, 'liên hệ 2', '2023-11-18', 1, 'Chưa phản hồi');
 
 -- --------------------------------------------------------
 
@@ -197,7 +205,7 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id_role`, `name_role`, `mo_ta`) VALUES
-(1, 'Học Viên', 'Đăng Nhập ,Đăng Ky khóa học. xem các khóa học,danh mục'),
+(1, 'Học Viên', 'Đăng Nhập ,Đăng Ky khóa học. xem các khóa học,danh mục '),
 (2, 'Nhân Viên', 'Có quyền xem thông tin quản trị.trả lời các liên hệ của học viên '),
 (3, 'Admin', 'Có toàn quyền Quản trị website');
 
@@ -224,8 +232,9 @@ CREATE TABLE `tai_khoan` (
 --
 
 INSERT INTO `tai_khoan` (`id_tai_khoan`, `ten_tai_khoan`, `ho_va_ten`, `email`, `nam_sinh`, `mat_khau`, `avt`, `so_dien_thoai`, `id_role`) VALUES
-(1, 'admin', 'Hiếu Huân Tuấn', 'codephpnguvl@gmail.com', '2004-02-10', 'admin', 'img.png', '0123456789', 1),
-(12, 'hocvien', 'Le QUy Hieu', 'lehieu10022004@gmail.com', '2023-10-31', 'hocvien', 'gv.png', '0111222333', 1);
+(1, 'admin', 'Hiếu Huân Tuấn', 'codephpnguvl@gmail.com', '2004-02-10', 'admin', 'img.png', '012345678911', 3),
+(12, 'hocvien', 'Le QUy Hieu', 'lehieu10022004@gmail.com', '2023-10-31', 'hocvien', 'gv.png', '0111222333', 1),
+(13, 'nhanvien', 'le hiếu', 'hieulqph36904@fpt.edu.vn', '2004-12-12', 'nhanvien', 'kcjj.png', '0111222333', 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -293,7 +302,7 @@ ALTER TABLE `tai_khoan`
 -- AUTO_INCREMENT cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `dang_ky_khoa_hoc`
@@ -305,43 +314,43 @@ ALTER TABLE `dang_ky_khoa_hoc`
 -- AUTO_INCREMENT cho bảng `danh_muc_khoa_hoc`
 --
 ALTER TABLE `danh_muc_khoa_hoc`
-  MODIFY `id_danh_muc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_danh_muc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `giang_vien`
 --
 ALTER TABLE `giang_vien`
-  MODIFY `id_giang_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_giang_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `khoa_hoc`
 --
 ALTER TABLE `khoa_hoc`
-  MODIFY `id_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyen_mai`
 --
 ALTER TABLE `khuyen_mai`
-  MODIFY `id_khuyen_mai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_khuyen_mai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `lien_he`
 --
 ALTER TABLE `lien_he`
-  MODIFY `id_lien_he` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_lien_he` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_role` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
-  MODIFY `id_tai_khoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_tai_khoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
