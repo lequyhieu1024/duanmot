@@ -1,19 +1,9 @@
 /* .container{
     margin: 0 auto;
 } */
-/* .header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    height: 100px;
-    background-color: aquamarine;
-} */
 .logo img{
     width: 100px;
     height: 100px;
-}
-.form-search{
-    display: grid;
-    grid-template-columns: 1fr 0.2fr;
 }
 .khoahocdadangky{
     border: 1px solid black;
