@@ -43,12 +43,14 @@
                             if($_SESSION['id_role']==3){
                                 echo '<a href="app/views/admin/index.php">đến trang qtv</a>';echo '<br>';
                             }
-                            echo $_SESSION['id_role'];echo '<br>';
-                            echo $_SESSION['ten_tai_khoan'];echo '<br>';
+                            echo 'role:'.$_SESSION['id_role'];echo '<br>';
+                            echo 'tentaikhoan:'.$_SESSION['ten_tai_khoan'];echo '<br>';
+                            echo 'id taikhoan:'.$_SESSION['id_tai_khoan'];echo '<br>';
                     }else{
                         echo '<a href="index.php?redirect=login">Đăng nhập</a>';
                     }
                 ?>
+                <a href="index.php?redirect=lienhe">Liên hệ QTV</a>
             </div>
         </div>
         

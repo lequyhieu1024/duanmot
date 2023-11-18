@@ -32,7 +32,19 @@
                 }
                 break;
             case 'lienhe':
-                include("app/views/client/taikhoan/lienhe.php");
+                include("app/views/client/lienhe.php");
+                if(isset($_POST["sendmesage"])){
+                    if(isset($_SESSION['ten_tai_khoan'])){
+                    $noi_dung = $_POST['noi_dung'];
+                    $id_tai_khoan = $_POST['id_tai_khoan'];
+                    $ngay_lien_he = $_POST['ngay_lien_he'];
+                    $trang_thai = $_POST['trang_thai'];
+                    lienhe($noi_dung, $ngay_lien_he,$id_tai_khoan,$trang_thai);
+                    echo '<script>alert("Liên hệ thành công, chờ phản hồi")</script>';
+                  }else{
+                    echo '<script>alert("Hãy đăng nhập để gửi liên hệ")</script>';
+                  }
+                }
                 break;
             case 'unsetcookie':
                 include("app/views/client/taikhoan/fogotcookie.php");
