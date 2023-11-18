@@ -184,6 +184,14 @@
                 include('../../views/admin/taikhoan/alltaikhoan.php');
                 break;
             case 'addtaikhoan':
+<<<<<<< HEAD
+                include('../../models/AdminModel/taikhoan/addtaikhoan.php');
+                break;
+            case 'edittaikhoan':
+                include('../../models/AdminModel/taikhoan/edittaikhoan.php');
+                break;
+           
+=======
                 include('../../views/admin/taikhoan/addtaikhoan.php');
                 if (isset($_POST["addtaikhoan"])) {
                     $ten_tai_khoan = $_POST['ten_tai_khoan'];
@@ -236,6 +244,7 @@
             case 'delete':
                 include('../../models/adminmodel/delete.php');
                 break; 
+>>>>>>> eb6a8881c04ed1aa0bafe44ef8e66125628c71f1
         }
     }else{
         include("layout/home.php");
