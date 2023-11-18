@@ -183,12 +183,68 @@
             case 'alltaikhoan':
                 include('../../views/admin/taikhoan/alltaikhoan.php');
                 break;
-                case 'addtaikhoan':
-                    include('../../models/AdminModel/taikhoan/addtaikhoan.php');
-                break;case 'edittaikhoan':
-                    include('../../models/AdminModel/taikhoan/edittaikhoan.php');
-                    break;
+            case 'addtaikhoan':
+<<<<<<< HEAD
+                include('../../models/AdminModel/taikhoan/addtaikhoan.php');
+                break;
+            case 'edittaikhoan':
+                include('../../models/AdminModel/taikhoan/edittaikhoan.php');
+                break;
            
+=======
+                include('../../views/admin/taikhoan/addtaikhoan.php');
+                if (isset($_POST["addtaikhoan"])) {
+                    $ten_tai_khoan = $_POST['ten_tai_khoan'];
+                    $email = $_POST['email'];
+                    $so_dien_thoai = $_POST['so_dien_thoai'];
+                    $ho_va_ten = $_POST['ho_va_ten'];
+                    $mat_khau = $_POST['mat_khau'];
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "../../../public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
+                    $nam_sinh = $_POST['nam_sinh'];
+                    $mo_ta = $_POST['mo_ta'];
+                    $id_role = $_POST['id_role'];
+                    addtaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau);  
+                    header("location:index.php?act=alltaikhoan&table=tai_khoan");
+                }
+                break;
+            case 'edittaikhoan':
+                include('../../views/admin/taikhoan/edittaikhoan.php');
+                if (isset($_POST["edittaikhoan"])) {
+                    $id_tai_khoan = $_POST["id_tai_khoan"];
+                    $ten_tai_khoan = $_POST['ten_tai_khoan'];
+                    $email = $_POST['email'];
+                    $mat_khau = $_POST['mat_khau'];
+                    $so_dien_thoai = $_POST['so_dien_thoai'];
+                    $ho_va_ten = $_POST['ho_va_ten'];
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "../../../public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
+                    $nam_sinh = $_POST['nam_sinh'];
+                    $mo_ta = $_POST['mo_ta'];
+                    $id_role = $_POST['id_role'];
+                    edittaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau);
+                    header("location:index.php?act=alltaikhoan&table=tai_khoan");
+                }
+                break;
+            case 'contact':
+                include('../../views/admin/layout/contact.php');
+                break;
+            case 'delete':
+                include('../../models/adminmodel/delete.php');
+                break; 
+>>>>>>> eb6a8881c04ed1aa0bafe44ef8e66125628c71f1
         }
     }else{
         include("layout/home.php");

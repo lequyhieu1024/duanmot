@@ -22,7 +22,7 @@
                 <label for="exampleInputPassword1">Ảnh đại diện</label>
                 <input type="file" class="form-control" name="avt" id="exampleInputPassword1" required placeholder="ảnh đại diện khóa học">
             </div>
-            ảnh hiện tại<img style="width: 100px;height:80px;" src="../../../public/images/<?=$avt?>" alt="">
+            Ảnh hiện tại<img style="width: 100px;height:80px;" src="../../../public/images/<?=$avt?>" alt="">
             <div class="form-group">
                 <label for="exampleInputEmail1">Mô tả</label>
                 <input type="text" class="form-control" value="<?=$mo_ta;?>" id="exampleInputEmail1" required name="mo_ta" placeholder="Mô tả khóa học">
