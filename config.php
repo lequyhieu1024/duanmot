@@ -92,16 +92,22 @@ function danh_muc(){
     $result = pdo_query($sql);
     return $result;
 }
-function giang_vien() {
+function chitietgiangvien() {
     $id_giang_vien = $_GET['id_giang_vien'];
     $sql = "SELECT * FROM giang_vien WHERE id_giang_vien = '$id_giang_vien'";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+function giang_vien() {
+    $sql = "SELECT * FROM giang_vien";
     $result = pdo_query($sql);
     return $result;
 }
 function chitietkhoahoc(){
     $id_khoa_hoc = $_GET['id_khoa_hoc'];
     $sql = "SELECT * FROM khoa_hoc WHERE id_khoa_hoc = '$id_khoa_hoc'";
-    $result = pdo_query_one($sql);
+    $result = pdo_query($sql);
     return $result;
 }
 ?>

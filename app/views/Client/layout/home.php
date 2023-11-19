@@ -62,12 +62,12 @@
                         </div>
 
                         <div class="col-lg-12 pt-4 mb-3">
-                            <h2 class="fw-400 font-lg d-block">Popular <b> Classes</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+                            <h2 class="fw-400 font-lg d-block">Khóa học <b> nổi bật</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
                         </div>
 
                         <div class="col-lg-12 pt-2">
                             <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
-                                <?php $ctkh =khoahoc();
+                                <?php $ctkh =khoahocnhieuluotxem();
                                 foreach($ctkh as $tt):
                                     extract($tt);
                                 ?>
@@ -75,19 +75,15 @@
                                 <div class="item">
                                     <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                                         <div class="card-image w-100 mb-3">
-                                            <div class="video-bttn position-relative d-block"><img src="public/images/v-1.png" alt="image" class="w-100"></div>
+                                            <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>
                                         </div>
                                         <div class="card-body pt-0">
                                             <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=$tien_hoc?></span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?> </div></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 32 Lesson </h6>
+                                            <div style="max-height:100px;overflow:hidden"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
+                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/user-6.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/user-7.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/user-8.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/user-3.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/<?=$avt?>" alt="user" class="w30 d-inline-block"></a></li>
                                                 <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
                                             </ul>
                                         </div>
@@ -100,34 +96,36 @@
 
                         
                         <div class="col-lg-12 pt-0 mb-3">
-                            <h2 class="fw-400 font-lg d-block">Latest <b> Classes</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+                            <h2 class="fw-400 font-lg d-block">Khóa học <b> mới</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
                         </div>
 
                         
                         <div class="col-lg-12 pt-2">
-                            <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
-
+                        <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                                <?php $ctkh =khoahoc();
+                                foreach($ctkh as $tt):
+                                    extract($tt);
+                                ?>
+                                <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>">
                                 <div class="item">
                                     <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                                         <div class="card-image w-100 mb-3">
-                                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="public/images/v-6.jpg" alt="image" class="w-100"></a>
+                                            <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Desinger</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 450</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 24 Lesson </h6>
+                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
+                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=$tien_hoc?></span>
+                                            <div style="max-height:100px;overflow:hidden"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
+                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="public/images/user-6.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="public/images/user-7.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="public/images/user-8.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="public/images/user-3.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                                <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/<?=$avt?>" alt="user" class="w30 d-inline-block"></a></li>
                                                 <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+                                </a>
+                                <?php endforeach ?>
                             </div>
                         </div>
 
@@ -139,7 +137,7 @@
                             <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">     
                                 <?php $gv = giang_vien();
                                 foreach($gv as $dsgv):
-                                extract($dsgv);?>  
+                                extract($dsgv);?>   
                                     <div class="item">
                                         <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
                                             <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(public/images/<?=$avt?>);"></div>
@@ -148,7 +146,7 @@
                                                 <div class="clearfix"></div>
                                                 <h4 class="fw-700 font-xsss mt-3 mb-1"><?=$ten_giang_vien ?> </h4>
                                                 <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2"><?=$email?></p>
-                                                <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">Xem Thông Tin</span>
+                                                <a href="index.php?redirect=chitietgiangvien&id_giang_vien=<?=$id_giang_vien?>"><span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">Xem Thông Tin</span> </a>
                                             </div>
                                         </div>
                                     </div>

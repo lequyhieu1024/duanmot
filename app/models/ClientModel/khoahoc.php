@@ -21,3 +21,13 @@ function khoahoc() {
     $result = pdo_query($sql);
     return $result;
 }
+function khoahocnhieuluotxem () {
+    $sql ="SELECT * FROM khoa_hoc ORDER BY so_luot_xem DESC";
+    $result = pdo_query($sql);
+    return $result;
+}
+function updateview() {
+    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+    $sql = "UPDATE khoa_hoc SET so_luot_xem = so_luot_xem + 1 WHERE id_khoa_hoc = '$id_khoa_hoc'";
+    pdo_execute($sql);
+}
