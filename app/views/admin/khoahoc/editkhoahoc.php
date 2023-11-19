@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Ảnh đại diện</label>
-                <input type="file" class="form-control" name="avt" id="exampleInputPassword1" required placeholder="ảnh đại diện khóa học">
+                <input type="file" class="form-control" name="avt" id="exampleInputPassword1" placeholder="ảnh đại diện khóa học">
             </div>
             Ảnh hiện tại<img style="width: 100px;height:80px;" src="../../../public/images/<?=$avt?>" alt="">
             <div class="form-group">
