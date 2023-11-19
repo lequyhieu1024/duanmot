@@ -1,5 +1,5 @@
 <?php
-$target_dir = "../../../public/images/"; // Đường dẫn thư mục lưu trữ tệp tải lên
+$target_dir = "uploads/"; // Đường dẫn thư mục lưu trữ tệp tải lên
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]); // Đường dẫn đầy đủ của tệp tải lên
 $uploadOk = 1; // Biến kiểm tra lỗi
 

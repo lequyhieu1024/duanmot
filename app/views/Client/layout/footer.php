@@ -1,12 +1,37 @@
-
-        <div class="footer">
-
+</div>
+        <!-- main content -->
+        <div class="app-footer border-0 shadow-lg">
+            <a href="default.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
+            <a href="default-follower.html" class="nav-content-bttn"><i class="feather-package"></i></a>
+            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
+            <a href="#" class="nav-content-bttn sidebar-layer"><i class="feather-layers"></i></a>
+            <a href="default-settings.html" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w30 shadow-xss"></a>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script>
-        AOS.init();
-    </script>
+
+        <div class="app-header-search">
+            <form class="search-form">
+                <div class="form-group searchbox mb-0 border-0 p-1">
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                    <a href="#" class="ml-1 mt-1 d-inline-block close searchbox-close">
+                        <i class="ti-close font-xs"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div> 
+
+    <script src="public/js/plugin.js"></script>
+
+    <script src="public/js/apexcharts.min.js"></script> 
+    <script src="public/js/chart.js"></script> 
+    <script src="public/js/scripts.js"></script>
+    
 </body>
+
+
+<!-- Mirrored from uitheme.net/elomoas/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Nov 2023 13:06:49 GMT -->
 </html>
