@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Avatar</label>
-                <input type="file" class="form-control" required id="exampleInputEmail1" name="avt" placeholder="Ảnh đại diện tài khoản">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="avt" placeholder="Ảnh đại diện tài khoản">
             </div>
             ảnh hiện tại: <img style="width:100px;height:80%;" src="../../../public/images/<?=$avt?>" alt="">
             <div class="form-group">

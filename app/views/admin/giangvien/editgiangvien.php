@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Avatar</label>
-                <input type="file" class="form-control" required id="exampleInputEmail1" name="avt" placeholder="Ảnh đại diện giảng viên">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="avt" placeholder="Ảnh đại diện giảng viên">
                 ảnh hiện tại: <img style="width: 100px;height:80px;" src="../../../public/images/<?=$avt?>" alt="">
             </div>
             <div class="form-group">
