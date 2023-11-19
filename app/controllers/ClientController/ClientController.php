@@ -76,9 +76,6 @@
             case 'author-profile':
                 include('app/views/Client/display/author-profile.html');
                 break;
-            case 'blog':
-                include('app/views/Client/display/blog.html');
-                break;
             case 'blog-sidebar':
                 include('app/views/Client/display/blog-sidebar.html');
                 break;

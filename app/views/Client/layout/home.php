@@ -182,6 +182,10 @@
                                         <h4 class="fw-600 mb-0 text-grey-900 font-xssss mt-0 mr-4">Unfollow Group <span class="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">Save to your saved items</span></h4>
                                     </div>
                                 </div>
+                                <?php
+                                //  $info = myInfo();
+                                // extract($info);
+                                ?>
                                 <figure class="avatar ml-auto mr-auto mb-0 mt-2 w90"><img src="public/images/user-12.png" alt="image" class="float-right shadow-sm rounded-circle w-100"></figure>
                                 <div class="clearfix"></div>
                                 <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1">Hendrix Stamp</h2>
@@ -208,7 +212,6 @@
                                         <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download1.png" alt="icon" class="p-3"></a></div>
                                     </div>
                                 </div>  
-
                             </div>
                         </div>
 
@@ -228,139 +231,6 @@
 
                             </div>
                         </div>
-
-                        <div class="card theme-light-bg overflow-hidden rounded-xxl border-0 mb-3">
-                            <div class="card-body d-flex justify-content-between align-items-end pl-4 pr-4 pt-4 pb-3">
-                                <h4 class="fw-700 font-xsss">My Class</h4>
-                                <a href="#" class="position-absolute right-0 mr-4"><i class="ti-more-alt text-grey-500 font-xs"></i></a>
-                            </div>
-                            <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
-                                <div class="row">
-                                    <div class="col-3 p-0">
-                                        <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
-                                            <img src="public/images/download7.png" alt="icon" class="p-1 w-100">
-                                        </a>  
-                                    </div>
-                                    <div class="col-9 pr-3">
-                                        <h4 class="font-xssss d-block fw-700 mt-2">Advanced Python Sass <span class="float-right mt-1 font-xsssss text-grey-500">87%</span></h4>
-                                        <div class="progress mt-2 h5 w-100">
-                                          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="87" style="width: 87%"></div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
-                                <div class="row">
-                                    <div class="col-3 p-0">
-                                        <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
-                                            <img src="public/images/download1.png" alt="icon" class="p-1 w-100">
-                                        </a>  
-                                    </div>
-                                    <div class="col-9 pr-3">
-                                        <h4 class="font-xssss d-block fw-700 mt-2">Bootstrap SASS CSS <span class="float-right mt-1 font-xsssss text-grey-500">65%</span></h4>
-                                        <div class="progress mt-2 h5 w-100">
-                                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65" style="width: 65%"></div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
-                                <div class="row">
-                                    <div class="col-3 p-0">
-                                        <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
-                                            <img src="public/images/download6.png" alt="icon" class="p-1 w-100">
-                                        </a>  
-                                    </div>
-                                    <div class="col-9 pr-3">
-                                        <h4 class="font-xssss d-block fw-700 mt-2">Basic JAVA <span class="float-right mt-1 font-xsssss text-grey-500">75%</span></h4>
-                                        <div class="progress mt-2 h5 w-100">
-                                          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75" style="width: 75%"></div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
-                                <div class="row">
-                                    <div class="col-3 p-0">
-                                        <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
-                                            <img src="public/images/download5.png" alt="icon" class="p-1 w-100">
-                                        </a>  
-                                    </div>
-                                    <div class="col-9 pr-3">
-                                        <h4 class="font-xssss d-block fw-700 mt-2">Advance React <span class="float-right mt-1 font-xsssss text-grey-500">96%</span></h4>
-                                        <div class="progress mt-2 h5 w-100">
-                                          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="96" style="width: 96%"></div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-body pl-4 pr-4 pt-0 pb-4 border-0 w-100 d-block">
-                                <div class="row">
-                                    <div class="col-3 p-0">
-                                        <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
-                                            <img src="public/images/mongodb.png" alt="icon" class="p-1 w-100">
-                                        </a>  
-                                    </div>
-                                    <div class="col-9 pr-3">
-                                        <h4 class="font-xssss d-block fw-700 mt-2">Mongodb Database <span class="float-right mt-1 font-xsssss text-grey-500">73%</span></h4>
-                                        <div class="progress mt-2 h5 w-100">
-                                          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="73" style="width: 73%"></div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card theme-light-bg overflow-hidden rounded-xxl border-0 mb-3">
-                            <div class="card-body d-flex justify-content-between align-items-end pl-4 pr-4 pt-4 pb-3">
-                                <h4 class="fw-700 font-xsss">Profile Scrore</h4>
-                                <a href="#" class="position-absolute right-0 mr-4"><i class="ti-more-alt text-grey-500 font-xs"></i></a>
-                            </div>
-                            <div id="chart-multipleitem"></div>
-                            <div class="card-body d-block pt-0 pb-0 pl-md-5 pr-md-5">
-                                <div class="row">
-                                    <div class="col-4 text-center mb-3">
-                                        <h4 class="text-warning font-xssss fw-700">HTML <span class="d-block mt-1 font-xsssss fw-500 text-grey-500">67%</span></h4>
-                                    </div>
-                                    <div class="col-4 text-center mb-3">
-                                        <h4 class="text-danger font-xssss fw-700">JAVA <span class="d-block mt-1 font-xsssss fw-500 text-grey-500">55%</span></h4>
-                                    </div>
-                                    <div class="col-4 text-center mb-3">
-                                        <h4 class="text-primary font-xssss fw-700">HTML <span class="d-block mt-1 font-xsssss fw-500 text-grey-500">44%</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                             
-                        </div>
-
-                        <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
-                            <div class="card-body d-block text-left">
-                                <h1 class="text-grey-800 font-xl fw-900 mb-4 lh-3">Sign up for our newsletter</h1>
-                                <form action="#" class="mt-3">
-                                    <div class="form-group icon-input">
-                                        <i class="ti-email text-grey-500 font-sm"></i>
-                                        <input type="text" class="form-control mb-2 bg-greylight border-0 style1-input pl-5" placeholder="Enail address">
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="">
-                                        <label class="text-grey-500 font-xssss" for="blankCheckbox">By checking this box, you confirm that you have read and are agreeing to our terms of use regarding.</label>
-                                    </div>
-                                </form>
-                                <ul class="d-flex align-items-center justify-content-between mt-3">
-                                    <li><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                    <li><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                    <li><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                    <li><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                    <li><a href="#" class="btn-round-md bg-pinterest"><i class="font-xs ti-pinterest text-white"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
                     </div>
                 </div>
                 <button class="btn btn-circle text-white btn-neutral sidebar-right">
