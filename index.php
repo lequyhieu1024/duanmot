@@ -5,6 +5,7 @@ session_start();
     include("app/models/ClientModel/lienhe.php");
     include("app/models/ClientModel/khoahoc.php");
     include("app/models/ClientModel/giangvien.php");
+    include("app/models/ClientModel/binhluan.php");
     include("app/models/ClientModel/danhmuc.php");
 
 

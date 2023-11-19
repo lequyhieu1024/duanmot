@@ -15,9 +15,10 @@
     <link rel="icon" type="public/image/png" sizes="16x16" href="public/images/favicon.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="app/views/admin/plugins/fontawesome-free/css/all.min.css">
+    
 
 </head>
-
 <body class="color-theme-blue mont-font">
 
     <div class="preloader"></div>

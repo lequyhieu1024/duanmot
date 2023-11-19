@@ -104,10 +104,5 @@ function giang_vien() {
     $result = pdo_query($sql);
     return $result;
 }
-function chitietkhoahoc(){
-    $id_khoa_hoc = $_GET['id_khoa_hoc'];
-    $sql = "SELECT * FROM khoa_hoc WHERE id_khoa_hoc = '$id_khoa_hoc'";
-    $result = pdo_query($sql);
-    return $result;
-}
+
 ?>

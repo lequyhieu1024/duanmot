@@ -64,6 +64,17 @@
             case 'chitietkhoahoc':
                 include('app/views/Client/khoahoc/chitietkhoahoc.php');
                 break;
+            case 'addbinhluan':
+                if(isset($_POST['addbinhluan'])){
+                    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                    $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                    $noi_dung_binh_luan = $_POST['noi_dung_binh_luan'];
+                    $ngay_binh_luan = $_POST['ngay_binh_luan'];
+                    $danh_gia = $_POST['danh_gia'];
+                    addbinhluan($id_tai_khoan,$id_khoa_hoc,$noi_dung_binh_luan,$ngay_binh_luan,$danh_gia);
+                    header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
+                }
+                break;
             case 'default-settings':
                 include('app/views/Client/display/default-settings.html');
                 break;
