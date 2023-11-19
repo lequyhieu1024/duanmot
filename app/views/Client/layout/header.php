@@ -1,56 +1,208 @@
 <?php ob_start();?>
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from uitheme.net/elomoas/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Nov 2023 13:06:33 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Learn IT | Learn to know, Learn to do, Learn to earn money</title>
-    <link rel="shortcut icon" href="public/images/icon-logo-cong-nghe-thong-tin.ico" type="image/x-icon">
-    <link rel="stylesheet" href="public/assets/client.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="public/css/themify-icons.css">
+    <link rel="stylesheet" href="public/css/feather.css">
+    <!-- Favicon icon -->
+    <link rel="icon" type="public/image/png" sizes="16x16" href="public/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="public/css/style.css">
+
 </head>
-<body>
-    <div class="container">
-        <div style="border:2px solid" class="row col-sm-12">line</div> 
-        <div class="row d-flex flex-row">
-            <div class="logo col-md-2 col-xs-6 col-sm-4">
-                <img src="public/images/icon-logo-cong-nghe-thong-tin-1.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="danhmuc d-none d-md-block col-md-4">
-                <ul>
-                    <li>
-                        danh mục
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="timkiem col-md-4 col-xs-6 col-sm-4">
-                <form class="form-search" action="" method="post">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nhập khóa học muốn học">
-                    <button type="submit" name="search-button"><i class="fa fa-search"></i></button>
-                </form>
-                <div class="khoahocdadangky">
-                    <p>Khóa Học Của Tôi</p>
+
+<body class="color-theme-blue mont-font">
+
+    <div class="preloader"></div>
+
+    
+    <div class="main-wrapper">
+
+        <!-- navigation -->
+        <nav class="navigation scroll-bar">
+            <div class="container pl-0 pr-0">
+                <div class="nav-content">
+                    <div class="nav-top">
+                        <a href="index.php"><i class="feather-slack text-success display1-size mr-3 ml-3"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xl logo-text mb-0">Learn IT. </span> </a>
+                        <a href="#" class="close-nav d-inline-block d-lg-none"><i class="ti-close bg-grey mb-4 btn-round-sm font-xssss fw-700 text-dark ml-auto mr-2 "></i></a>
+                    </div>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span>-------------------------------------------- </span></div>
+                    <ul class="mb-3">
+                        <li class="logo d-none d-xl-block d-lg-block"></li>
+                        <li><a href="index.php" class="active nav-content-bttn open-font" data-tab="chats"><i class="feather-home mr-3"></i><span>Trang chủ</span></a></li>
+                        <li><a href="index.php?redirect=khoahoccuatoi" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học của tôi</span></a></li>
+                        <li><a href="index.php?redirect=allkhuyenmai&table=khuyen_mai" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-gift mr-3"></i><span>Chương trình khuyến mãi</span></a></li>
+                        <li><a href="index.php?redirect=lienhe" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-message-square mr-3"></i><span>Liên Hệ & Hỏi Đáp</span></a></li>                      
+                    </ul>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span>Danh Mục</span></div>
+                    <ul class="mb-3">
+                        <li class="logo d-none d-xl-block d-lg-block"></li>
+                        <?php $danhmuc = alldanhmuc();
+                        foreach($danhmuc as $alldanhmuc):
+                        extract($alldanhmuc);?>
+                        <li><a href="index.php?redirect=all_kh_theo_dm&id_danh_muc=<?=$id_danh_muc?>" class=" nav-content-bttn open-font" data-tab="chats"><i class="feather-book mr-3"></i><span><?=$ten_danh_muc;?></span></a></li>         
+                        <?php endforeach?>            
+                    </ul>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span>Giảng Viên </span>Kỳ Cựu</div>
+                    <ul class="mb-3">
+                        <?php $top5gv = top_5_giang_vien();
+                        foreach($top5gv as $gv):
+                        extract($gv);?>
+                        <li><a href="index.php?redirect=chitietgiangvien&id_giang_vien=<?=$id_giang_vien?>" class="nav-content-bttn open-font pl-2 pb-2 pt-1 h-auto" data-tab="chats"><img src="public/images/<?=$avt?>" alt="teacher" class="w40 mr-2"><span> <?=$ma_giang_vien?> </span></a></li>
+                        <?php endforeach?>
+                    </ul>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span></span> Account</div>
+                    <ul class="mb-3">
+                        <li class="logo d-none d-xl-block d-lg-block"></li>
+                        <li><a href="index.php?redirect=default-settings" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-settings mr-3 text-grey-500"></i><span>Settings</span></a></li>
+                        <li><?php if(isset($_SESSION['ten_tai_khoan'])){
+                            echo '<a href="index.php?redirect=logout" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:red" class="font-sm feather-log-out mr-3 text-red-500"></i><span>Log Out</span></a></li>';
+                        }else{
+                            echo '<li><a href="index.php?redirect=login" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Log In</span></a>';
+                            echo '<a href="index.php?redirect=register" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:blue" class="font-sm feather-user-plus mr-3 text-blue-500"></i><span>Resiter</span></a></li>';
+                        }
+                        ?>
+                            
+                        
+                    </ul>
                 </div>
             </div>
-            <div class="dangnhapdangxuatdangky col-md-2 col-xs-12 col-sm-4">
-                <?php 
-                    if(isset($_SESSION['ten_tai_khoan'])){
-                        echo '<a href="index.php?redirect=logout">Đăng Xuất</a>'; echo '<br>';
-                            if($_SESSION['id_role']==3){
-                                echo '<a href="app/views/admin/index.php">đến trang qtv</a>';echo '<br>';
-                            }
-                            echo 'role:'.$_SESSION['id_role'];echo '<br>';
-                            echo 'tentaikhoan:'.$_SESSION['ten_tai_khoan'];echo '<br>';
-                            echo 'id taikhoan:'.$_SESSION['id_tai_khoan'];echo '<br>';
-                    }else{
-                        echo '<a href="index.php?redirect=login">Đăng nhập</a>';
-                    }
-                ?>
-                <a href="index.php?redirect=lienhe">Liên hệ QTV</a>
+        </nav>
+        <!-- navigation -->
+        <!-- main content -->
+        <div class="main-content">
+            <div class="middle-sidebar-header bg-white">
+                <button class="header-menu"></button>
+                <form action="#" class="float-left header-search">
+                    <div class="form-group mb-0 icon-input">
+                        <i class="feather-search font-lg text-grey-400"></i>
+                        <input type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">
+                    </div>
+                </form>
+                <ul class="d-flex ml-auto right-menu-icon">
+                    <li><a href="message.html"><i class="feather-message-square font-xl text-current"></i></a></li>
+                    <li>
+                        <a href="#"><i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
+                            <div class="menu-dropdown switchcolor-wrap">
+                                <h4 class="fw-700 font-xs mb-4">Settings</h4>
+                                 <h6 class="font-xssss text-grey-500 fw-700 mb-3 d-block">Choose Color Theme</h6>
+                                <ul>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
+                                            <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
+                                            <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
+                                            <span class="circle-color bg-blue" style="background-color: #132977;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
+                                            <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
+                                            <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
+                                            <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
+                                            <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
+                                        </label>
+                                    </li>
+
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
+                                            <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
+                                            <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
+                                            <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
+                                            <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
+                                        </label>
+                                    </li>
+                                    <li class="ml-0 d-inline-block">
+                                        <label class="item-radio item-content">
+                                            <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
+                                            <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="card bg-transparent-card border-0 d-block mt-3">
+                                    <h4 class="d-inline font-xssss mont-font fw-700">Header Background</h4>
+                                    <div class="d-inline float-right mt-1">
+                                        <label class="toggle toggle-menu-color"><input type="checkbox"><span class="toggle-icon"></span></label>
+                                    </div>
+                                </div>
+                                <div class="card bg-transparent-card border-0 d-block mt-3">
+                                    <h4 class="d-inline font-xssss mont-font fw-700">Sticky Header</h4>
+                                    <div class="d-inline float-right mt-1">
+                                        <label class="toggle toggle-sticky"><input type="checkbox"><span class="toggle-icon"></span></label>
+                                    </div>
+                                </div>
+                                <div class="card bg-transparent-card border-0 d-block mt-3">
+                                    <h4 class="d-inline font-xssss mont-font fw-700">Full Screen</h4>
+                                    <div class="d-inline float-right mt-1">
+                                        <label class="toggle toggle-screen"><input type="checkbox"><span class="toggle-icon"></span></label>
+                                    </div>
+                                </div>
+                                <div class="card bg-transparent-card border-0 d-block mt-3">
+                                    <h4 class="d-inline font-xssss mont-font fw-700">Menu Position</h4>
+                                    <div class="d-inline float-right mt-1">
+                                        <label class="toggle toggle-menu"><input type="checkbox"><span class="toggle-icon"></span></label>
+                                    </div>
+                                </div>
+                                <div class="card bg-transparent-card border-0 d-block mt-3">
+                                    <h4 class="d-inline font-xssss mont-font fw-700">Dark Mode</h4>
+                                    <div class="d-inline float-right mt-1">
+                                        <label class="toggle toggle-dark"><input type="checkbox"><span class="toggle-icon"></span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="default-user-profile.html"><img src="public/images/female-profile.png" alt="user" class="w40 mt--1"></a></li>
+                    <li><a href="#" class="menu-search-icon"><i class="feather-search text-grey-900 font-lg"></i></a></li>
+                </ul>
             </div>
-        </div>
-        
+
