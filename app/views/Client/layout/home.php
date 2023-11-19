@@ -4,14 +4,13 @@
                         <div class="col-lg-12 mb-3">
                             <div class="card rounded-xxl p-lg--5 border-0 bg-no-repeat bg-image-contain banner-wrap" style="background-image: url(public/images/fogg-clip.png);">
                                 <div class="card-body p-4">
-                                    <h2 class="display3-size fw-400 display2-md-size sm-mt-7 sm-pt-10">Find a perfect <b class="d-lg-block">Online Course</b></h2>    
-                                    <h4 class="text-grey-500 font-xssss fw-500 ml-1 lh-24">For only course you need to learn web development</h4>
+                                    <h2 class="display3-size fw-400 display2-md-size sm-mt-7 sm-pt-10">Tìm kiếm <b class="d-lg-block">Khóa Học </b></h2>    
                                     <div class="form-group mt-lg-4 p-3 border-light border p-2 bg-white rounded-lg ">
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group icon-input mb-0">
                                                     <i class="ti-search font-xs text-grey-400"></i>
-                                                    <input type="text" class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Search online courses..">
+                                                    <input type="text" class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
                                                 </div>
                                             </div>
 
@@ -32,7 +31,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h4 class="text-grey-500 font-xssss fw-500 ml-1 lh-24"> <b class="text-grey-800 text-dark">Popular Search :</b> Designer, Developer, PHP, HTML, CSS, SCSS </h4>
                                 </div>
                             </div>
                         </div>

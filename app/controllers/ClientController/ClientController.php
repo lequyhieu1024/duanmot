@@ -39,7 +39,7 @@
                 }
                 break;
             case 'lienhe':
-                    include("app/views/client/lienhe.php");
+                    include("app/views/client/chucnangphu/lienhe.php");
                     if(empty($_SESSION['ten_tai_khoan'])){
                         if(isset($_POST["sendmesage"])){
                         $noi_dung = $_POST['noi_dung'];
@@ -75,75 +75,8 @@
                     header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
                 }
                 break;
-            case 'default-settings':
-                include('app/views/Client/display/default-settings.html');
-                break;
-            case 'about':
-                include('app/views/Client/display/about.html');
-                break;
-            case 'accout-ifomation':
-                include('app/views/Client/display/accout-ifomation.html');
-                break;
-            case 'author-profile':
-                include('app/views/Client/display/author-profile.html');
-                break;
-            case 'blog-sidebar':
-                include('app/views/Client/display/blog-sidebar.html');
-                break;
-            case 'blog-single':
-                include('app/views/Client/display/blog-single.html');
-                break;
-            case 'cart':
-                include('app/views/Client/display/cart.html');
-                break;
-            case 'coming-soon':
-                include('app/views/Client/display/coming-soon.html');
-                break;
-            case 'component':
-                include('app/views/Client/display/component.html');
-             break;
-            case 'contact':
-                include('app/views/Client/display/contact.html');
-                break;
-            case 'contact-information':
-                include('app/views/Client/display/contact-information.html');
-                break;
-            case 'contact-two':
-                include('app/views/Client/display/contact-two.html');
-                break;
-            case 'cource-details':
-                include('app/views/Client/display/cource-details.html');
-                break;
-            case 'course-details-2':
-                include('app/views/Client/display/course-details-2.html');
-                break;
-            case 'courses-grid-1':
-                include('app/views/Client/display/courses-grid-1.html');
-                break;
-            case 'courses-grid-2':
-                include('app/views/Client/display/courses-grid-2.html');
-                break;
-            case 'courses-grid-3':
-                include('app/views/Client/display/courses-grid-3.html');
-                break;
-            case 'chat':
-                include('app/views/Client/display/chat.html');
-                break;
-            case 'checkout':
-                include('app/views/Client/display/checkout.html');
-                break;
-                
-            case 'default-analystics':
-                include('app/views/Client/display/default-analystics.html');
-                break;
-            case 'default-author-profile':
-                include('app/views/Client/display/default-author-profile.html');
-                break;
-            case 'default-categories':
-                include('app/views/Client/display/default-categories.html');
-                break;
-            case 'default-course-details':
-                include('app/views/Client/display/default-course-details.html');
+            case 'search':
+                include('app/views/Client/chucnangphu/search.php');
                 break;
         }
     }else{
