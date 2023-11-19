@@ -35,8 +35,8 @@
             <td><?=$so_dien_thoai ?></td>       
             <td><?=$mo_ta ?></td>       
             <td><?=$nam_sinh ?></td>             
-            <td><a href="index.php?act=editgiangvien&id=id_giang_vien&table=giang_vien&id_edit=<?=$id_giang_vien;?>"><button class="btn btn-warning">Sửa</button></a>
-                <a href="index.php?act=delete&header=allgiangvien&id=id_giang_vien&table=giang_vien&iddl=<?=$id_giang_vien;?>"><button class="btn btn-danger">Xóa</button></a>
+            <td><a href="index.php?act=editgiangvien&id=id_giang_vien&table=giang_vien&id_edit=<?=$id_giang_vien;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Sửa</button></a>
+                <a href="index.php?act=delete&header=allgiangvien&id=id_giang_vien&table=giang_vien&iddl=<?=$id_giang_vien;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>
         <?php endforeach; ?>
