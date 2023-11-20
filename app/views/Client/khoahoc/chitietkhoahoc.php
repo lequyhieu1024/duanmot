@@ -40,8 +40,9 @@ $khct = current($ctkh);
                                 <form action="index.php?redirect=dangkykhoahoc" method="post">
                                     <?php
                                     $ctkh = chitietkhoahoc();
-                                    foreach ($ctkh as $value):?>
+                                    foreach ($ctkh as $value): if(isset($_SESSION['id_tai_khoan'])):?>
                                     <input type="hidden" name="id_tai_khoan" value="<?=$_SESSION['id_tai_khoan']?>">
+                                    <?php endif?>
                                     <input type="hidden" name="id_khoa_hoc" value="<?=$id_khoa_hoc?>">
                                     <input type="hidden" name="id_giang_vien" value="<?=$id_giang_vien?>">
                                     <input type="hidden" name="thanh_tien" value="<?=$tien_hoc?>">
