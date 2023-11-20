@@ -8,14 +8,13 @@
                                     <div class="form-group mt-lg-4 p-3 border-light border p-2 bg-white rounded-lg ">
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <div class="form-group icon-input mb-0">
+                                         <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
                                                     <i class="ti-search font-xs text-grey-400"></i>
-                                                    <input type="text" class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
-                                                </div>
+                                                    <input type="text" name="search_input" required class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
                                             </div>
 
                                             <div class="col-md-4">
-                                                <div class="form-group icon-input mb-0">
+                                                <!-- <div class="form-group icon-input mb-0">
                                                     <i class="ti-package font-xs text-grey-400"></i>
                                                     <select class="style1-select bg-transparent border-0 pl-5">
                                                         <?php $kh = top_15_khoa_hoc();
@@ -24,11 +23,12 @@
                                                         <option value="<?=$id_khoa_hoc?>"><?=$ten_khoa_hoc?></option>
                                                         <?php endforeach ?>
                                                     </select>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="col-md-3">
-                                                <a href="default-search.html" class="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</a>
+                                                <button type="submit" name="tim_kiem" class="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</button>
                                             </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>

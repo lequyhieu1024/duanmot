@@ -31,6 +31,9 @@
             case 'allkhoahoc':
                 include('../../views/admin/khoahoc/allkhoahoc.php');
                 break;
+            case 'allkhđângky':
+                include('../../views/admin/khoahoc/allkhdadangky.php');
+                break;
             case 'khtheodm':
                 include('../../views/admin/khoahoc/khtheodm.php');
                 break;

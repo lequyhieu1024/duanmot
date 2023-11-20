@@ -64,7 +64,7 @@
                         <li class="logo d-none d-xl-block d-lg-block"></li>
                         <li><a href="index.php?redirect=default-settings" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-settings mr-3 text-grey-500"></i><span>Settings</span></a></li>
                         <li><?php if(isset($_SESSION['ten_tai_khoan'])){
-                            if($_SESSION['id_role']){
+                            if($_SESSION['id_role']==3){
                                 echo '<li><a href="app/views/admin/index.php" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Cpanel</span></a>';
                             }
                             echo '<a href="index.php?redirect=logout" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:red" class="font-sm feather-log-out mr-3 text-red-500"></i><span>Log Out</span></a></li>';

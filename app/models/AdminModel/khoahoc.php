@@ -34,5 +34,8 @@ function editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_
     }
     pdo_execute($sql);
 }
-
+function dangkykhoahoc($id_dang_ky_khoa_hoc,$id_tai_khoan, $id_khoa_hoc, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai){
+    $sql = "INSERT INTO dang_ky_khoa_hoc(id_dang_ky_khoa_hoc,id_tai_khoan, id_khoa_hoc, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai) VALUES ('$id_dang_ky_khoa_hoc','$id_tai_khoan', '$id_khoa_hoc', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai')";
+    pdo_execute($sql);
+}
 ?>

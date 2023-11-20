@@ -128,6 +128,23 @@
             <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
+                Khóa học đã đăng ký
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.php?act=allkhdadangky&table=dang_ky_khoa_hoc" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tất cả khóa học</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
                 Danh mục khóa học
                 <i class="right fas fa-angle-left"></i>
               </p>

@@ -1,7 +1,7 @@
 <?php 
  updateview();
 $ctkh = chitietkhoahoc();
-    foreach($ctkh as $khct):
+$khct = current($ctkh);
         extract($khct);
 ?>
     <div class="middle-sidebar-bottom">
@@ -18,8 +18,7 @@ $ctkh = chitietkhoahoc();
                             </div>
                             <p class="review-link font-xssss fw-600 text-grey-500 lh-3 mb-4"></p>
 
-                            <a href="#" class="btn-round-lg ml-3 d-inline-block rounded-lg bg-greylight"><i class="feather-share-2 font-sm text-grey-700"></i></a>
-                            <a href="#" class="btn-round-lg ml-2 d-inline-block rounded-lg bg-danger"><i class="feather-bookmark font-sm text-white"></i> </a>
+                             <?php echo ($danh_gia != "") ? '<a class="btn-round-lg ml-3 d-inline-block rounded-lg bg-greylight font-weight-bold">'. number_format($danh_gia, 1) .'<i class="fa fa-star" style="color: #f5cd3d;"></i>' : "<a class='text-white font-weight-bold ml-3'>Chưa có đánh giá</a>"; ?></a>
                             <a href="#" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-inline-block mt-0 p-2 lh-34 text-center ls-3 w200">Quan tâm khóa học</a>
                         </div>
                     </div>
@@ -38,10 +37,22 @@ $ctkh = chitietkhoahoc();
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-book-open font-lg text-current position-absolute left-0"></i> Chuyên Ngành <span class="d-block text-grey-500 mt-1 font-xssss">Information Technology</span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-user font-lg text-current position-absolute left-0"></i> Giảng Viên <span class="d-block text-grey-500 mt-1 font-xssss"><img style="width:20px;" src="public/images/<?=$avt_gv?>" alt=""> <?=$ma_giang_vien?>-<?=$ten_giang_vien?> </span></h4>
                                 <h4 class="pl-35 mb-0 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-award font-lg text-current position-absolute left-0"></i> Kinh Ngiệm Giảng Viên <span class="d-block text-grey-500 mt-1 font-xssss"><?=$mota_gv?> </span></h4>
-                                <a href="#" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">BUy Now</a>
+                                <form action="index.php?redirect=dangkykhoahoc" method="post">
+                                    <?php
+                                    $ctkh = chitietkhoahoc();
+                                    foreach ($ctkh as $value):?>
+                                    <input type="hidden" name="id_tai_khoan" value="<?=$_SESSION['id_tai_khoan']?>">
+                                    <input type="hidden" name="id_khoa_hoc" value="<?=$id_khoa_hoc?>">
+                                    <input type="hidden" name="id_giang_vien" value="<?=$id_giang_vien?>">
+                                    <input type="hidden" name="thanh_tien" value="<?=$tien_hoc?>">
+                                    <input type="hidden" name="ngay_dang_ky_hoc" value="<?php echo date('Y-m-d H:i:s'); ?>">
+                                    <input type="hidden" name="trang_thai" value="<?=$trang_thai?>" >
+                                    <input type="hidden" name="id_khuyen_mai" value="<?=$id_khuyen_mai?>">
+                                    <?php endforeach ?>
+                                    <button type="submit" name="dangkykhoahoc" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">BUy Now</button>
+                                </form>
                         </div>
                     </div>
-                    <?php endforeach;?>
                     <div class="card w-100 border-0 mt-0 mb-4 p-4 shadow-xss position-relative rounded-lg bg-white"> 
                         <h4>Bình Luận</h4>
                         <!-- Bình luận -->
@@ -58,7 +69,7 @@ $ctkh = chitietkhoahoc();
                                         <h6 class="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0"><?=$ngay_binh_luan?></h6>
                                         <div class="star d-block w-100 text-left">
                                         </div>                            
-                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?></p>
+                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?> - Rating: <?=$danh_gia?><i class="fa fa-star" style="color: #f5cd3d;"></i></p>
                                     </div>
                                 </div>
                             </div>

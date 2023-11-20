@@ -17,9 +17,9 @@ if(isset($_SESSION['id_role'])){
         include("../../controllers/AdminController/AdminController.php");
         include("layout/footer.php");
     }else{
-    echo '<img style="width:100%;height:100%" src="../public/images/404.jpg" alt="">';
+    echo '<img style="width:100%;height:100%" src="../../../public/images/404.png" alt="">';
     }
 }else{
-    echo '<img style="width:100%;height:100%" src="../public/images/404.jpg" alt="">';
+    echo '<img style="width:100%;height:100%" src="../public/images/404.png" alt="">';
 }
 ?>

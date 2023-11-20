@@ -75,8 +75,19 @@
                     header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
                 }
                 break;
-            case 'search':
-                include('app/views/Client/chucnangphu/search.php');
+            case 'timkiem':
+                include("app/views/client/khoahoc/kh_theo_timkiem.php");
+                break;
+            case 'dangkykhoahoc':
+                if(isset($_POST['dangkykhoahoc'])){
+                    $id_tai_khoan = $_POST['id_tai_khoan'];
+                    $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                    $id_giang_vien = $_POST['id_giang_vien'];
+                    $thanh_tien = $_POST['thanh_tien'];
+                    $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
+                    $trang_thai = $_POST['trang_thai'];
+                    $id_khuyen_mai = $_POST['id_khuyen_mai'];
+                }
                 break;
         }
     }else{
