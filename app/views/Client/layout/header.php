@@ -86,7 +86,7 @@
                 <button class="header-menu"></button>
                 <form action="#" class="float-left header-search">
                     <div class="form-group mb-0 icon-input">
-                        <marquee class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">Chào mừng đến website của tôi</marquee>
+                        <marquee class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">Chào mừng đến website của Hiếu Huân Tuấn</marquee>
                     </div>
                 </form>
                 <ul class="d-flex ml-auto right-menu-icon">
