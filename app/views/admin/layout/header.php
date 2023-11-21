@@ -134,7 +134,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?act=allkhdadangky&table=dang_ky_khoa_hoc" class="nav-link">
+                <a href="index.php?act=dangkykhoahoc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tất cả khóa học</p>
                 </a>

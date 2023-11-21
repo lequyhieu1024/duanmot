@@ -34,8 +34,14 @@ function editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_
     }
     pdo_execute($sql);
 }
-function dangkykhoahoc($id_dang_ky_khoa_hoc,$id_tai_khoan, $id_khoa_hoc, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai){
-    $sql = "INSERT INTO dang_ky_khoa_hoc(id_dang_ky_khoa_hoc,id_tai_khoan, id_khoa_hoc, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai) VALUES ('$id_dang_ky_khoa_hoc','$id_tai_khoan', '$id_khoa_hoc', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai')";
-    pdo_execute($sql);
+function QLkhdadangky(){
+    $sql = "SELECT *,dang_ky_khoa_hoc.id_khoa_hoc,khoa_hoc.ten_khoa_hoc,khoa_hoc.avt, dang_ky_khoa_hoc.trang_thai,giang_vien.ma_giang_vien ,khuyen_mai.ten_khuyen_mai
+    FROM dang_ky_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien";
+    $result = pdo_query($sql);
+    return $result;
 }
 ?>
