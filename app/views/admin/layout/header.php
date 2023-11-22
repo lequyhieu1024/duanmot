@@ -33,11 +33,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -134,7 +129,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?act=allkhdadangky&table=dang_ky_khoa_hoc" class="nav-link">
+                <a href="index.php?act=qlkhdadangky" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tất cả khóa học</p>
                 </a>

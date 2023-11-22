@@ -40,13 +40,14 @@ $khct = current($ctkh);
                                 <form action="index.php?redirect=dangkykhoahoc" method="post">
                                     <?php
                                     $ctkh = chitietkhoahoc();
-                                    foreach ($ctkh as $value):?>
+                                    foreach ($ctkh as $value): if(isset($_SESSION['id_tai_khoan'])):?>
                                     <input type="hidden" name="id_tai_khoan" value="<?=$_SESSION['id_tai_khoan']?>">
+                                    <?php endif?>
                                     <input type="hidden" name="id_khoa_hoc" value="<?=$id_khoa_hoc?>">
                                     <input type="hidden" name="id_giang_vien" value="<?=$id_giang_vien?>">
                                     <input type="hidden" name="thanh_tien" value="<?=$tien_hoc?>">
                                     <input type="hidden" name="ngay_dang_ky_hoc" value="<?php echo date('Y-m-d H:i:s'); ?>">
-                                    <input type="hidden" name="trang_thai" value="<?=$trang_thai?>" >
+                                    <input type="hidden" name="trang_thai" value="Chưa thanh toán" >
                                     <input type="hidden" name="id_khuyen_mai" value="<?=$id_khuyen_mai?>">
                                     <?php endforeach ?>
                                     <button type="submit" name="dangkykhoahoc" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">BUy Now</button>

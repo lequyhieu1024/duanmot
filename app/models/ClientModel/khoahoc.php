@@ -42,3 +42,22 @@ function chitietkhoahoc(){
     $result = pdo_query($sql);
     return $result;
 }
+function khoahoccuatoi(){
+    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $sql = "SELECT * FROM dang_ky_khoa_hoc WHERE id_tai_khoan = '$id_tai_khoan'";
+    $results = pdo_query($sql);
+    return $results;
+}
+function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai){
+    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai')";
+    pdo_execute($sql);
+}
+function myskill(){
+    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $sql = "SELECT *,khoa_hoc.avt as avt FROM dang_ky_khoa_hoc
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    WHERE id_tai_khoan = '$id_tai_khoan'";
+    $result = pdo_query($sql);
+    return $result;
+}
+?>

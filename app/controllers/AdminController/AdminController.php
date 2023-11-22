@@ -31,8 +31,16 @@
             case 'allkhoahoc':
                 include('../../views/admin/khoahoc/allkhoahoc.php');
                 break;
-            case 'allkhđângky':
-                include('../../views/admin/khoahoc/allkhdadangky.php');
+            case 'qlkhdadangky':
+                include('../../views/admin/khoahoc/qlkhdadangky.php');
+                break;
+            case 'edit_ql_kh_dadangky':
+                include('../../views/admin/khoahoc/edit_ql_kh_dadangky.php');
+                if(isset($_POST['edit_trangthai'])){
+                    $trang_thai = $_POST['trang_thai'];
+                    editQLkhdadangky($id_dang_ky_khoa_hoc);
+                    header("location: index.php?act=qlkhdadangky");
+                }
                 break;
             case 'khtheodm':
                 include('../../views/admin/khoahoc/khtheodm.php');

@@ -27,5 +27,7 @@ function myInfo(){
     if(isset($_SESSION['id_tai_khoan'])){
         $id_tai_khoan = $_SESSION['id_tai_khoan'];
         $sql = "SELECT * FROM tai_khoan WHERE id_tai_khoan = '$id_tai_khoan'";
+        $result = pdo_query($sql);
+        return $result;
     }
 }
