@@ -16,8 +16,8 @@
             <th scope="col">Người đăng ký</th>
             <th scope="col">Ngày đăng ký</th>
             <th scope="col">Trạng thái</th>
-            <th scope="col">Danh Mục</th>
             <th scope="col">Mã giảng viên</th>
+            <th scope="col">Áp dụng khuyến mãi</th>
             <th scope="col">Thao tác</th>
         </tr>
     </thead>
@@ -36,8 +36,8 @@
             <td><?=$trang_thai ?></td>
             <td><?=$ma_giang_vien ?></td>  
             <td><?php if ($ten_khuyen_mai != ""): $ten_khuyen_mai ;else:echo "Không áp km";endif; ?></td>       
-            <td><a href="index.php?act=editkhoahoc&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Sửa</button></a>
-                <a href="index.php?act=delete&header=allkhoahoc&table=khoa_hoc&id=id_khoa_hoc&iddl=<?=$id_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
+            <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Sửa</button></a>
+                <a href="index.php?act=delete&header=qlkhdadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
             </td>       
         </tr>
         <?php endforeach; ?>

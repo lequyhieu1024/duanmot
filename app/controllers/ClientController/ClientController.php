@@ -72,11 +72,12 @@
                     $noi_dung_binh_luan = $_POST['noi_dung_binh_luan'];
                     $ngay_binh_luan = $_POST['ngay_binh_luan'];
                     $danh_gia = $_POST['danh_gia'];
-                        if ($danh_gia != 0) {
-                                addbinhluan($id_tai_khoan, $id_khoa_hoc, $noi_dung_binh_luan, $ngay_binh_luan, $danh_gia);
-                                header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
-                            } else {
-                                echo '<script>alert("vui lòng đánh giá")</script>';
+                        if ($danh_gia >=1 && $danh_gia <=5) {
+                            addbinhluan($id_tai_khoan, $id_khoa_hoc, $noi_dung_binh_luan, $ngay_binh_luan, $danh_gia);
+                            header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
+                        } else {
+                            echo '<script>alert("vui lòng đánh giá")</script>';
+                            echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
                             }
                         }
                     }
@@ -105,6 +106,9 @@
                 break;
             case 'khoahoccuatoi':
                 include("app/views/client/khoahoc/khoahoccuatoi.php");
+                break;
+            case 'mycontact':
+                include("app/views/client/chucnangphu/mycontact.php");
                 break;
         }
     }else{
