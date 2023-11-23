@@ -7,17 +7,12 @@ function kh_theo_dm(){
         return $result;
     }
 }
-function top_15_khoa_hoc(){
-    $sql = "SELECT * FROM khoa_hoc order by id_khoa_hoc DESC LIMIT 15";
-    $result = pdo_query($sql);
-    return $result;
-}
 function khoahoc() {
     $sql = "SELECT *,khoa_hoc.id_khoa_hoc,khoa_hoc.mo_ta, khoa_hoc.trang_thai,giang_vien.ma_giang_vien,khoa_hoc.avt, avg(binh_luan.danh_gia) as avg_rate
     FROM khoa_hoc
     JOIN danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc
     LEFT JOIN binh_luan ON binh_luan.id_khoa_hoc = khoa_hoc.id_khoa_hoc
-    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien GROUP BY khoa_hoc.id_khoa_hoc";
+    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien GROUP BY khoa_hoc.id_khoa_hoc DESC";
     $result = pdo_query($sql);
     return $result;
 }
@@ -57,6 +52,31 @@ function myskill(){
     $sql = "SELECT *,khoa_hoc.avt as avt FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
     WHERE id_tai_khoan = '$id_tai_khoan'";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lockhoahocgiagiamdan(){
+    $sql = "SELECT * FROM khoa_hoc ORDER BY tien_hoc DESC";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lockhoahocgiatangdan(){
+    $sql = "SELECT * FROM khoa_hoc ORDER BY tien_hoc ASC";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lockhoahocduoi500(){
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc <=500";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lockhoahocduoi1500(){
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >500 AND tien_hoc <=1500";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lockhoahoctren1500(){
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >1500";
     $result = pdo_query($sql);
     return $result;
 }

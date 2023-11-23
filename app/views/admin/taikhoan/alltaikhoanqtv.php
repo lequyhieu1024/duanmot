@@ -25,7 +25,7 @@
     </thead>
     <tbody>
         <?php
-        $result = select_all_table();
+        $result = alltaikhoanqtv();
         foreach ($result as $row):
             extract($row);?>
         <tr>

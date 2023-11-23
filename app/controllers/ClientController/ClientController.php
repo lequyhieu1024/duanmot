@@ -103,19 +103,29 @@
             //             echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
             //         }
             //     }
-                // break;
+            //     break;
             case 'khoahoccuatoi':
                 include("app/views/client/khoahoc/khoahoccuatoi.php");
                 break;
             case 'mycontact':
                 include("app/views/client/chucnangphu/mycontact.php");
                 break;
-                case 'myinfo':
-                    include("app/views/client/taikhoan/myinfo.php");
-                    break;
-                case 'thanhtoan':
-                    include("app/views/client/thanhtoan/thanhtoan.php");
-                    break;
+            case 'myinfo':
+                include("app/views/client/taikhoan/myinfo.php");
+                break;
+            case 'thanhtoan':
+                include("app/views/client/thanhtoan/thanhtoan.php");
+                break;
+            case 'lockhoahoc':
+                if(isset($_POST['loc'])){
+                    $value = $_POST['lockhoahoc'];
+                    include("app/views/client/khoahoc/lockhoahoc.php");
+                }
+                break;
+
+            default:
+                include("app/views/client/layout/home.php");
+                break;
         }
     }else{
         include("app/views/client/layout/home.php");

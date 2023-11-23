@@ -11,8 +11,16 @@
                     if(isset($_POST['adddanhmuc'])){
                         $trang_thai = $_POST['trang_thai'];
                         $mo_ta = $_POST['mo_ta'];
+                        if($_FILES['avt']['name'] != ""){
+                            $avt = basename($_FILES["avt"]["name"]);
+                            $target_dir = "../../../public/images/";
+                            $target_file = $target_dir . $avt;
+                            move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                        }else{
+                            $avt ="";
+                        }
                         $ten_danh_muc = $_POST['ten_danh_muc'];
-                        adddanhmuc($ten_danh_muc,$mo_ta,$trang_thai);
+                        adddanhmuc($ten_danh_muc,$mo_ta,$avt,$trang_thai);
                         header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
                 }
             }           
@@ -23,8 +31,16 @@
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $trang_thai = $_POST['trang_thai'];
                     $mo_ta = $_POST['mo_ta'];
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "../../../public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
                     $ten_danh_muc = $_POST['ten_danh_muc'];
-                    editdanhmuc($id_danh_muc,$ten_danh_muc,$mo_ta,$trang_thai);
+                    editdanhmuc($id_danh_muc,$ten_danh_muc,$mo_ta,$avt,$trang_thai);
                     header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
                 }
                 break;
@@ -35,12 +51,13 @@
                 include('../../views/admin/khoahoc/qlkhdadangky.php');
                 break;
             case 'edit_ql_kh_dadangky':
-                include('../../views/admin/khoahoc/edit_ql_kh_dadangky.php');
-                if(isset($_POST['edit_trangthai'])){
-                    $trang_thai = $_POST['trang_thai'];
-                    editQLkhdadangky($id_dang_ky_khoa_hoc);
-                    header("location: index.php?act=qlkhdadangky");
-                }
+                    include('../../views/admin/khoahoc/edit_ql_kh_dadangky.php');
+                    if(isset($_POST['edit_trangthai'])){
+                        $trang_thai = $_POST['trang_thai'];
+                        $id_dang_ky_khoa_hoc = $_GET['id_edit'];
+                        editQLkhdadangky($id_dang_ky_khoa_hoc, $trang_thai);
+                        header("location: index.php?act=qlkhdadangky");
+                    }
                 break;
             case 'khtheodm':
                 include('../../views/admin/khoahoc/khtheodm.php');
@@ -191,9 +208,12 @@
                     header("location:index.php?act=allkhuyenmai&table=khuyen_mai");
                 }
                 break;
-            case 'alltaikhoan':
-                include('../../views/admin/taikhoan/alltaikhoan.php');
-                break;
+                case 'alltaikhoanqtv':
+                    include('../../views/admin/taikhoan/alltaikhoanqtv.php');
+                    break;
+                case 'alltaikhoanhv':
+                    include('../../views/admin/taikhoan/alltaikhoanhv.php');
+                    break;
             case 'addtaikhoan':
                 include('../../views/admin/taikhoan/addtaikhoan.php');
                 if (isset($_POST["addtaikhoan"])) {
