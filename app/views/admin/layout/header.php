@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- Favicon icon -->
+  <link rel="icon" type="dist/img/logo2.png" sizes="16x16" href="dist/img/logo2.png">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -95,7 +97,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/logo2.png" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
         </div>
         <div class="info">
           <a href="index.php" class="d-block">Nhóm 7</a>
