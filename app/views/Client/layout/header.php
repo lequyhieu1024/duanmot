@@ -205,13 +205,18 @@
                         </a>
                     </li>
                     <?php $info = myInfo();
+                    if($info != ""){
                     foreach($info as $tt):
                     extract($tt);
 
                     ?>
-                    <li><a href="index.php?act=myinfo"><img src="public/images/<?=$avt?>" alt="user" class="w40 mt--1"></a></li>
+                    <li><a href="index.php?redirect=myinfo"><img src="public/images/<?=$avt?>" alt="user" class="w40 mt--1"></a></li>
                     <?php endforeach?>
                     <li><a href="#" class="menu-search-icon"><i class="feather-search text-grey-900 font-lg"></i></a></li>
+                    <?php }else{ ?>
+                        <li><a href="#"><i class="fa fa-user"></i></a></li>
+                    <li><a href="#" class="menu-search-icon"><i class="feather-search text-grey-900 font-lg"></i></a></li>
+                    <?php } ?>
                 </ul>
             </div>
 
