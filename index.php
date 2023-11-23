@@ -8,6 +8,7 @@ session_start();
     include("app/models/ClientModel/binhluan.php");
     include("app/models/ClientModel/danhmuc.php");
     include("app/models/ClientModel/timkiem.php");
+    include("app/models/ClientModel/khuyenmai.php");
 
 
     include ("app/views/client/layout/header.php");

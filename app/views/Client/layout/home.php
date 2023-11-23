@@ -161,7 +161,7 @@
 
                         <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
                             <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(public/images/user-pattern.png);">
-                                <a href="index.php?act=setting" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                                <a href="index.php?redirect=setting" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
                                 <?php
                                  $info = myInfo();
                                  if($info != ""){
@@ -173,8 +173,8 @@
                                 <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1"><?=$ho_va_ten?></h2>
                                 <div class="clearfix"></div>
                                 <ul class="list-inline border-0 mt-4">
-                                    <li class="list-inline-item"><h4 class="fw-700 font-md"> <span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Số điện thoại</span><?=$so_dien_thoai?></h4></li>
-                                    <li class="list-inline-item"><h4 class="fw-700 font-md"><span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Email</span><?=$email?> </h4></li>
+                                    <li class="list-inline-item"><h4 class="fw-700 font-md"> <?=$so_dien_thoai?></h4></li>
+                                    <li class="list-inline-item"><h4 class="fw-700 font-md"><?=$email?> </h4></li>
                                 </ul>
                                 <?php endforeach ?>
                                
