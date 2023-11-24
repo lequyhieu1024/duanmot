@@ -43,7 +43,7 @@
                     <label for="">Số Điện Thoại</label><br>
                     <input type="number" name="so_dien_thoai" placeholder="Số điện thoại người học" id="" value="<?=$so_dien_thoai?>"><br>
                     <label for="">Email</label><br>
-                    <input type="email" name="email" placeholder="email người học" id="" value="<?=$email?>"><br>
+                    <input type="email" name="email" placeholder="Email người học" id="" value="<?=$email?>"><br>
                
             </div>
             <div class="thongtindonhang">
@@ -73,10 +73,6 @@
             </div>
         </form>
     </div>
-
-
-
-
     <script>
         document.getElementById("khuyen_mai_select").value = 0;
         calculateTotal();
