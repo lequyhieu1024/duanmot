@@ -15,7 +15,8 @@ function login($ten_tai_khoan,$mat_khau) {
         }
         header('location:index.php');
     }else{
-        header('location: index.php?redirect=login&loginErr');
+        echo '<script>alert("Sai thông tin đăng nhập")</script>';
+        echo '<script>window.location.href= "app/views/client/taikhoan/login.php"</script>';
     }
 }
 function checkRegister() {
