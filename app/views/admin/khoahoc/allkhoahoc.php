@@ -33,7 +33,7 @@
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt ?>" alt=""></td>
             <td><?=$tien_hoc ?></td>
-            <td><?=$mo_ta ?></td>
+            <td><?php echo nl2br($mo_ta) ?></td>
             <td><?=$so_luot_xem ?></td>
             <td><?=$trang_thai ?></td>
             <td><?=$ma_giang_vien ?></td>

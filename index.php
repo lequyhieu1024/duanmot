@@ -11,6 +11,7 @@ session_start();
 // <<<<<<< HEAD
 =======
     include("app/models/ClientModel/khuyenmai.php");
+    include("app/models/ClientModel/trangthai.php");
 
 
 // >>>>>>> 98a8f1dfe719adfb916b8a9674b4eaa2d2e5dec8

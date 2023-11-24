@@ -7,7 +7,7 @@
     <div class="card-header">
         <h3 class="card-title">Sửa danh mục</h3>
     </div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên danh mục</label>
@@ -26,6 +26,11 @@
                     <option value="none">None</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh</label>
+                <input type="file" class="form-control" name="avt" id="exampleInputPassword1">               
+            </div>
+            <img style="width:100px" src="../../../public/images/<?=$avt?>" alt="">
         </div>
         <!-- /.card-body -->
 

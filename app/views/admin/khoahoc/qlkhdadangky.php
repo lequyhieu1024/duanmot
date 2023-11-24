@@ -33,11 +33,11 @@
             <td><?=$thanh_tien ?></td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
-            <td><?=$trang_thai ?></td>
+            <td><?=$ten_trang_thai ?></td>
             <td><?=$ma_giang_vien ?></td>  
             <td><?php if ($ten_khuyen_mai != ""): $ten_khuyen_mai ;else:echo "Không áp km";endif; ?></td>       
-            <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Sửa</button></a>
-                <a href="index.php?act=delete&header=qlkhdadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
+            <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Cập nhật trạng thái</button></a>
+                <!-- <a href="index.php?act=delete&header=qlkhdadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a> -->
             </td>       
         </tr>
         <?php endforeach; ?>

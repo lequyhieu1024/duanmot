@@ -31,10 +31,11 @@
                             echo '<script>
                                     var xacNhan = confirm("Đăng ký thành công. Mời đăng nhập");
                                         if(xacNhan){
-                                            window.location.href ="index.php?redirect=login"}
+                                            window.location.href ="app/views/client/taikhoan/login.php"}
                                     </script>';                              
                         }else{
                             echo '<script>alert("Đăng ký thất bại")</script>';
+                            echo '<script> window.location.href ="app/views/client/taikhoan/register.php"</script>';
                     }
                 }
                 break;
@@ -103,19 +104,42 @@
             //             echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
             //         }
             //     }
-                // break;
+            //     break;
+            case 'huydangky':
+                delete();
+                header("location: index.php?redirect=khoahoccuatoi");
+                break;
             case 'khoahoccuatoi':
                 include("app/views/client/khoahoc/khoahoccuatoi.php");
+                break;
+            case 'chitietkhcuatoi':
+                if(isset($_GET['id_khoa_hoc'])){
+                    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+                    chitietkhcuatoi($id_khoa_hoc);
+                }
+                include("app/views/client/khoahoc/chitietkhcuatoi.php");
                 break;
             case 'mycontact':
                 include("app/views/client/chucnangphu/mycontact.php");
                 break;
-                case 'myinfo':
-                    include("app/views/client/taikhoan/myinfo.php");
-                    break;
-                case 'thanhtoan':
-                    include("app/views/client/thanhtoan/thanhtoan.php");
-                    break;
+            case 'myinfo':
+                include("app/views/client/taikhoan/myinfo.php");
+                break;
+            case 'thanhtoan':
+                include("app/views/client/thanhtoan/thanhtoan.php");
+                break;
+            case 'lockhoahoc':
+                if(isset($_POST['loc'])){
+                    $value = $_POST['lockhoahoc'];
+                    include("app/views/client/khoahoc/lockhoahoc.php");
+                }
+                break;
+            case 'default-settings':
+                include("app/views/client/chucnangphu/default-settings.php");
+                break;
+            default:
+                include("app/views/client/layout/home.php");
+                break;
         }
     }else{
         include("app/views/client/layout/home.php");

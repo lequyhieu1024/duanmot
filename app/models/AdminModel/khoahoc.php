@@ -35,18 +35,18 @@ function editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_
     pdo_execute($sql);
 }
 function QLkhdadangky(){
-    $sql = "SELECT *,dang_ky_khoa_hoc.id_khoa_hoc,khoa_hoc.ten_khoa_hoc,khoa_hoc.avt, dang_ky_khoa_hoc.trang_thai,giang_vien.ma_giang_vien ,khuyen_mai.ten_khuyen_mai
+    $sql = "SELECT *,dang_ky_khoa_hoc.id_khoa_hoc,khoa_hoc.ten_khoa_hoc,khoa_hoc.avt, trang_thai.ten_trang_thai,giang_vien.ma_giang_vien ,khuyen_mai.ten_khuyen_mai
     FROM dang_ky_khoa_hoc
     JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
     LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
     JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien";
     $result = pdo_query($sql);
     return $result;
 }
-function editQLkhdadangky($trang_thai){
-    $id_dang_ky_khoa_hoc = $_GET['id_dang_ky_khoa_hoc'];
+function editQLkhdadangky($id_dang_ky_khoa_hoc,$trang_thai){
     $sql = "UPDATE dang_ky_khoa_hoc set trang_thai = '$trang_thai' WHERE id_dang_ky_khoa_hoc = '$id_dang_ky_khoa_hoc'";
     pdo_execute($sql);
-}
+    }
 ?>

@@ -1,4 +1,30 @@
+<div class="middle-sidebar-bottom">
+                <div class="middle-sidebar-left">
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <div class="card rounded-xxl p-lg--5 border-0 bg-no-repeat bg-image-contain banner-wrap" style="background-image: url(public/images/fogg-clip.png);">
+                                <div class="card-body p-4">
+                                    <h2 class="display3-size fw-400 display2-md-size sm-mt-7 sm-pt-10">Tìm kiếm <b class="d-lg-block">Khóa Học </b></h2>    
+                                    <div class="form-group mt-lg-4 p-3 border-light border p-2 bg-white rounded-lg ">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                         <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
+                                                    <i class="ti-search font-xs text-grey-400"></i>
+                                                    <input type="text" name="search_input" required class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
+                                            </div>
 
+                                            <div class="col-md-4">
+                                                
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="submit" name="tim_kiem" class="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</button>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 <div class="col-lg-12 pt-2">
     <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
         <?php $ctkh =search();

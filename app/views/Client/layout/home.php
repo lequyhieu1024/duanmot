@@ -14,16 +14,7 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <!-- <div class="form-group icon-input mb-0">
-                                                    <i class="ti-package font-xs text-grey-400"></i>
-                                                    <select class="style1-select bg-transparent border-0 pl-5">
-                                                        <?php $kh = top_15_khoa_hoc();
-                                                        foreach($kh as $top15kh):
-                                                            extract($top15kh)?>
-                                                        <option value="<?=$id_khoa_hoc?>"><?=$ten_khoa_hoc?></option>
-                                                        <?php endforeach ?>
-                                                    </select>
-                                                </div> -->
+                                                
                                             </div>
                                             <div class="col-md-3">
                                                 <button type="submit" name="tim_kiem" class="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</button>
@@ -35,30 +26,44 @@
                             </div>
                         </div>
                         <div class="col-lg-12 pt-2">
-                            <h2 class="fw-400 font-lg">Khám Phá <b>Môn Học</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+                            <h2 class="fw-400 font-lg">Khám Phá <b>Danh Mục</b> <a href="#" class="float-right" ></a></h2>
                         </div>
 
                         <div class="col-lg-12 mt-3">
                             <div class="col-lg-12 mt-3">
                                 <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
-                                    <?php $kh = khoahoc();
+                                    <?php $kh = alldanhmuc();
                                     foreach($kh as $khoahoc):
                                     extract($khoahoc);?>                                      
                                         <div class="item">
                                             <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
-                                                <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>">
+                                                <a href="index.php?redirect=all_kh_theo_dm&id_danh_muc=<?=$id_danh_muc?>">
                                                     <div class="card-body p-2 ml-1 ">
                                                         <span class="btn-round-xl bg-white"><img src="public/images/<?=$avt?>" alt="icon" class="p-2"></span>
-                                                        <h4 class="fw-600 font-xsss mt-3 mb-0"><?=$ten_khoa_hoc?> <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">Lượt đăng ký: <?=$so_luot_dang_ky?></span></h4>                   
+                                                        <h4 class="fw-600 font-xsss mt-3 mb-0"><?=$ten_danh_muc?> </h4>                   
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
                                     <?php endforeach;?>
                                 </div>
-                            </div>    
+                            </div>  
                         </div>
-
+                        <div class="col-lg-12 mt-3">
+                            <div class="col-lg-12 mt-3">
+                                <form action="index.php?redirect=lockhoahoc" method="post">
+                                    <select style="height:35px;width:200px;background-color:yellow" name="lockhoahoc" id="">
+                                        <option value="0"><h2>------Lọc khóa học------</h2></option>
+                                        <option value="1">Giá giảm dần</option>
+                                        <option value="2">Giá tăng dần</option>
+                                        <option value="3">Giá dưới 500$</option>
+                                        <option value="4">Giá từ 500$ - 1500$</option>
+                                        <option value="5">Giá trên 1500$</option>
+                                    </select>
+                                    <input style="height: 35px;width:60px;background-color:yellow" name="loc" type="submit" value="OK">
+                                </form>
+                            </div>
+                        </div>
                         <div class="col-lg-12 pt-4 mb-3">
                             <h2 class="fw-400 font-lg d-block">Khóa học <b> nổi bật</b> <a href="#" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
                         </div>
@@ -100,9 +105,10 @@
                         
                         <div class="col-lg-12 pt-2">
                         <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
-                                <?php $ctkh =khoahoc();
-                                foreach($ctkh as $tt):
-                                    extract($tt);
+                                <?php
+                                $kh = khoahoc();
+                                foreach($kh as $rows):
+                                    extract($rows);
                                 ?>
                                 <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>">
                                 <div class="item">
@@ -117,7 +123,6 @@
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
                                                 <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/<?=$avt?>" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
                                             </ul>
                                         </div>
                                     </div>

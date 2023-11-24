@@ -12505,16 +12505,7 @@ strong,
 .navigation .nav-top a {
   line-height: 75px;
   width: 280px;
-  text-align: left;
-  padding-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-  white-space: nowrap;
+  text-align: center;
 }
 .navigation .nav-top a .logo-text {
   line-height: 75px;

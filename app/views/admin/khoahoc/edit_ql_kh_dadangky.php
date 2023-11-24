@@ -12,8 +12,16 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Trạng thái</label>
                 <select name="trang_thai" id="">
-                    <option value="<?=$trang_thai?>"><?=$trang_thai?></option>
-                    <option value="Thanh toán thành công">Thanh toán thành công</option>
+                    <?php
+                    $tt = QLkhdadangky();
+                    foreach($tt as $rows):extract($rows)?>
+                    <option value="<?=$id_trang_thai?>"><?=$ten_trang_thai?>(Now)</option>
+                    <?php endforeach;?>
+                    <?php
+                    $trang_thai = trang_thai();
+                    foreach($trang_thai as $rows):extract($rows)?>
+                    <option value="<?=$id_trang_thai?>"><?=$ten_trang_thai?></option>
+                    <?php endforeach?>
                 </select>
             </div>
             <div class="card-footer">

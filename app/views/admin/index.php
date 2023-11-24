@@ -11,6 +11,7 @@ if(isset($_SESSION['id_role'])){
         include("../../models/AdminModel/quyen.php");
         include("../../models/AdminModel/taikhoan.php");
         include("../../models/AdminModel/khuyenmai.php");
+        include("../../models/AdminModel/trangthai.php");
 
 
         include("layout/header.php");
