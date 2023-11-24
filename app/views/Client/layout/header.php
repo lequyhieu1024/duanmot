@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="public/css/themify-icons.css">
     <link rel="stylesheet" href="public/css/feather.css">
     <!-- Favicon icon -->
-    <link rel="icon" type="public/image/png" sizes="16x16" href="public/images/favicon.png">
+    <link rel="icon" type="public/image/png" sizes="16x16" href="public/images/logo2.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="app/views/admin/plugins/fontawesome-free/css/all.min.css">
@@ -32,7 +32,7 @@
             <div class="container pl-0 pr-0">
                 <div class="nav-content">
                     <div class="nav-top">
-                        <a href="index.php"><i class="feather-slack text-success display1-size mr-3 ml-3"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xl logo-text mb-0">Learn IT. </span> </a>
+                        <a href="index.php"><img src="public/images/logo.png" style="width: 110px; padding: 5px;"></img><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xl logo-text mb-0">Learn IT. </span> </a>
                         <a href="#" class="close-nav d-inline-block d-lg-none"><i class="ti-close bg-grey mb-4 btn-round-sm font-xssss fw-700 text-dark ml-auto mr-2 "></i></a>
                     </div>
                     <div class="nav-caption fw-600 font-xssss text-grey-500"><span>-------------------------------------------- </span></div>

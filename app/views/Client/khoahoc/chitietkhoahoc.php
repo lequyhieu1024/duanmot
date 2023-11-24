@@ -24,7 +24,7 @@ $khct = current($ctkh);
                     </div>
                     <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4 alert-success">
                         <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 text-success mb-4">Mô tả khóa học</h2>
-                        <h4 class="font-xssss fw-600 text-grey-600 mb-3 pl-30 position-relative lh-24"><i class="ti-check font-xssss btn-round-xs bg-success text-white position-absolute left-0 top-5"></i><?=$mo_ta?></h4>
+                        <h4 class="font-xssss fw-600 text-grey-600 mb-3 pl-30 position-relative lh-24"><i class="ti-check font-xssss btn-round-xs bg-success text-white position-absolute left-0 top-5"></i><?php echo nl2br($mo_ta);?></h4>
                     </div>
                 </div>
                 <div class="col-xl-4 col-xxl-3">
