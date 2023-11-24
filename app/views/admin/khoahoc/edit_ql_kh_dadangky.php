@@ -14,6 +14,7 @@
                 <select name="trang_thai" id="">
                     <option value="<?=$trang_thai?>"><?=$trang_thai?></option>
                     <option value="Thanh toán thành công">Thanh toán thành công</option>
+                    <option value="Chờ thanh toán">Chờ thanh toán</option>
                 </select>
             </div>
             <div class="card-footer">

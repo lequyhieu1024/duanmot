@@ -17,4 +17,14 @@ function edittaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_die
     }
     pdo_execute($sql);
 }
+function alltaikhoanqtv(){
+    $sql = "SELECT * FROM tai_khoan WHERE id_role = 3 OR id_role=2";
+    $result = pdo_query($sql);
+    return $result;
+}
+function alltaikhoanhv(){
+    $sql = "SELECT * FROM tai_khoan WHERE id_role =1";
+    $result = pdo_query($sql);
+    return $result;
+}
 ?>

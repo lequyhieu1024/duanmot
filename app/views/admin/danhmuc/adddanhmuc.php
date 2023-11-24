@@ -5,7 +5,7 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form action="index.php?act=adddanhmuc" method="post">
+    <form action="index.php?act=adddanhmuc" enctype="multipart/form-data" method="post">
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên danh mục</label>
@@ -14,6 +14,10 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Mô tả danh mục</label>
                 <input type="text" class="form-control" required name="mo_ta" id="exampleInputPassword1" placeholder="Mô tả danh mục">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh</label>
+                <input type="file" class="form-control" required name="avt" id="exampleInputPassword1">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Trạng thái</label>
