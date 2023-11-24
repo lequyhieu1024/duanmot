@@ -39,11 +39,11 @@
             <div class="tthv">
                 <h2>(*) Thông tin học viên</h2>
                     <label for="">Họ Và Tên</label> <br>
-                    <input type="text" name="ho_va_ten" placeholder="Họ và tên" id=""><br>
+                    <input type="text" name="ho_va_ten" placeholder="Họ và tên" id="" value="<?=$ho_va_ten?>"><br>
                     <label for="">Số Điện Thoại</label><br>
-                    <input type="number" name="so_dien_thoai" placeholder="Số điện thoại người học" id=""><br>
+                    <input type="number" name="so_dien_thoai" placeholder="Số điện thoại người học" id="" value="<?=$so_dien_thoai?>"><br>
                     <label for="">Email</label><br>
-                    <input type="email" name="email" placeholder="email người học" id=""><br>
+                    <input type="email" name="email" placeholder="email người học" id="" value="<?=$email?>"><br>
                
             </div>
             <div class="thongtindonhang">
