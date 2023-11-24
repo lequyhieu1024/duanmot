@@ -2,7 +2,7 @@
 function kh_theo_dm(){
     if(isset($_GET['id_danh_muc'])){
         $id_danh_muc = $_GET['id_danh_muc'];
-        $sql = "SELECT * FROM khoa_hoc WHERE id_danh_muc = '$id_danh_muc'";
+        $sql = "SELECT * FROM khoa_hoc WHERE id_danh_muc = '$id_danh_muc' and slideshow = 'show'";
         $result = pdo_query($sql);
         return $result;
     }
@@ -12,12 +12,13 @@ function khoahoc() {
     FROM khoa_hoc
     JOIN danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc
     LEFT JOIN binh_luan ON binh_luan.id_khoa_hoc = khoa_hoc.id_khoa_hoc
-    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien GROUP BY khoa_hoc.id_khoa_hoc DESC";
+    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien
+    WHERE khoa_hoc.slideshow = 'show' GROUP BY khoa_hoc.id_khoa_hoc DESC";
     $result = pdo_query($sql);
     return $result;
 }
 function khoahocnhieuluotxem () {
-    $sql ="SELECT * FROM khoa_hoc ORDER BY so_luot_xem DESC";
+    $sql ="SELECT * FROM khoa_hoc WHERE slideshow = 'show' ORDER BY so_luot_xem DESC";
     $result = pdo_query($sql);
     return $result;
 }
@@ -38,11 +39,13 @@ function chitietkhoahoc(){
     return $result;
 }
 function dem_kh_cua_toi(){
+    if(isset($_SESSION['id_tai_khoan'])){
     $id_tai_khoan = $_SESSION['id_tai_khoan']; 
     $sql = "SELECT count(*) as so_luong FROM dang_ky_khoa_hoc WHERE id_tai_khoan = '$id_tai_khoan'";
     $rows =pdo_query_one($sql);
     $so_luong = $rows['so_luong'];
     return $so_luong;
+}
 }
 function khoahoccuatoi(){
     $id_tai_khoan = $_SESSION['id_tai_khoan'];

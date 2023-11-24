@@ -10,6 +10,7 @@ session_start();
     include("app/models/ClientModel/timkiem.php");
     include("app/models/ClientModel/khuyenmai.php");
     include("app/models/ClientModel/trangthai.php");
+    include("app/models/ClientModel/lotrinhkhoahoc.php");
 
 
     include ("app/views/client/layout/header.php");

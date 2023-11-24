@@ -205,11 +205,12 @@
                             </div>
                         </a>
                     </li>
-                    <?php $info = myInfo();
-                    if($info != ""){
+                    
+                    <?php
+                    if(isset($_SESSION['ten_tai_khoan'])){
+                    $info = myInfo();
                     foreach($info as $tt):
                     extract($tt);
-
                     ?>
                     <li><a href="index.php?redirect=myinfo"><img src="public/images/<?=$avt?>" alt="user" class="w40 mt--1"></a></li>
                     <?php endforeach?>

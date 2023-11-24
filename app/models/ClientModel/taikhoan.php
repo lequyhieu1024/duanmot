@@ -1,6 +1,6 @@
 <?php 
-function register($id_tai_khoan,$ten_tai_khoan,$email,$mat_khau,$id_role) {
-    $sql = "INSERT INTO tai_khoan(id_tai_khoan,ten_tai_khoan, email, mat_khau,id_role) VALUES ('$id_tai_khoan','$ten_tai_khoan','$email','$mat_khau','$id_role')";
+function register($ten_tai_khoan,$email,$mat_khau,$id_role) {
+    $sql = "INSERT INTO tai_khoan(ten_tai_khoan, email, mat_khau,id_role) VALUES ('$ten_tai_khoan','$email','$mat_khau','$id_role')";
     pdo_execute($sql);
 }
 function login($ten_tai_khoan,$mat_khau) {

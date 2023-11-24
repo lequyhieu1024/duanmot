@@ -21,13 +21,12 @@
                     if(isset($_POST['register'])){
                         $success = $err= "";
                         $ten_tai_khoan = $_POST['ten_tai_khoan'];
-                        $id_tai_khoan = $_POST['id_tai_khoan'];
                         $email = $_POST['email'];
                         $mat_khau = $_POST['mat_khau'];
                         $id_role = $_POST['id_role'];
                         $xn_mat_khau = $_POST['xn_mat_khau'];
                         if($mat_khau === $xn_mat_khau){
-                            register($id_tai_khoan,$ten_tai_khoan,$email,$mat_khau,$id_role);
+                            register($ten_tai_khoan,$email,$mat_khau,$id_role);
                             echo '<script>
                                     var xacNhan = confirm("Đăng ký thành công. Mời đăng nhập");
                                         if(xacNhan){

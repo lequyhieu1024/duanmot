@@ -68,7 +68,6 @@
                     $trang_thai = $_POST['trang_thai'];
                     $mo_ta = $_POST['mo_ta'];
                     $ten_khoa_hoc = $_POST['ten_khoa_hoc'];
-                    $lo_trinh_hoc = $_POST['lo_trinh_hoc'];
                     if($_FILES['avt']['name'] != ""){
                         $avt = basename($_FILES["avt"]["name"]);
                         $target_dir = "../../../public/images/";
@@ -81,7 +80,7 @@
                     $id_giang_vien = $_POST['id_giang_vien'];
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $slideshow = $_POST['slideshow'];
-                    addkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_hoc,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
+                    addkhoahoc($ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
                     echo '<h2 style="color: red">Thêm thành công!</h2>';
                     
                 }
@@ -105,10 +104,53 @@
                     $id_giang_vien = $_POST['id_giang_vien'];
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $slideshow = $_POST['slideshow'];
-                    editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_hoc,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
+                    editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
                     header("location:index.php?act=allkhoahoc&table=khoa_hoc");
                 }
                 break;
+                case 'alllotrinh':
+                    include('../../views/admin/lotrinhhoc/alllotrinh.php');
+                    break;
+                case 'addlotrinh':
+                    include('../../views/admin/lotrinhhoc/addlotrinh.php');
+                    if(isset($_POST['addlotrinh'])){
+                        $thoi_gian = $_POST['thoi_gian'];
+                        addlotrinh($thoi_gian);
+                        echo '<h2 style="color: red">Thêm thành công!</h2>';
+                    }
+                    break;
+                case 'editlotrinh':
+                    include('../../views/admin/lotrinhhoc/editlotrinh.php');
+                    if(isset($_POST['editlotrinh'])){
+                        $thoi_gian = $_POST['thoi_gian'];
+                        $id_lo_trinh = $_POST['id_lo_trinh'];
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        editlotrinh($id_lo_trinh,$thoi_gian,);
+                        header("location:index.php?act=alllotrinh&table=lo_trinh_hoc");
+                    }
+                    break;
+                case 'allltkh':
+                    include('../../views/admin/lotrinhkhoahoc/allltkh.php');
+                    break;
+                case 'addltkh':
+                    include('../../views/admin/lotrinhkhoahoc/addltkh.php');
+                    if(isset($_POST['addltkh'])){
+                        $id_lo_trinh = $_POST['id_lo_trinh'];
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        addltkh($id_lo_trinh,$id_khoa_hoc);
+                        echo '<h2 style="color: red">Thêm thành công!</h2>';
+                    }
+                    break;
+                case 'editltkh':
+                    include('../../views/admin/lotrinhkhoahoc/editltkh.php');
+                    if(isset($_POST['editltkh'])){
+                        $id_ltkh = $_POST['id_lo_trinh_khoa_hoc'];
+                        $id_lo_trinh = $_POST['id_lo_trinh'];
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        editltkh($id_ltkh,$id_lo_trinh,$id_khoa_hoc);
+                        header("location:index.php?act=allltkh&table=lo_trinh_hoc");
+                    }
+                    break;
             case 'allgiangvien':
                 include('../../views/admin/giangvien/allgiangvien.php');
                 break;
