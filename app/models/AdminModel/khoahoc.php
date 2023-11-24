@@ -44,4 +44,9 @@ function QLkhdadangky(){
     $result = pdo_query($sql);
     return $result;
 }
+function editQLkhdadangky($trang_thai){
+    $id_dang_ky_khoa_hoc = $_GET['id_dang_ky_khoa_hoc'];
+    $sql = "UPDATE dang_ky_khoa_hoc set trang_thai = '$trang_thai' WHERE id_dang_ky_khoa_hoc = '$id_dang_ky_khoa_hoc'";
+    pdo_execute($sql);
+}
 ?>

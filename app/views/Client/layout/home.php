@@ -161,60 +161,37 @@
 
                         <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
                             <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(public/images/user-pattern.png);">
-                                <a href="#" class="position-absolute right-0 mr-4" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather-edit text-grey-500 font-xs"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenu2">
-                                    <div class="card-body p-0 d-flex">
-                                        <i class="feather-bookmark text-grey-500 mr-3 font-lg"></i>
-                                        <h4 class="fw-600 text-grey-900 font-xssss mt-0 mr-4">Save Link <span class="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">Add this to your saved items</span></h4>
-                                    </div>
-                                    <div class="card-body p-0 d-flex mt-2">
-                                        <i class="feather-alert-circle text-grey-500 mr-3 font-lg"></i>
-                                        <h4 class="fw-600 text-grey-900 font-xssss mt-0 mr-4">Hide Post <span class="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">Save to your saved items</span></h4>
-                                    </div>
-                                    <div class="card-body p-0 d-flex mt-2">
-                                        <i class="feather-alert-octagon text-grey-500 mr-3 font-lg"></i>
-                                        <h4 class="fw-600 text-grey-900 font-xssss mt-0 mr-4">Hide all from Group <span class="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">Save to your saved items</span></h4>
-                                    </div>
-                                    <div class="card-body p-0 d-flex mt-2">
-                                        <i class="feather-lock text-grey-500 mr-3 font-lg"></i>
-                                        <h4 class="fw-600 mb-0 text-grey-900 font-xssss mt-0 mr-4">Unfollow Group <span class="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">Save to your saved items</span></h4>
-                                    </div>
-                                </div>
+                                <a href="index.php?redirect=setting" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
                                 <?php
-                                //  $info = myInfo();
-                                // extract($info);
+                                 $info = myInfo();
+                                 if($info != ""){
+                                    foreach($info as $tt):
+                                extract($tt);
                                 ?>
-                                <figure class="avatar ml-auto mr-auto mb-0 mt-2 w90"><img src="public/images/user-12.png" alt="image" class="float-right shadow-sm rounded-circle w-100"></figure>
+                                <figure class="avatar ml-auto mr-auto mb-0 mt-2 w90"><img src="public/images/<?=$avt?>" alt="image" class="float-right shadow-sm rounded-circle w-100"></figure>
                                 <div class="clearfix"></div>
-                                <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1">Hendrix Stamp</h2>
-                                <h4 class="text-grey-500 font-xssss mt-0"><span class="d-inline-block bg-success btn-round-xss m-0"></span> Available</h4>
+                                <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1"><?=$ho_va_ten?></h2>
                                 <div class="clearfix"></div>
-                                <div class="col-12 text-center mt-4 mb-2">
-                                    <a href="message.html" class="p-0 ml-1 btn btn-round-md rounded-xl bg-lightblue"><i class="text-current ti-comment-alt font-sm"></i></a>
-                                    <a href="login.html" class="p-0 ml-1 btn btn-round-md rounded-xl bg-lightblue"><i class="text-current ti-lock font-sm"></i></a>
-                                    <a href="#" class="p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                </div>
                                 <ul class="list-inline border-0 mt-4">
-                                    <li class="list-inline-item text-center mr-4"><h4 class="fw-700 font-md">500+ <span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Connections</span></h4></li>
-                                    <li class="list-inline-item text-center mr-4"><h4 class="fw-700 font-md">88.7 k <span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Follower</span></h4></li>
-                                    <li class="list-inline-item text-center"><h4 class="fw-700 font-md">1,334 <span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Followings</span></h4></li>
+                                    <li class="list-inline-item"><h4 class="fw-700 font-md"> <?=$so_dien_thoai?></h4></li>
+                                    <li class="list-inline-item"><h4 class="fw-700 font-md"><?=$email?> </h4></li>
                                 </ul>
-
+                                <?php endforeach ?>
+                               
                                 <div class="col-12 pl-0 mt-4 text-left">
                                     <h4 class="text-grey-800 font-xsss fw-700 mb-3 d-block">My Skill <a href="#"><i class="ti-angle-right font-xsssss text-grey-700 float-right "></i></a></h4>
                                     <div class="carousel-card owl-carousel owl-theme overflow-visible nav-none">
-                                        <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download1.png" alt="icon" class="p-3"></a></div>
-                                        <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download2.png" alt="icon" class="p-3"></a></div>
-                                        <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download4.png" alt="icon" class="p-3"></a></div>
-                                        <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download3.png" alt="icon" class="p-3"></a></div>
-                                        <div class="item"><a href="#" class="btn-round-xxxl border bg-greylight"><img src="public/images/download1.png" alt="icon" class="p-3"></a></div>
+                                    <?php 
+                                        $myskill = myskill();
+                                        foreach($myskill as $value):
+                                            extract($value);?>
+                                        <div class="item"><a href="" class="btn-round-xxxl border bg-greylight"><img src="public/images/<?=$avt?>" alt="icon" class="p-3"></a></div>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>  
+                                
                             </div>
                         </div>
-
-
-
                         <div class="card theme-light-bg overflow-hidden rounded-xxl border-0 mb-3">
                             <div class="card-body d-flex justify-content-between align-items-end p-4">
                                 <div>
@@ -234,4 +211,5 @@
                 <button class="btn btn-circle text-white btn-neutral sidebar-right">
                     <i class="ti-angle-left"></i>  
                 </button>
+                <?php } ?>
             </div>    
