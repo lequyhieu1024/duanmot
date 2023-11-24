@@ -8,11 +8,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../admin/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../../admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="admin/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../admin/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -39,7 +39,7 @@
         </div>
       </form>
       <p class="mt-3 mb-1">
-        <a href="index.php?redirect=login">Login</a>
+        <a href="login.php">Login</a>
       </p>
     </div>
     <!-- /.login-card-body -->

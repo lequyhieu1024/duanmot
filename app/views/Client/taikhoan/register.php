@@ -1,9 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register| Learn IT</title>
 
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../admin/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="../../admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../admin/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page">
+<div class="login-box">
   <div class="card">
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="" method="post">
+      <form action="../../../../index.php?redirect=register" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" required name="ten_tai_khoan" placeholder="User Name">
           <input type="hidden" class="form-control" required name="id_tai_khoan" placeholder="User Name">
@@ -62,11 +79,12 @@
         </a>
       </div>
 
-      <a href="index.php?redirect=login" class="text-center">I already have a membership</a>
+      <a href="login.php" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
-
+</div>
+</body>
 <!-- jQuery -->
 <script src="../../admin/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

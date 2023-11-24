@@ -19,6 +19,7 @@
     
 
 </head>
+<?php $sl=dem_kh_cua_toi();?>
 <body class="color-theme-blue mont-font">
 
     <div class="preloader"></div>
@@ -38,7 +39,7 @@
                     <ul class="mb-3">
                         <li class="logo d-none d-xl-block d-lg-block"></li>
                         <li><a href="index.php" class="active nav-content-bttn open-font" data-tab="chats"><i class="feather-home mr-3"></i><span>Trang chủ</span></a></li>
-                        <li><a href="index.php?redirect=khoahoccuatoi" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học của tôi</span></a></li>
+                        <li><a href="index.php?redirect=khoahoccuatoi" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học đã đăng ký ( <?php echo $sl;?> )</span></a></li>
                         <li><a href="index.php?redirect=allkhuyenmai&table=khuyen_mai" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-gift mr-3"></i><span>Chương trình khuyến mãi</span></a></li>
                         <li><a href="index.php?redirect=lienhe" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-message-square mr-3"></i><span>Liên Hệ & Hỏi Đáp</span></a></li>                      
                     </ul>
@@ -69,8 +70,8 @@
                             }
                             echo '<a href="index.php?redirect=logout" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:red" class="font-sm feather-log-out mr-3 text-red-500"></i><span>Log Out</span></a></li>';
                         }else{
-                            echo '<li><a href="index.php?redirect=login" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Log In</span></a>';
-                            echo '<a href="index.php?redirect=register" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:blue" class="font-sm feather-user-plus mr-3 text-blue-500"></i><span>Resiter</span></a></li>';
+                            echo '<li><a href="app/views/client/taikhoan/login.php" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Log In</span></a>';
+                            echo '<a href="app/views/client/taikhoan/register.php" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:blue" class="font-sm feather-user-plus mr-3 text-blue-500"></i><span>Resiter</span></a></li>';
                         }
                         ?>
                             
