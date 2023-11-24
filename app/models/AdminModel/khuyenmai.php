@@ -1,5 +1,5 @@
 <?php 
-function addkhuyenmai($id_khuyen_mai,$ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung) {
+function addkhuyenmai($ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung) {
     $sql = "INSERT INTO khuyen_mai(ngay_ket_thuc,ten_khuyen_mai,ngay_bat_dau,noi_dung) VALUES ('$ngay_ket_thuc','$ten_khuyen_mai','$ngay_bat_dau','$noi_dung')";
     pdo_execute($sql);
 }
