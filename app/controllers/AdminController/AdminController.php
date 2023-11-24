@@ -21,7 +21,7 @@
                         }
                         $ten_danh_muc = $_POST['ten_danh_muc'];
                         adddanhmuc($ten_danh_muc,$mo_ta,$avt,$trang_thai);
-                        header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
+                        echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
             }           
                 break;
@@ -82,7 +82,8 @@
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $slideshow = $_POST['slideshow'];
                     addkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_hoc,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
-                    header("location:index.php?act=allkhoahoc&table=khoa_hoc");
+                    echo '<h2 style="color: red">Thêm thành công!</h2>';
+                    
                 }
                 break;
             case 'editkhoahoc':
@@ -128,8 +129,8 @@
                         $avt ="";
                     }
                     $mo_ta = $_POST['mo_ta'];
-                    addgiangvien($id_giang_vien,$ma_giang_vien,$ten_giang_vien,$email,$avt,$so_dien_thoai,$mo_ta,$nam_sinh);
-                    header("location:index.php?act=allgiangvien&table=giang_vien");
+                    addgiangvien($ma_giang_vien,$ten_giang_vien,$email,$avt,$so_dien_thoai,$mo_ta,$nam_sinh);
+                    echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
                 break;
             case 'editgiangvien':
@@ -162,8 +163,8 @@
                 if (isset($_POST["addrole"])) {
                     $name_role = $_POST['name_role'];
                     $mo_ta = $_POST['mo_ta'];
-                    addrole($id_role,$name_role,$mo_ta);
-                    header("location:index.php?act=allrole&table=role");
+                    addrole($name_role,$mo_ta);
+                    echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
                 break;
             case 'allrole':
@@ -192,8 +193,8 @@
                     $ngay_bat_dau = $_POST['ngay_bat_dau'];
                     $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
                     $noi_dung = $_POST['noi_dung'];
-                    addkhuyenmai($id_khuyen_mai,$ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung) ;
-                    header("location:index.php?act=allkhuyenmai&table=khuyen_mai");
+                    addkhuyenmai($ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung) ;
+                    echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
                 break;
             case 'editkhuyenmai':
@@ -231,10 +232,9 @@
                         $avt ="";
                     }
                     $nam_sinh = $_POST['nam_sinh'];
-                    $mo_ta = $_POST['mo_ta'];
                     $id_role = $_POST['id_role'];
-                    addtaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau);  
-                    header("location:index.php?act=alltaikhoan&table=tai_khoan");
+                    addtaikhoan($ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau);  
+                    echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
                 break;
             case 'edittaikhoan':

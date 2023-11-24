@@ -5,7 +5,7 @@ function dem_tai_khoan() {
     $so_luong = $rows['so_luong'];
     return $so_luong;
 }
-function addtaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau){
+function addtaikhoan($ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau){
     $sql = "INSERT INTO tai_khoan(ten_tai_khoan,email,nam_sinh,avt,so_dien_thoai,id_role,ho_va_ten,mat_khau) VALUES ('$ten_tai_khoan','$email','$nam_sinh','$avt','$so_dien_thoai','$id_role','$ho_va_ten','$mat_khau')";
     pdo_execute($sql);
 }

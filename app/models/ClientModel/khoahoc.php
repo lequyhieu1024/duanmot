@@ -38,7 +38,7 @@ function chitietkhoahoc(){
     return $result;
 }
 function dem_kh_cua_toi(){
-    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $id_tai_khoan = $_SESSION['id_tai_khoan']; 
     $sql = "SELECT count(*) as so_luong FROM dang_ky_khoa_hoc WHERE id_tai_khoan = '$id_tai_khoan'";
     $rows =pdo_query_one($sql);
     $so_luong = $rows['so_luong'];
