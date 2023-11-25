@@ -24,10 +24,6 @@
                 <input type="text" class="form-control" id="exampleInputEmail1" required name="mo_ta" placeholder="Mô tả khóa học">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Lộ Trình Học</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" required name="lo_trinh_hoc" placeholder="Mô tả khóa học">
-            </div>
-            <div class="form-group">
                 <label for="exampleInputPassword1">Trạng thái</label>
                 <select name="trang_thai" id="">
                     <option value="yes">Lớp còn nhận học viên</option>

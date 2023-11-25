@@ -23,7 +23,7 @@ function dem_khoa_hoc() {
     return $so_luong;
 }
 function addkhoahoc($ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow) {
-        $sql = "INSERT INTO khoa_hoc(id_khoa_hoc,ten_khoa_hoc, avt, tien_hoc, mo_ta ,trang_thai, id_giang_vien, id_danh_muc, slideshow) VALUES ('$ten_khoa_hoc','$avt','$tien_hoc','$mo_ta','$trang_thai','$id_giang_vien','$id_danh_muc','$slideshow')";
+        $sql = "INSERT INTO khoa_hoc(ten_khoa_hoc, avt, tien_hoc, mo_ta ,trang_thai, id_giang_vien, id_danh_muc, slideshow) VALUES ('$ten_khoa_hoc','$avt','$tien_hoc','$mo_ta','$trang_thai','$id_giang_vien','$id_danh_muc','$slideshow')";
         pdo_execute($sql); 
 }
 function editkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow){

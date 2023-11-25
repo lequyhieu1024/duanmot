@@ -235,7 +235,15 @@
                     $ngay_bat_dau = $_POST['ngay_bat_dau'];
                     $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
                     $noi_dung = $_POST['noi_dung'];
-                    addkhuyenmai($ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung) ;
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "../../../public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
+                    addkhuyenmai($ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung,$avt) ;
                     echo '<h2 style="color: red">Thêm thành công!</h2>';
                 }
                 break;
@@ -247,7 +255,15 @@
                     $ngay_bat_dau = $_POST['ngay_bat_dau'];
                     $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
                     $noi_dung = $_POST['noi_dung'];
-                    editkhuyenmai($id_khuyen_mai,$ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung);
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "../../../public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
+                    editkhuyenmai($id_khuyen_mai,$ngay_bat_dau,$ngay_ket_thuc,$ten_khuyen_mai,$noi_dung,$avt);
                     header("location:index.php?act=allkhuyenmai&table=khuyen_mai");
                 }
                 break;
@@ -297,10 +313,9 @@
                         $avt ="";
                     }
                     $nam_sinh = $_POST['nam_sinh'];
-                    $mo_ta = $_POST['mo_ta'];
                     $id_role = $_POST['id_role'];
                     edittaikhoan($id_tai_khoan,$ten_tai_khoan,$email,$nam_sinh,$avt,$so_dien_thoai,$id_role,$ho_va_ten,$mat_khau);
-                    header("location:index.php?act=alltaikhoan&table=tai_khoan");
+                    echo '<h2 style="color: red">Thêm thành công!</h2>'; 
                 }
                 break;
             case 'contact':
