@@ -39,7 +39,7 @@
             <td><?=$ma_giang_vien ?></td>
             <td><?=$ten_danh_muc ?></td>       
             <td><?=$slideshow ?></td>       
-            <td><?php if ($avg_rate != ""):echo number_format($avg_rate, 1);else:echo "5";endif; ?> <i class="fa fa-star" style="color: #f5cd3d;"></i> </td>       
+            <td><?php if ($avg_rate != ""):echo number_format($avg_rate, 1);else:echo "Chưa có";endif; ?> <i class="fa fa-star" style="color: #f5cd3d;"></i> </td>       
             <td><a href="index.php?act=editkhoahoc&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Sửa</button></a>
                 <a href="index.php?act=delete&header=allkhoahoc&table=khoa_hoc&id=id_khoa_hoc&iddl=<?=$id_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
             </td>       

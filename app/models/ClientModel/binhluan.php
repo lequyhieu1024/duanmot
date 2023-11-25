@@ -8,8 +8,19 @@ function binhluankhoahoc() {
     $result = pdo_query($sql);
     return $result; 
 }
-function addbinhluan($id_tai_khoan,$id_khoa_hoc,$noi_dung_binh_luan,$ngay_binh_luan,$danh_gia) {
-        $sql = "INSERT INTO binh_luan( id_tai_khoan, id_khoa_hoc, noi_dung_binh_luan, ngay_binh_luan, danh_gia) VALUES ('$id_tai_khoan','$id_khoa_hoc','$noi_dung_binh_luan','$ngay_binh_luan','$danh_gia')";
-        pdo_execute($sql);
+function addbinhluan($id_tai_khoan,$id_khoa_hoc,$noi_dung_binh_luan,$ngay_binh_luan) {
+    $sql = "INSERT INTO binh_luan( id_tai_khoan, id_khoa_hoc, noi_dung_binh_luan, ngay_binh_luan) VALUES ('$id_tai_khoan','$id_khoa_hoc','$noi_dung_binh_luan','$ngay_binh_luan')";
+    pdo_execute($sql);
+}
+function adddanhgia($id_tai_khoan,$id_khoa_hoc,$danh_gia){
+    $sql = "INSERT INTO danh_gia(id_tai_khoan, id_khoa_hoc,danh_gia) VALUES ('$id_tai_khoan','$id_khoa_hoc','$danh_gia')";
+    pdo_execute($sql);
+}
+function checkdanhgia(){
+    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $sql = "SELECT * FROM danh_gia WHERE id_khoa_hoc = '$id_khoa_hoc' AND id_tai_khoan='$id_tai_khoan'";
+    $result = pdo_query($sql);
+    return $result;
 }
 ?>

@@ -56,7 +56,7 @@ $khct = current($ctkh);
                                         <h6 class="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0"><?=$ngay_binh_luan?></h6>
                                         <div class="star d-block w-100 text-left">
                                         </div>                            
-                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?> - Rating: <?=$danh_gia?><i class="fa fa-star" style="color: #f5cd3d;"></i></p>
+                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?></i></p>
                                     </div>
                                 </div>
                             </div>

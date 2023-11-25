@@ -277,6 +277,15 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="index.php?act=alldanhgia" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Đánh giá
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>

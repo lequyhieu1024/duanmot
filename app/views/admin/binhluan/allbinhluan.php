@@ -15,7 +15,6 @@
             <th scope="col">Tên Khóa Học</th>
             <th scope="col">Nội Dung</th>
             <th scope="col">Ngày Bình Luận</th>
-            <th scope="col">Đánh Giá</th>
             <th scope="col">Thao tác</th>
         </tr>
     </thead>
@@ -29,8 +28,7 @@
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ten_khoa_hoc ?></td>
             <td><?=$noi_dung_binh_luan ?></td>       
-            <td><?=$ngay_binh_luan ?></td>       
-            <td><?=$danh_gia ?></td>       
+            <td><?=$ngay_binh_luan ?></td>           
             <td><a href="index.php?act=delete&header=allbinhluan&id=id_binh_luan&table=binh_luan&iddl=<?=$id_binh_luan;?>"><button class="btn btn-danger">Xóa</button></a></td>       
         </tr>
         <?php endforeach; ?>

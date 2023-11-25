@@ -154,6 +154,9 @@
             case 'allgiangvien':
                 include('../../views/admin/giangvien/allgiangvien.php');
                 break;
+            case 'alldanhgia':
+                include('../../views/admin/danhgia/alldanhgia.php');
+                break;
             case 'addgiangvien':
                 include('../../views/admin/giangvien/addgiangvien.php');
                 if (isset($_POST["addgiangvien"])) {
