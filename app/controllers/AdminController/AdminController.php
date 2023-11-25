@@ -225,6 +225,9 @@
             case 'alllienhe':
                 include('../../views/admin/lienhe/alllienhe.php');
                 break;
+            case 'ttnguoiguilh':
+                include('../../views/admin/lienhe/ttnguoiguilh.php');
+                break;
             case 'allkhuyenmai':
                 include('../../views/admin/khuyenmai/allkhuyenmai.php');
                 break;
