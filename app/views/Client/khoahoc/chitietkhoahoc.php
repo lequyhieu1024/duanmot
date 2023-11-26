@@ -27,6 +27,7 @@ $khct = current($ctkh);
                         <h4 class="font-xssss fw-600 text-grey-600 mb-3 pl-30 position-relative lh-24"><i class="ti-check font-xssss btn-round-xs bg-success text-white position-absolute left-0 top-5"></i><?php echo nl2br($mo_ta);?></h4>
                     </div>
                 </div>
+
                 <div class="col-xl-4 col-xxl-3">
                     <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0 shadow-xss">
                         <div class="card-body p-3 d-block text-left">
@@ -40,6 +41,7 @@ $khct = current($ctkh);
                                 <a name="dangky" href="index.php?redirect=thanhtoan&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc?>" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">Đăng ký ngay</a>
                         </div>
                     </div>
+
                     <div class="card w-100 border-0 mt-0 mb-4 p-4 shadow-xss position-relative rounded-lg bg-white"> 
                         <h4>Bình Luận</h4>
                         <!-- Bình luận -->
@@ -70,6 +72,7 @@ $khct = current($ctkh);
                 </button>
             </div>            
         </div>
+
         <!-- main content -->
         <div class="app-footer border-0 shadow-lg">
             <a href="index.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
@@ -79,6 +82,7 @@ $khct = current($ctkh);
             <a href="#" data-toggle="modal" data-target="#mySetting" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w40"></a>
         </div>
 
+        
     </div> 
     <script src="js/plugin.js"></script>
     <script src="js/scripts.js"></script>
