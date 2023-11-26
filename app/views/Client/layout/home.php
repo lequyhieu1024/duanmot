@@ -52,15 +52,15 @@
                         <div class="col-lg-12 mt-3">
                             <div class="col-lg-12 mt-3">
                                 <form action="index.php?redirect=lockhoahoc" method="post">
-                                    <select style="height:35px;width:200px;background-color:yellow" name="lockhoahoc" id="">
-                                        <option value="0"><h2>------Lọc khóa học------</h2></option>
+                                    <select style="height:35px;width:200px;border: 1px solid #666;background-color:yellow " name="lockhoahoc" id="">
+                                        <option value="0" disabled selected hidden><h2>------Lọc khóa học------</h2></option>
                                         <option value="1">Giá giảm dần</option>
                                         <option value="2">Giá tăng dần</option>
                                         <option value="3">Giá dưới 500$</option>
                                         <option value="4">Giá từ 500$ - 1500$</option>
                                         <option value="5">Giá trên 1500$</option>
                                     </select>
-                                    <input style="height: 35px;width:60px;background-color:yellow" name="loc" type="submit" value="OK">
+                                    <input style="height:35px;width:60px;background-color:yellow; border: 1px solid #666;" name="loc" type="submit" value="OK">
                                 </form>
                             </div>
                         </div>
