@@ -135,6 +135,9 @@
                 }
                 include("app/views/client/khoahoc/chitietkhcuatoi.php");
                 break;
+            case 'thanhtoan':
+                include("app/views/client/thanhtoan/thanhtoan.php");
+                break;
             case 'mycontact':
                 include("app/views/client/chucnangphu/mycontact.php");
                 break;
