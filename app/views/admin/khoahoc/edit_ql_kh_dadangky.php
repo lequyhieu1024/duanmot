@@ -13,9 +13,9 @@
                 <label for="exampleInputEmail1">Trạng thái</label>
                 <select name="trang_thai" id="">
                     <?php
-                    $tt = QLkhdadangky();
+                    $tt = chitietkhcuatoi($id_dang_ky_khoa_hoc);
                     foreach($tt as $rows):extract($rows)?>
-                    <option value="<?=$id_trang_thai?>"><?=$ten_trang_thai?>(Now)</option>
+                    <option checked value="<?=$id_trang_thai?>"><?=$ten_trang_thai?>(Now)</option>
                     <?php endforeach;?>
                     <?php
                     $trang_thai = trang_thai();

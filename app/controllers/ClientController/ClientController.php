@@ -141,9 +141,6 @@
             case 'myinfo':
                 include("app/views/client/taikhoan/myinfo.php");
                 break;
-            case 'thanhtoan':
-                include("app/views/client/thanhtoan/thanhtoan.php");
-                break;
             case 'lockhoahoc':
                 if(isset($_POST['loc'])){
                     $value = $_POST['lockhoahoc'];

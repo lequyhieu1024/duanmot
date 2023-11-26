@@ -37,7 +37,7 @@ $khct = current($ctkh);
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-book-open font-lg text-current position-absolute left-0"></i> Chuyên Ngành <span class="d-block text-grey-500 mt-1 font-xssss">Information Technology</span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-user font-lg text-current position-absolute left-0"></i> Giảng Viên <span class="d-block text-grey-500 mt-1 font-xssss"><img style="width:20px;" src="public/images/<?=$avt_gv?>" alt=""> <?=$ma_giang_vien?>-<?=$ten_giang_vien?> </span></h4>
                                 <h4 class="pl-35 mb-0 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-award font-lg text-current position-absolute left-0"></i> Kinh Ngiệm Giảng Viên <span class="d-block text-grey-500 mt-1 font-xssss"><?=$mota_gv?> </span></h4>
-                                <a name="dangky" href="index.php?redirect=thanhtoan&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc?>" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">Đăng ký ngay</a>
+                                <a href="index.php?redirect=thanhtoan&table=khoa_hoc&id=id_khoa_hoc&id_edit=<?=$id_khoa_hoc?>" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-block mt-4 w-100 p-2 lh-34 text-center ls-3 ">Đăng ký ngay</a>
                         </div>
                     </div>
                     <div class="card w-100 border-0 mt-0 mb-4 p-4 shadow-xss position-relative rounded-lg bg-white"> 

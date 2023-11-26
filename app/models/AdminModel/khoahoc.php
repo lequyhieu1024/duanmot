@@ -62,4 +62,17 @@ function allkh(){
     $result = pdo_query($sql);
     return $result;
 }
+function chitietkhcuatoi($id_dang_ky_khoa_hoc){
+    $sql = "SELECT dang_ky_khoa_hoc.id_dang_ky_khoa_hoc,dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai,trang_thai.id_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
+    khoa_hoc.tien_hoc
+    FROM dang_ky_khoa_hoc
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    WHERE dang_ky_khoa_hoc.id_dang_ky_khoa_hoc = '$id_dang_ky_khoa_hoc'";
+    $results = pdo_query($sql);
+    return $results;
+}
 ?>

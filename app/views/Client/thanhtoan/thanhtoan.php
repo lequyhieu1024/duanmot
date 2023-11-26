@@ -1,9 +1,4 @@
-<?php
-    if(isset($_POST['dangky'])){
-        $id_khoa_hoc = $_POST['id_khoa_hoc'];
-    }
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
