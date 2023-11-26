@@ -9,9 +9,9 @@
         </div>
 
         <div class="app-header-search">
-            <form class="search-form">
+            <form action='index.php?redirect=timkiem' class="search-form">
                 <div class="form-group searchbox mb-0 border-0 p-1">
-                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <input type="text" name="search_input" class="form-control border-0" placeholder="Search...">
                     <i class="input-icon">
                         <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
                     </i>
@@ -23,7 +23,6 @@
         </div>
 
     </div> 
-
     <script src="public/js/plugin.js"></script>
 
     <script src="public/js/apexcharts.min.js"></script> 

@@ -31,7 +31,7 @@ $khct = current($ctkh);
                     <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0 shadow-xss">
                         <div class="card-body p-3 d-block text-left">
                             <h1 class="display1-size text-current fw-700 mb-4"> $ <?=$tien_hoc?> <span class="font-xssss text-grey-500 fw-500"> / Chưa tính khuyến mại</span></h1>
-                                <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-bar-chart-2 font-lg text-current position-absolute left-0"></i> Lộ trình học <span class="d-block text-grey-500 mt-1 font-xssss"><?=$lo_trinh_hoc?> tháng</span></h4>
+                                <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-bar-chart-2 font-lg text-current position-absolute left-0"></i> Lộ trình học <span class="d-block text-grey-500 mt-1 font-xssss"><?php $lt = lotrinh(); foreach($lt as $rows):extract($rows);echo ' - '. $thoi_gian ;endforeach?></span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-layers font-lg text-current position-absolute left-0"></i> Số lượt đăng ký học  <span class="d-block text-grey-500 mt-1 font-xssss"><?=$so_luot_dang_ky?></span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-shuffle font-lg text-current position-absolute left-0"></i> Hướng học <span class="d-block text-grey-500 mt-1 font-xssss"><?=$ten_danh_muc?> </span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-book-open font-lg text-current position-absolute left-0"></i> Chuyên Ngành <span class="d-block text-grey-500 mt-1 font-xssss">Information Technology</span></h4>
@@ -56,7 +56,7 @@ $khct = current($ctkh);
                                         <h6 class="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0"><?=$ngay_binh_luan?></h6>
                                         <div class="star d-block w-100 text-left">
                                         </div>                            
-                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?> - Rating: <?=$danh_gia?><i class="fa fa-star" style="color: #f5cd3d;"></i></p>
+                                        <p class="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2"><?=$noi_dung_binh_luan?></i></p>
                                     </div>
                                 </div>
                             </div>

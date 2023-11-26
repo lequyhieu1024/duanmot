@@ -21,13 +21,12 @@
                     if(isset($_POST['register'])){
                         $success = $err= "";
                         $ten_tai_khoan = $_POST['ten_tai_khoan'];
-                        $id_tai_khoan = $_POST['id_tai_khoan'];
                         $email = $_POST['email'];
                         $mat_khau = $_POST['mat_khau'];
                         $id_role = $_POST['id_role'];
                         $xn_mat_khau = $_POST['xn_mat_khau'];
                         if($mat_khau === $xn_mat_khau){
-                            register($id_tai_khoan,$ten_tai_khoan,$email,$mat_khau,$id_role);
+                            register($ten_tai_khoan,$email,$mat_khau,$id_role);
                             echo '<script>
                                     var xacNhan = confirm("Đăng ký thành công. Mời đăng nhập");
                                         if(xacNhan){
@@ -67,22 +66,39 @@
                 break;
             case 'addbinhluan':
                 if(isset($_POST['addbinhluan'])){
-                    if(isset($_SESSION['id_tai_khoan'])){
+                    if(isset($_SESSION['ten_tai_khoan'])){
                     $id_tai_khoan = $_SESSION['id_tai_khoan'];
                     $id_khoa_hoc = $_POST['id_khoa_hoc'];
                     $noi_dung_binh_luan = $_POST['noi_dung_binh_luan'];
                     $ngay_binh_luan = $_POST['ngay_binh_luan'];
-                    $danh_gia = $_POST['danh_gia'];
-                        if ($danh_gia >=1 && $danh_gia <=5) {
-                            addbinhluan($id_tai_khoan, $id_khoa_hoc, $noi_dung_binh_luan, $ngay_binh_luan, $danh_gia);
-                            header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
-                        } else {
-                            echo '<script>alert("vui lòng đánh giá")</script>';
-                            echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
+                    addbinhluan($id_tai_khoan, $id_khoa_hoc, $noi_dung_binh_luan, $ngay_binh_luan);
+                        header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
+                    }else{
+                        echo '<script>alert("Chưa đăng nhập")</script>';
+                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
+                    }
+                }
+                break;
+                case 'adddanhgia':
+                    if(isset($_POST['adddanhgia'])){
+                        if(isset($_SESSION['id_tai_khoan'])){
+                            $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                            $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                            $danh_gia = $_POST['danh_gia'];
+                            if ($danh_gia >=1 && $danh_gia <=5) {
+                                adddanhgia($id_tai_khoan,$id_khoa_hoc,$danh_gia);
+                                echo '<script>alert("Đánh giá thành công")</script>';
+                                echo '<script>window.location.href="index.php?redirect=khoahoccuatoi"</script>';
+                            } else {
+                                echo '<script>alert("vui lòng đánh giá")</script>';
+                                echo '<script>window.location.href="index.php?redirect=chitietkhcuatoi&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
+                                }
+                            }else{
+                                echo '<script>alert("Chưa đăng nhập")</script>';
+                                echo '<script>window.location.href="index.php?redirect=chitietkhcuatoi&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
                             }
                         }
-                    }
-                break;
+                    break;
             case 'timkiem':
                 include("app/views/client/khoahoc/kh_theo_timkiem.php");
                 break;

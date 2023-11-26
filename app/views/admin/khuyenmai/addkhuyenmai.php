@@ -5,7 +5,7 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên khuyến mãi</label>
@@ -22,6 +22,10 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Nội dung</label>
                 <input type="number" class="form-control" required name="noi_dung" id="exampleInputPassword1" placeholder="% Khuyến Mãi">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh</label>
+                <input type="file" class="form-control" required name="avt" id="exampleInputPassword1">
             </div>
         </div>
         <!-- /.card-body -->

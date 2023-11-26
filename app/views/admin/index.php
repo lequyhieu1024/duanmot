@@ -12,6 +12,8 @@ if(isset($_SESSION['id_role'])){
         include("../../models/AdminModel/taikhoan.php");
         include("../../models/AdminModel/khuyenmai.php");
         include("../../models/AdminModel/trangthai.php");
+        include("../../models/AdminModel/lotrinhhoc.php");
+        include("../../models/AdminModel/lotrinhkhoahoc.php");
 
 
         include("layout/header.php");
@@ -21,6 +23,6 @@ if(isset($_SESSION['id_role'])){
     echo '<img style="width:100%;height:100%" src="../../../public/images/404.png" alt="">';
     }
 }else{
-    echo '<img style="width:100%;height:100%" src="../public/images/404.png" alt="">';
+    echo '<img style="width:100%;height:100%" src="../../../public/images/404.png" alt="">';
 }
 ?>

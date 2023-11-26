@@ -4,7 +4,7 @@ function role(){
         $result = pdo_query($sql);
         return $result;
 }
-function addrole($id_role,$name_role,$mo_ta) {
+function addrole($name_role,$mo_ta) {
     $sql = "INSERT INTO role(name_role,mo_ta) VALUES ('$name_role','$mo_ta')";
     pdo_execute($sql);
 }

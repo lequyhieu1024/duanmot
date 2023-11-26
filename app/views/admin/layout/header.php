@@ -188,6 +188,52 @@
             <a href="#" class="nav-link">
               <i class="nav-icon"></i>
               <p>
+                Lộ trình học
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.php?act=alllotrinh&table=lo_trinh_hoc" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tất cả lộ trình</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?act=addlotrinh" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm lộ trình</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Lộ trình học khóa học
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.php?act=allltkh&table=lo_trinh_khoa_hoc" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tất cả lộ trình khóa học</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?act=addltkh" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm lộ trình khóa học</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
                 Tài khoản
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -229,6 +275,15 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="index.php?act=alldanhgia" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Đánh giá
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

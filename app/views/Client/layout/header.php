@@ -67,6 +67,8 @@
                         <li><?php if(isset($_SESSION['ten_tai_khoan'])){
                             if($_SESSION['id_role']==3){
                                 echo '<li><a href="app/views/admin/index.php" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Cpanel</span></a>';
+                            }else if($_SESSION['id_role']==2){
+                                echo '<li><a href="app/views/nhanvien/index.php" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:green" class="font-sm feather-log-in mr-3 text-green-500"></i><span>Cpanel Nhân Viên</span></a>';
                             }
                             echo '<a href="index.php?redirect=logout" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i style="color:red" class="font-sm feather-log-out mr-3 text-red-500"></i><span>Log Out</span></a></li>';
                         }else{
@@ -87,7 +89,7 @@
                 <button class="header-menu"></button>
                 <form action="#" class="float-left header-search">
                     <div class="form-group mb-0 icon-input">
-                        <marquee class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">Chào mừng đến website của tôi</marquee>
+                        <marquee class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">Chào mừng đến website của Hiếu Huân Tuấn</marquee>
                     </div>
                 </form>
                 <ul class="d-flex ml-auto right-menu-icon">
@@ -205,11 +207,12 @@
                             </div>
                         </a>
                     </li>
-                    <?php $info = myInfo();
-                    if($info != ""){
+                    
+                    <?php
+                    if(isset($_SESSION['ten_tai_khoan'])){
+                    $info = myInfo();
                     foreach($info as $tt):
                     extract($tt);
-
                     ?>
                     <li><a href="index.php?redirect=myinfo"><img src="public/images/<?=$avt?>" alt="user" class="w40 mt--1"></a></li>
                     <?php endforeach?>

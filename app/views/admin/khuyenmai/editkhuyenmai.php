@@ -1,7 +1,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title">Thêm khuyến mãi</h3>
+        <h3 class="card-title">Sửa khuyến mãi</h3>
     </div>
     <?php 
         $km = select_all_table_fetch_one();
@@ -26,6 +26,11 @@
                 <label for="exampleInputPassword1">Nội dung</label>
                 <input type="number" class="form-control" required name="noi_dung" id="exampleInputPassword1" value="<?=$noi_dung?>" placeholder="% Khuyến Mãi">
             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh</label>
+                <input type="file" class="form-control" name="avt" id="exampleInputPassword1">
+            </div>
+            ảnh cũ: <img style="width:100px" src="../../../public/images/<?=$avt?>" alt="">
         </div>
         <!-- /.card-body -->
 

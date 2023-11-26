@@ -8,7 +8,7 @@
                                     <div class="form-group mt-lg-4 p-3 border-light border p-2 bg-white rounded-lg ">
                                         <div class="row">
                                             <div class="col-md-5">
-                                         <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
+                                        <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
                                                     <i class="ti-search font-xs text-grey-400"></i>
                                                     <input type="text" name="search_input" required class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
                                             </div>

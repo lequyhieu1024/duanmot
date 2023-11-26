@@ -55,6 +55,13 @@
                 <h3><?=$ten_khoa_hoc?></h3>
                 <label for="">Tiền học:</label>
                 <h3>$ <?=$tien_hoc?></h3>
+                <label for="">Chọn Lộ trình học:</label>
+                <select name="lo_trinh_hoc" id="">
+                    <?php $lt = lotrinh();
+                    foreach ($lt as $row): extract($row);?>
+                    <option value="<?=$id_lo_trinh?>"><?=$thoi_gian?></option>
+                    <?php endforeach?>
+                </select>
                 <label for="">Khuyến mãi:</label>
                 <select name="khuyen_mai" id="khuyen_mai_select" onchange="calculateTotal()">
                     <option value="0">Không áp dụng khuyến mãi</option>

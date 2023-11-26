@@ -27,9 +27,16 @@
                 <button class="btn btn-primary"><?=$ten_trang_thai?></button>
                 <?php if($id_trang_thai == 1){?>
                     <button id="btnz" class="btn btn-outline-primary"><a href="index.php?redirect=huydangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc?>">Hủy đăng ký</a></button>
-                    <?php } else{?> 
+                    <?php } else if($trang_thai == 2){?> 
                     <button class="btn btn-outline-primary" disabled>Hủy đăng ký</button>
-                    <?php }?>
+                    <?php }else{
+                        $checkdg = checkdanhgia();
+                        if(empty($checkdg)){
+                            include("app/views/Client/chucnangphu/danhgia.php");
+                        }else{
+                            echo "Cảm ơn đã đánh giá";
+                        }
+                        }?>
             </div>
         </div>
         <?php endforeach ?>
