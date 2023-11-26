@@ -21,7 +21,7 @@
                         }
                         $ten_danh_muc = $_POST['ten_danh_muc'];
                         adddanhmuc($ten_danh_muc,$mo_ta,$avt,$trang_thai);
-                        echo '<h2 style="color: red">Thêm thành công!</h2>';
+                        header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
                 }
             }           
                 break;
@@ -80,9 +80,8 @@
                     $id_giang_vien = $_POST['id_giang_vien'];
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $slideshow = $_POST['slideshow'];
-                    addkhoahoc($ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
-                    echo '<h2 style="color: red">Thêm thành công!</h2>';
-                    
+                    addkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_hoc,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
+                    header("location:index.php?act=allkhoahoc&table=khoa_hoc");
                 }
                 break;
             case 'editkhoahoc':

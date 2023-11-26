@@ -7,7 +7,7 @@
         $km = select_all_table_fetch_one();
         extract($km);
     ?>
-    <form method="post">
+    <form method="post"  enctype="multipart/form-data">
         <div class="card-body">
                 <input type="hidden" class="form-control" required id="exampleInputEmail1" value="<?=$id_khuyen_mai?>" name="id_khuyen_mai" >
             <div class="form-group">
@@ -30,7 +30,7 @@
                 <label for="exampleInputPassword1">Ảnh</label>
                 <input type="file" class="form-control" name="avt" id="exampleInputPassword1">
             </div>
-            ảnh cũ: <img style="width:100px" src="../../../public/images/<?=$avt?>" alt="">
+            Ảnh cũ: <img style="width:100px" src="../../../public/images/<?=$avt?>" alt="">
         </div>
         <!-- /.card-body -->
 
