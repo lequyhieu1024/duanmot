@@ -91,7 +91,7 @@ function myskill(){
     $id_tai_khoan = $_SESSION['id_tai_khoan'];
     $sql = "SELECT *,khoa_hoc.avt as avt FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
-    WHERE id_tai_khoan = '$id_tai_khoan'";
+    WHERE id_tai_khoan = '$id_tai_khoan' AND dang_ky_khoa_hoc.trang_thai = 3";
     $result = pdo_query($sql);
     return $result;
 }
