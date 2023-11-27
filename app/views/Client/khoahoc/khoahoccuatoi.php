@@ -5,12 +5,12 @@ if(empty($_SESSION['ten_tai_khoan'])){
   echo 'Chưa đăng nhập';
 }else{
  $myCources = khoahoccuatoi();?>
- <div class="container" style="margin:30px">
+ <div class="container-khct" style="margin:30px">
   <h1>Khóa học của tôi</h1>
     <table class="table">
         <?php  foreach($myCources as $mc):extract($mc); ?>   
         <tr>
-          <td><img style="width:100px" src="public/images/<?=$avt_kh?>" alt=""></td>
+          <td><img style="width:200px;height:100px" src="public/images/<?=$avt_kh?>" alt=""></td>
           <td><h1><?=$ten_khoa_hoc?></h1></td>
           <td>Giảng viên:<?=$ma_giang_vien?></td>
           <td><h2>$ <?=$thanh_tien?></h2></td>

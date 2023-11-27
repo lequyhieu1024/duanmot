@@ -39,7 +39,7 @@
                                             <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
                                                 <a href="index.php?redirect=all_kh_theo_dm&id_danh_muc=<?=$id_danh_muc?>">
                                                     <div class="card-body p-2 ml-1 ">
-                                                        <span class="btn-round-xl bg-white"><img src="public/images/<?=$avt?>" alt="icon" class="p-2"></span>
+                                                        <span class="btn-round-xl bg-white"><img style="border-radius:40px" src="public/images/<?=$avt?>" alt="icon" class="p-2"></span>
                                                         <h4 class="fw-600 font-xsss mt-3 mb-0"><?=$ten_danh_muc?> </h4>                   
                                                     </div>
                                                 </a>

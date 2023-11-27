@@ -22,7 +22,7 @@
             display:grid;
             grid-template-columns:1fr 1.5fr;
             margin-bottom:10px;
-            box-shadow: 6px 0px 10px 10px whitesmoke;
+            box-shadow: 0 0 10px gray;
         }
     </style>
 </head>
