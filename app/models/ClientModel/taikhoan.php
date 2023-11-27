@@ -41,6 +41,11 @@ function checkpassword($id_tai_khoan){
     $result = pdo_query_one($sql);
     return $result;
 }
-function changeMyInfo(){
-    
-}
+function changeMyInfo($id_tai_khoan,$ho_va_ten,$email,$nam_sinh,$avt,$so_dien_thoai){
+    if($avt != ""){
+        $sql = "UPDATE tai_khoan SET ho_va_ten='$ho_va_ten',email='$email',nam_sinh='$nam_sinh',avt='$avt',so_dien_thoai='$so_dien_thoai' WHERE id_tai_khoan = $id_tai_khoan";
+    }else{
+        $sql = "UPDATE tai_khoan SET ho_va_ten='$ho_va_ten',email='$email',nam_sinh='$nam_sinh',so_dien_thoai='$so_dien_thoai' WHERE id_tai_khoan = $id_tai_khoan";
+    }
+    pdo_execute($sql);
+    }
