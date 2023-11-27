@@ -13,9 +13,6 @@
             case 'logout':
                 include("app/views/client/taikhoan/logout.php");
                 break;
-            case 'all_kh_theo_dm':
-                include("app/views/client/khoahoc/all_kh_theo_dm.php");
-                break;
             case 'register':
                 include("app/views/client/taikhoan/register.php");
                     if(isset($_POST['register'])){
@@ -37,6 +34,52 @@
                             echo '<script> window.location.href ="app/views/client/taikhoan/register.php"</script>';
                     }
                 }
+                break;
+            case 'changepassword':
+                if(isset($_POST['changepassword'])){
+                    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                    $mat_khau_old = $_POST['mat_khau_old'];
+                    $mat_khau_new = $_POST['mat_khau_new'];
+                    $xn_mat_khau = $_POST['xn_mat_khau'];
+                    $check = checkpassword($id_tai_khoan);
+                    if($check['mat_khau'] == $mat_khau_old){
+                        if($mat_khau_new == $xn_mat_khau){
+                            changepassword($mat_khau_new, $id_tai_khoan);
+                            echo '<script>alert("Đổi mật khẩu thành công")</script>';
+                        }else{
+                            echo '<script>alert("Mật khẩu xác nhận không khớp")</script>';
+                            echo '<script> window.location.href ="index.php?redirect=changepassword"</script>';
+                        }
+                    }else{                       
+                            echo '<script>alert("Mật khẩu cũ không chính xác")</script>';
+                            echo '<script> window.location.href ="index.php?redirect=changepassword"</script>';
+                    }
+                }
+                include "app/views/Client/taikhoan/changepassword.php";
+                break;
+            case 'changeMyInfo':
+                if(isset($_POST['changemyinfo'])){
+                    $id_tai_khoan = $_POST['id_tai_khoan'];
+                    $ho_va_ten = $_POST['ho_va_ten'];
+                    $email = $_POST['email'];
+                    $so_dien_thoai = $_POST['so_dien_thoai'];
+                    $nam_sinh = $_POST['nam_sinh'];
+                    if($_FILES['avt']['name'] != ""){
+                        $avt = basename($_FILES["avt"]["name"]);
+                        $target_dir = "public/images/";
+                        $target_file = $target_dir . $avt;
+                        move_uploaded_file($_FILES["avt"]["tmp_name"], $target_file);  
+                    }else{
+                        $avt ="";
+                    }
+                    changeMyInfo($id_tai_khoan,$ho_va_ten,$email,$nam_sinh,$avt,$so_dien_thoai);
+                    echo '<script>alert("Cập nhật thành công")</script>';
+                    echo '<script> window.location.href ="index.php?redirect=default-settings"</script>';
+                }
+                include "app/views/Client/taikhoan/changeMyInfo.php";
+                break;
+            case 'all_kh_theo_dm':
+                include("app/views/client/khoahoc/all_kh_theo_dm.php");
                 break;
             case 'lienhe':
                     include("app/views/client/chucnangphu/lienhe.php");

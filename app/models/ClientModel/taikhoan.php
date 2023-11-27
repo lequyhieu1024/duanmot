@@ -32,3 +32,20 @@ function myInfo(){
         return $result;
     }
 }
+function changepassword($mat_khau_new,$id_tai_khoan){
+    $sql = "UPDATE tai_khoan SET mat_khau = '$mat_khau_new' WHERE id_tai_khoan = '$id_tai_khoan'";
+    pdo_execute($sql);
+}
+function checkpassword($id_tai_khoan){
+    $sql = "SELECT mat_khau FROM tai_khoan WHERE id_tai_khoan = '$id_tai_khoan'";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+function changeMyInfo($id_tai_khoan,$ho_va_ten,$email,$nam_sinh,$avt,$so_dien_thoai){
+    if($avt != ""){
+        $sql = "UPDATE tai_khoan SET ho_va_ten='$ho_va_ten',email='$email',nam_sinh='$nam_sinh',avt='$avt',so_dien_thoai='$so_dien_thoai' WHERE id_tai_khoan = $id_tai_khoan";
+    }else{
+        $sql = "UPDATE tai_khoan SET ho_va_ten='$ho_va_ten',email='$email',nam_sinh='$nam_sinh',so_dien_thoai='$so_dien_thoai' WHERE id_tai_khoan = $id_tai_khoan";
+    }
+    pdo_execute($sql);
+    }

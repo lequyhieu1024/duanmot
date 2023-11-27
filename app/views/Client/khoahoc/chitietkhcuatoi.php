@@ -7,43 +7,57 @@
 </head>
 <body>
     <?php  $myCources = chitietkhcuatoi($id_khoa_hoc);?> 
-    <div style="margin:30px" class="container">
-        <h1>Chi tiết khóa học đã đăng ký</h1>
+    <div style="margin:30px" class="container-ctkhct">
+        <h1>Chi tiết khóa học đã đăng ký</h1><br>
         <?php  foreach($myCources as $mc):extract($mc); ?>   
         <div class="group">
             <div class="img">
-                <img style="width:150px" src="public/images/<?=$avt_kh?>" alt="">
+                <img style="height:170px" class="img-fluid" src="public/images/<?=$avt_kh?>" alt="">
             </div>
-            <div class="ten">
-                <h1><?=$ten_khoa_hoc?></h1>
-            </div>
-            <div class="gia">
-                <h1>$ <?=$tien_hoc?></h1>
-            </div>
-            <div class="gv">
-                <h2><?=$ma_giang_vien?></h2>
-            </div>
-            <div class="thaotac">
-                <button class="btn btn-primary"><?=$ten_trang_thai?></button>
-                <?php if($id_trang_thai == 1){?>
-                    <button id="btnz" class="btn btn-outline-primary"><a href="index.php?redirect=huydangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc?>">Hủy đăng ký</a></button>
-                    <?php } else if($trang_thai == 2){?> 
-                    <button class="btn btn-outline-primary" disabled>Hủy đăng ký</button>
-                    <?php }else{
-                        $checkdg = checkdanhgia();
-                        if(empty($checkdg)){
-                            include("app/views/Client/chucnangphu/danhgia.php");
-                        }else{
-                            echo "Cảm ơn đã đánh giá";
-                        }
-                        }?>
+            <div class="group2">
+                <div class="group3">
+                    <div class="ten">
+                        <h1>Khóa học: <b style="color:blue"><?=$ten_khoa_hoc?></b></h1>
+                    </div>
+                    <div class="gia">
+                        <h1> <del style>$<?=$tien_hoc?></del><b style="color:red"> $ <?=$thanh_tien?></b></h1>
+                    </div>
+                    <div class="gv">
+                        <h2>GV: <b><?=$ma_giang_vien?></b></h2>
+                    </div>
+                </div>
+                <div class="thaotac"><br>
+                    <button class="btn btn-primary"><?=$ten_trang_thai?></button><br><br>
+                    <?php if($id_trang_thai == 1){?>
+                        <button id="btnz" class="btn btn-outline-primary"><a href="index.php?redirect=huydangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc?>">Hủy đăng ký</a></button>
+                        <?php } else if($trang_thai == 2){?> 
+                        <button class="btn btn-outline-primary" disabled>Hủy đăng ký</button>
+                        <?php }else{
+                            $checkdg = checkdanhgia();
+                            if(empty($checkdg)){
+                                include("app/views/Client/chucnangphu/danhgia.php");
+                            }else{
+                                echo "Cảm ơn đã đánh giá";
+                            }
+                            }?>
+                </div>
             </div>
         </div>
         <?php endforeach ?>
     </div>
     <style>
         .group{
-            border: 1px solid;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 0 10px gray;
+        }
+        .group2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .group3{
+            display: grid;
+            grid-template-rows: 1fr 1fr;
         }
         #btnz:hover{
             background-color: red;

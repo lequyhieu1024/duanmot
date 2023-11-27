@@ -14,7 +14,7 @@
                             <h2 class="fw-700 font-lg d-block lh-4 mb-1 text-white mt-2">Học theo hướng : <?=$ten_danh_muc?></h2>
                             <div class="clearfix"></div>
                             <div class="star d-block w-100 text-left mt-2">
-                                <img style="width:200px" src="public/images/<?=$avt_kh?>" class="img-fluid" alt="star">
+                                <img style="width:250px;height:150px" src="public/images/<?=$avt_kh?>" alt="star">
                             </div>
                             <p class="review-link font-xssss fw-600 text-grey-500 lh-3 mb-4"></p>
 
@@ -38,7 +38,7 @@
                                             <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
                                                 <a href="index.php?redirect=chitietkhoahoc&id_danh_muc=<?=$id_danh_muc?>&id_khoa_hoc=<?=$id_khoa_hoc?>">
                                                     <div class="card-body p-2 ml-1 ">
-                                                        <span class="btn-round-xl bg-white"><img src="public/images/<?=$avt_kh?>" alt="icon" class="p-2"></span>
+                                                        <span class="btn-round-xl bg-white"><img style="border-radius:40px" src="public/images/<?=$avt_kh?>" alt="icon" class="p-2"></span>
                                                         <h4 class="fw-600 font-xsss mt-3 mb-0"><?=$ten_khoa_hoc?> </h4>                   
                                                     </div>
                                                 </a>
