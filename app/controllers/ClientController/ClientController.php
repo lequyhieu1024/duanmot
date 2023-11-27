@@ -135,8 +135,13 @@
                 }
                 include("app/views/client/khoahoc/chitietkhcuatoi.php");
                 break;
-            case 'thanhtoan':
-                include("app/views/client/thanhtoan/thanhtoan.php");
+            case 'thongtinthanhtoan':
+                if(isset($_SESSION['id_tai_khoan'])){
+                    include("app/views/client/thanhtoan/thongtinthanhtoan.php");
+                }else{
+                    echo '<script>alert("Vui lòng đăng nhập")</script>';
+                    echo '<script>window.location.href="app/views/client/taikhoan/login.php"</script>';
+                }
                 break;
             case 'mycontact':
                 include("app/views/client/chucnangphu/mycontact.php");
@@ -152,6 +157,41 @@
                 break;
             case 'default-settings':
                 include("app/views/client/chucnangphu/default-settings.php");
+                break;
+            case 'thanhtoan':
+                if($_POST['pttt'] == 1){
+                    if(isset($_POST['redirect'])){
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $so_dien_thoai = $_POST['so_dien_thoai'];
+                        $email = $_POST['email'];
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                    }
+                    include("app/views/client/thanhtoan/vnpay_create_payment.php");
+                }else{
+                    if(isset($_SESSION['id_tai_khoan'])){
+                        $id_tai_khoan = $_POST['id_tai_khoan'];
+                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $so_dien_thoai = $_POST['so_dien_thoai'];
+                        $email = $_POST['email'];
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        $id_giang_vien = $_POST['id_giang_vien'];
+                        $thanh_tien = $_POST['thanh_tien'];
+                        $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
+                        $trang_thai = $_POST['trang_thai'];
+                        $id_khuyen_mai = $_POST['khuyen_mai'];
+                        dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email);
+                        echo '<script>alert("Đã đăng ký, chờ xác nhận")</script>';
+                        echo '<script>window.location.href="index.php?redirect=khoahoccuatoi"</script>';
+                    }else{
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        echo '<script>alert("Vui lòng đăng nhập để đăng ký khóa học")</script>';
+                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
+                    }
+                }
+                
                 break;
             default:
                 include("app/views/client/layout/home.php");

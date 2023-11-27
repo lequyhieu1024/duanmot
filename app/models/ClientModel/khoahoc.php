@@ -76,8 +76,8 @@ function chitietkhcuatoi($id_khoa_hoc){
     $results = pdo_query($sql);
     return $results;
 }
-function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai){
-    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai')";
+function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email){
+    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai,ho_va_ten, so_dien_thoai, email) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai','$ho_va_ten', '$so_dien_thoai', '$email')";
     pdo_execute($sql);
 }
 function myskill(){

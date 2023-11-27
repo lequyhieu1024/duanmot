@@ -35,18 +35,18 @@
 <body>
     <div class="tttt">
         <p> * Kiểm tra kĩ mục 1 , 2, 3 trước khi chọn "Tiếp tục"</p>
-        <form method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
-        action="init_payment.php" class="form-group">
+        <form method="POST" enctype="application/x-www-form-urlencoded"
+        action="index.php?redirect=thanhtoan" class="form-group">
             <div class="thongtinthanhtoan">
                 <div class="tthv">
                     <h1> 1 / Thông tin học viên</h1>
                         <label for="">Họ Và Tên</label> <br>
-                        <input type="text" name="ho_va_ten" placeholder="Họ và tên" id="" value="<?=$ho_va_ten?>"><br>
+                        <input type="text" name="ho_va_ten" required placeholder="Họ và tên" id="" value="<?=$ho_va_ten?>"><br>
                         <label for="">Số Điện Thoại</label><br>
-                        <input type="number" name="so_dien_thoai" placeholder="Số điện thoại người học" id="" value="<?=$so_dien_thoai?>"><br>
+                        <input type="number" name="so_dien_thoai" required placeholder="Số điện thoại người học" id="" value="<?=$so_dien_thoai?>"><br>
                         <label for="">Email</label><br>
-                        <input type="email" name="email" placeholder="Email người học" id="" value="<?=$email?>"><br>
-                
+                        <input type="email" name="email" required placeholder="Email người học" id="" value="<?=$email?>"><br>
+
                 </div>
                 <div class="thongtindonhang">
                     <?php 
@@ -57,7 +57,7 @@
                     <table class="table table-bordered">
                         <tr>
                             <td>Khóa học</td>
-                            <td><?=$ten_khoa_hoc?></td>
+                            <td name="ten_khoa_hoc"><?=$ten_khoa_hoc?></td>
                         </tr>
                         <tr>
                             <td>Tiền học</td>
@@ -80,8 +80,15 @@
                         </tr>
                         <tr>
                             <td>Thành tiền</td>
-                            <td><h2 id="thanh_tien"> </h2></td>
+                            <td><h2 id="thanh_tien_display"> </h2></td>
                         </tr>
+                        
+                        <input type="hidden" name="id_khoa_hoc" value="<?=$id_khoa_hoc?>">
+                        <input type="hidden" name="id_giang_vien" value="<?=$id_giang_vien?>">
+                        <input type="hidden" name="id_tai_khoan" value="<?=$_SESSION['id_tai_khoan']?>">
+                        <input type="hidden" name="thanh_tien" id="thanh_tien_input">
+                        <input type="hidden" name="ngay_dang_ky_hoc" value="<?php echo date("Y-m-d H:i:s")?>">
+                        <input type="hidden" name="trang_thai" value="1">
                     </table>
                 </div>
             </div><br>
@@ -91,7 +98,7 @@
                 <input type="radio" name="pttt" value="2"> Thanh toán sau
             </div><br>
             <div class="tieptuc text-center">
-                <button name="thanhtoan" class="btn btn-danger" type="submit">Tiếp tục</button>
+                <button name="redirect" class="btn btn-danger" type="submit">Tiếp tục</button>
             </div>
         </form>  
     </div>
@@ -108,7 +115,8 @@
             var discountPercentage = getDiscountPercentage(selectedKhuyenMai);
             var originalTienHoc = <?php echo json_encode($tien_hoc); ?>;
             var discountedTotal = originalTienHoc - (originalTienHoc * discountPercentage / 100);
-            document.getElementById("thanh_tien").innerHTML = discountedTotal.toFixed(0);
+            document.getElementById("thanh_tien_input").value = discountedTotal.toFixed(0);
+            document.getElementById("thanh_tien_display").innerHTML = discountedTotal.toFixed(0);
         }
 
         function getDiscountPercentage(selectedKhuyenMai) {
@@ -125,8 +133,5 @@
         }
     </script>
 
-</script>
-
 </body>
 </html>
-
