@@ -83,7 +83,7 @@
                                         <div class="card-body pt-0">
                                             <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=$tien_hoc?></span>
-                                            <div style="max-height:100px;overflow:hidden"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
+                                            <div style="max-height: 100px; width: 100%; overflow: hidden;"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
                                                 <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/<?=$avt?>" alt="user" class="w30 d-inline-block"></a></li>
@@ -119,7 +119,7 @@
                                         <div class="card-body pt-0">
                                             <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=$tien_hoc?></span>
-                                            <div style="max-height:100px;overflow:hidden"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
+                                            <div style="max-height: 100px; width: 100%; overflow: hidden;"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?></div></h4></div>
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
                                                 <li><a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>"><img src="public/images/<?=$avt?>" alt="user" class="w30 d-inline-block"></a></li>
@@ -147,7 +147,7 @@
                                             <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
                                                 <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="public/images/<?=$avt?>" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
                                                 <div class="clearfix"></div>
-                                                <h4 class="fw-700 font-xsss mt-3 mb-1"><?=$ten_giang_vien ?> </h4>
+                                                <h4 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="fw-700 font-xsss mt-3 mb-1"><?=$ten_giang_vien ?> </h4>
                                                 <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2"><?=$email?></p>
                                                 <a href="index.php?redirect=chitietgiangvien&id_giang_vien=<?=$id_giang_vien?>"><span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">Xem Thông Tin</span> </a>
                                             </div>
