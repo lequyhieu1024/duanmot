@@ -32,3 +32,15 @@ function myInfo(){
         return $result;
     }
 }
+function changepassword($mat_khau_new,$id_tai_khoan){
+    $sql = "UPDATE tai_khoan SET mat_khau = '$mat_khau_new' WHERE id_tai_khoan = '$id_tai_khoan'";
+    pdo_execute($sql);
+}
+function checkpassword($id_tai_khoan){
+    $sql = "SELECT mat_khau FROM tai_khoan WHERE id_tai_khoan = '$id_tai_khoan'";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+function changeMyInfo(){
+    
+}

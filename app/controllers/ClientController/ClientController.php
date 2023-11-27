@@ -13,9 +13,6 @@
             case 'logout':
                 include("app/views/client/taikhoan/logout.php");
                 break;
-            case 'all_kh_theo_dm':
-                include("app/views/client/khoahoc/all_kh_theo_dm.php");
-                break;
             case 'register':
                 include("app/views/client/taikhoan/register.php");
                     if(isset($_POST['register'])){
@@ -37,6 +34,31 @@
                             echo '<script> window.location.href ="app/views/client/taikhoan/register.php"</script>';
                     }
                 }
+                break;
+            case 'changepassword':
+                if(isset($_POST['changepassword'])){
+                    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                    $mat_khau_old = $_POST['mat_khau_old'];
+                    $mat_khau_new = $_POST['mat_khau_new'];
+                    $xn_mat_khau = $_POST['xn_mat_khau'];
+                    $check = checkpassword($id_tai_khoan);
+                    if($check['mat_khau'] == $mat_khau_old){
+                        if($mat_khau_new == $xn_mat_khau){
+                            changepassword($mat_khau_new, $id_tai_khoan);
+                            echo '<script>alert("Đổi mật khẩu thành công")</script>';
+                        }else{
+                            echo '<script>alert("Mật khẩu xác nhận không khớp")</script>';
+                            echo '<script> window.location.href ="index.php?redirect=changepassword"</script>';
+                        }
+                    }else{                       
+                            echo '<script>alert("Mật khẩu cũ không chính xác")</script>';
+                            echo '<script> window.location.href ="index.php?redirect=changepassword"</script>';
+                    }
+                }
+                include "app/views/Client/taikhoan/changepassword.php";
+                break;
+            case 'all_kh_theo_dm':
+                include("app/views/client/khoahoc/all_kh_theo_dm.php");
                 break;
             case 'lienhe':
                     include("app/views/client/chucnangphu/lienhe.php");
