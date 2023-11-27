@@ -22,7 +22,6 @@ if($info != ""){
         </div>
       </div>
   </div>
-</div>
 <?php }?>
 
 
