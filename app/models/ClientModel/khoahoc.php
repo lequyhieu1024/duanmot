@@ -24,6 +24,21 @@ function khoahoc() {
     $result = pdo_query($sql);
     return $result;
 }
+function khoahocdanhgiatot() {
+    $sql = "SELECT *, khoa_hoc.id_khoa_hoc, khoa_hoc.mo_ta, khoa_hoc.trang_thai, giang_vien.ma_giang_vien, khoa_hoc.avt, avg(danh_gia.danh_gia) as avg_rate
+    FROM khoa_hoc
+    JOIN danh_muc_khoa_hoc ON khoa_hoc.id_danh_muc = danh_muc_khoa_hoc.id_danh_muc
+    LEFT JOIN binh_luan ON binh_luan.id_khoa_hoc = khoa_hoc.id_khoa_hoc
+    LEFT JOIN danh_gia ON danh_gia.id_khoa_hoc = khoa_hoc.id_khoa_hoc
+    JOIN giang_vien ON giang_vien.id_giang_vien = khoa_hoc.id_giang_vien
+    WHERE khoa_hoc.slideshow = 'show'
+    GROUP BY khoa_hoc.id_khoa_hoc
+    HAVING avg_rate > 4.0
+    ORDER BY avg_rate DESC";
+    $result = pdo_query($sql);
+    return $result;
+}
+
 function khoahocnhieuluotxem () {
     $sql ="SELECT * FROM khoa_hoc WHERE slideshow = 'show' ORDER BY so_luot_xem DESC";
     $result = pdo_query($sql);
