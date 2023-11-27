@@ -93,7 +93,7 @@ if($value ==1){
             
             ?>
             <div class="col-lg-4 mb-4">
-                <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>">
+                <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>&id_danh_muc=<?=$id_danh_muc?>">
                     <div class="card course-card p-0 shadow-xss border-0 rounded-lg overflow-hidden">
                         <div class="card-image mb-3">
                             <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>

@@ -4,7 +4,7 @@
         foreach($ctkh as $tt):
             extract($tt);
         ?>
-        <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>">
+        <a href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=<?=$id_khoa_hoc?>&id_danh_muc=<?=$id_danh_muc?>">
         <div class="item">
             <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                 <div class="card-image w-100 mb-3">

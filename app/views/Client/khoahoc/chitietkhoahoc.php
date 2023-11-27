@@ -1,13 +1,13 @@
-<?php 
- updateview();
-$ctkh = chitietkhoahoc();
-$khct = current($ctkh);
-        extract($khct);
-?>
-    <div class="middle-sidebar-bottom">
+
         <div class="middle-sidebar-left">
             <div class="row">
                 <div class="col-xl-8 col-xxl-9">
+                    <?php 
+                    updateview();
+                    $ctkh = chitietkhoahoc();
+                    $khct = current($ctkh);
+                            extract($khct);
+                    ?>
                     <div class="card border-0 mb-0 rounded-lg overflow-hidden" style="background-image: url(images/ivan-samkov.jpg);">
                         <div class="card-body p-5 bg-black-08">
                             <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc?></span>
@@ -26,9 +26,37 @@ $khct = current($ctkh);
                         <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 text-success mb-4">Mô tả khóa học</h2>
                         <h4 class="font-xssss fw-600 text-grey-600 mb-3 pl-30 position-relative lh-24"><i class="ti-check font-xssss btn-round-xs bg-success text-white position-absolute left-0 top-5"></i><?php echo nl2br($mo_ta);?></h4>
                     </div>
+                    <div class="khoahoclienquan">
+                        <div class="col-lg-12 mt-3">
+                            <div class="col-lg-12 mt-3">
+                            <h1>Khóa học liên quan</h1>
+                                <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                                    <?php $kh = khoahoclienquan();
+                                    foreach($kh as $khoahoc):
+                                    extract($khoahoc);?>                                      
+                                        <div class="item">
+                                            <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
+                                                <a href="index.php?redirect=chitietkhoahoc&id_danh_muc=<?=$id_danh_muc?>&id_khoa_hoc=<?=$id_khoa_hoc?>">
+                                                    <div class="card-body p-2 ml-1 ">
+                                                        <span class="btn-round-xl bg-white"><img src="public/images/<?=$avt_kh?>" alt="icon" class="p-2"></span>
+                                                        <h4 class="fw-600 font-xsss mt-3 mb-0"><?=$ten_khoa_hoc?> </h4>                   
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php endforeach;?>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
                 </div>
-
                 <div class="col-xl-4 col-xxl-3">
+                    <?php 
+                    updateview();
+                    $ctkh = chitietkhoahoc();
+                    $khct = current($ctkh);
+                            extract($khct);
+                    ?>
                     <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0 shadow-xss">
                         <div class="card-body p-3 d-block text-left">
                             <h1 class="display1-size text-current fw-700 mb-4"> $ <?=$tien_hoc?> <span class="font-xssss text-grey-500 fw-500"> / Chưa tính khuyến mại</span></h1>
@@ -72,7 +100,6 @@ $khct = current($ctkh);
                 </button>
             </div>            
         </div>
-
         <!-- main content -->
         <div class="app-footer border-0 shadow-lg">
             <a href="index.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
@@ -81,9 +108,6 @@ $khct = current($ctkh);
             <a href="#" class="nav-content-bttn right-menu"><i class="feather-layers"></i></a>
             <a href="#" data-toggle="modal" data-target="#mySetting" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w40"></a>
         </div>
-
-        
-    </div> 
     <script src="js/plugin.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/video-player.js"></script>

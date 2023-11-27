@@ -69,13 +69,16 @@
                     if(isset($_SESSION['ten_tai_khoan'])){
                     $id_tai_khoan = $_SESSION['id_tai_khoan'];
                     $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                    $id_danh_muc = $_POST['id_danh_muc'];
                     $noi_dung_binh_luan = $_POST['noi_dung_binh_luan'];
                     $ngay_binh_luan = $_POST['ngay_binh_luan'];
                     addbinhluan($id_tai_khoan, $id_khoa_hoc, $noi_dung_binh_luan, $ngay_binh_luan);
-                        header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=".$id_khoa_hoc);
+                    header("Location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=" . $id_khoa_hoc . "&id_danh_muc=" . $id_danh_muc);
                     }else{
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        $id_danh_muc = $_POST['id_danh_muc'];
                         echo '<script>alert("Chưa đăng nhập")</script>';
-                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'"</script>';
+                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '&id_danh_muc=' . $id_danh_muc . '"</script>';
                     }
                 }
                 break;
