@@ -13447,6 +13447,10 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
   padding: 80px 0 10px;
   background-color: #f6f7fc;
 }
+.footer-wrapper-map {
+  padding: 20px 0;
+  background-color: #f6f7fc;
+}
 .footer-wrapper.bg-dark h5 {
   color: #fff !important;
 }
