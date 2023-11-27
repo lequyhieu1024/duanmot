@@ -9,16 +9,15 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
  * @author xonv
  */
 require_once("./config.php");
-
-$vnp_TxnRef = $_POST['order_id']; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-$vnp_OrderInfo = $_POST['order_desc'];
-$vnp_OrderType = $_POST['order_type'];
-$vnp_Amount = $_POST['amount'] * 100;
-$vnp_Locale = $_POST['language'];
-$vnp_BankCode = $_POST['bank_code'];
+$vnp_TxnRef = rand(0,9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+$vnp_OrderInfo = "Thanh toán khóa học";
+$vnp_OrderType = "billpayment";
+$vnp_Amount = $_POST['thanh_tien'] * 100;
+$vnp_Locale = "VN";
+$vnp_BankCode = "NCB";
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 //Add Params of 2.0.1 Version
-$vnp_ExpireDate = $_POST['txtexpire'];
+//$vnp_ExpireDate = $_POST['txtexpire'];
 //Billing
 
 $inputData = array(
@@ -34,27 +33,11 @@ $inputData = array(
     "vnp_OrderType" => $vnp_OrderType,
     "vnp_ReturnUrl" => $vnp_Returnurl,
     "vnp_TxnRef" => $vnp_TxnRef
-
-    // "vnp_ExpireDate"=>$vnp_ExpireDate,
-    // "vnp_Bill_Mobile"=>$vnp_Bill_Mobile,
-    // "vnp_Bill_Email"=>$vnp_Bill_Email,
-    // "vnp_Bill_FirstName"=>$vnp_Bill_FirstName,
-    // "vnp_Bill_LastName"=>$vnp_Bill_LastName,
-    // "vnp_Bill_Address"=>$vnp_Bill_Address,
-    // "vnp_Bill_City"=>$vnp_Bill_City,
-    // "vnp_Bill_Country"=>$vnp_Bill_Country,
-    // "vnp_Inv_Phone"=>$vnp_Inv_Phone,
-    // "vnp_Inv_Email"=>$vnp_Inv_Email,
-    // "vnp_Inv_Customer"=>$vnp_Inv_Customer,
-    // "vnp_Inv_Address"=>$vnp_Inv_Address,
-    // "vnp_Inv_Company"=>$vnp_Inv_Company,
-    // "vnp_Inv_Taxcode"=>$vnp_Inv_Taxcode,
-    // "vnp_Inv_Type"=>$vnp_Inv_Type
 );
 
-// if (isset($vnp_BankCode) && $vnp_BankCode != "") {
-//     $inputData['vnp_BankCode'] = $vnp_BankCode;
-// }
+if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+    $inputData['vnp_BankCode'] = $vnp_BankCode;
+}
 // if (isset($vnp_Bill_State) && $vnp_Bill_State != "") {
 //     $inputData['vnp_Bill_State'] = $vnp_Bill_State;
 // }

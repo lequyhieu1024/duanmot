@@ -1,4 +1,4 @@
-
+<?php require_once("./config.php"); ?>             
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@
     <div class="tttt">
         <p> * Kiểm tra kĩ mục 1 , 2, 3 trước khi chọn "Tiếp tục"</p>
         <form method="POST" enctype="application/x-www-form-urlencoded"
-        action="index.php?redirect=thanhtoan" class="form-group">
+        action="app/views/client/thanhtoan/vnpay_create_payment.php" class="form-group">
             <div class="thongtinthanhtoan">
                 <div class="tthv">
                     <h1> 1 / Thông tin học viên</h1>
@@ -61,7 +61,7 @@
                         </tr>
                         <tr>
                             <td>Tiền học</td>
-                            <td>$ <?=$tien_hoc?></td>
+                            <td>$ <?= number_format($tien_hoc,0,"." ,",") ?></td>
                         </tr>
                         <tr>
                             <td>Khuyến mại</td>
@@ -94,7 +94,7 @@
             </div><br>
             <div class="phuongthucthanhtoan">
                 <h1>3 / Phương thức thanh toán</h1>
-                <input type="radio" name="pttt" checked value="1"> Thanh toán Online qua MOMO <br>
+                <input type="radio" name="pttt" checked value="1"> Thanh toán Online qua VNPAY <br>
                 <input type="radio" name="pttt" value="2"> Thanh toán sau
             </div><br>
             <div class="tieptuc text-center">

@@ -54,7 +54,7 @@
                 <div class="form-group">
 
                     <label >Số tiền:</label>
-                    <label><?php echo $_GET['vnp_Amount'] ?></label>
+                    <label><?php echo number_format($_GET['vnp_Amount'],0,",",".") ?></label>
                 </div>  
                 <div class="form-group">
                     <label >Nội dung thanh toán:</label>
@@ -83,6 +83,7 @@
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
                                 echo "<span style='color:blue'>GD Thanh cong</span>";
+                                
                             } else {
                                 echo "<span style='color:red'>GD Khong thanh cong</span>";
                             }

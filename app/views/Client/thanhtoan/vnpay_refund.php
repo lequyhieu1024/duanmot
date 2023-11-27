@@ -8,10 +8,10 @@
         <meta name="author" content="">
         <title>Tra cứu giao dịch</title>
         <!-- Bootstrap core CSS -->
-        <link href="/vnpay_php/assets/bootstrap.min.css" rel="stylesheet"/>
+        <link href="assets/bootstrap.min.css" rel="stylesheet"/>
         <!-- Custom styles for this template -->
-        <link href="/vnpay_php/assets/jumbotron-narrow.css" rel="stylesheet">  
-        <script src="/vnpay_php/assets/jquery-1.11.3.min.js"></script>
+        <link href="assets/jumbotron-narrow.css" rel="stylesheet">  
+        <script src="assets/jquery-1.11.3.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -20,7 +20,7 @@
             </div>
             <div style="width: 100%;padding-top:0px;font-weight: bold;color: #333333"><h3>Refund</h3></div>
             <div style="width: 100% ;border-bottom: 2px solid black;padding-bottom: 20px" >
-                <form action="/vnpay_php/vnpay_refund.php" id="frmCreateOrder" method="post">        
+                <form action="vnpay_refund.php" id="frmCreateOrder" method="post">        
                     <div class="form-group">
                         <label >OrderID</label>
                         <input class="form-control" data-val="true"  name="orderid" type="text" value="" />

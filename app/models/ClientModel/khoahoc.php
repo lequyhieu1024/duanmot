@@ -51,13 +51,13 @@ function updateview() {
 }
 function chitietkhoahoc(){
     $id_khoa_hoc = $_GET['id_khoa_hoc'];
-    $sql = "SELECT khoa_hoc.*, khoa_hoc.avt as avt_kh, giang_vien.avt as avt_gv, giang_vien.mo_ta as mota_gv, khoa_hoc.trang_thai, danh_muc_khoa_hoc.ten_danh_muc, avg(danh_gia.danh_gia) as danh_gia
-            FROM khoa_hoc
-            JOIN danh_muc_khoa_hoc ON danh_muc_khoa_hoc.id_danh_muc = khoa_hoc.id_danh_muc 
-            JOIN giang_vien ON khoa_hoc.id_giang_vien = giang_vien.id_giang_vien
-            LEFT JOIN binh_luan ON khoa_hoc.id_khoa_hoc = binh_luan.id_khoa_hoc
-            LEFT JOIN danh_gia ON khoa_hoc.id_khoa_hoc = danh_gia.id_khoa_hoc
-            WHERE khoa_hoc.id_khoa_hoc = '$id_khoa_hoc'";
+    $sql = "SELECT khoa_hoc.*, khoa_hoc.avt as avt_kh, giang_vien.avt as avt_gv,giang_vien.ma_giang_vien ,giang_vien.ten_giang_vien , giang_vien.mo_ta as mota_gv,khoa_hoc.trang_thai, danh_muc_khoa_hoc.ten_danh_muc, avg(danh_gia.danh_gia) as danh_gia
+        FROM khoa_hoc
+        JOIN danh_muc_khoa_hoc ON danh_muc_khoa_hoc.id_danh_muc = khoa_hoc.id_danh_muc 
+        JOIN giang_vien ON khoa_hoc.id_giang_vien = giang_vien.id_giang_vien
+        LEFT JOIN binh_luan ON khoa_hoc.id_khoa_hoc = binh_luan.id_khoa_hoc
+        LEFT JOIN danh_gia ON khoa_hoc.id_khoa_hoc = danh_gia.id_khoa_hoc
+        WHERE khoa_hoc.id_khoa_hoc = '$id_khoa_hoc'";
     $result = pdo_query($sql);
     return $result;
 }

@@ -148,25 +148,6 @@
             case 'timkiem':
                 include("app/views/client/khoahoc/kh_theo_timkiem.php");
                 break;
-            // case 'dangkykhoahoc':
-            //     if(isset($_POST['dangkykhoahoc'])){
-            //         if(isset($_SESSION['id_tai_khoan'])){
-            //             $id_tai_khoan = $_POST['id_tai_khoan'];
-            //             $id_khoa_hoc = $_POST['id_khoa_hoc'];
-            //             $id_giang_vien = $_POST['id_giang_vien'];
-            //             $thanh_tien = $_POST['thanh_tien'];
-            //             $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
-            //             $trang_thai = $_POST['trang_thai'];
-            //             $id_khuyen_mai = $_POST['id_khuyen_mai'];
-            //             dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai);
-            //             header("location: index.php?redirect=khoahoccuatoi");
-            //         }else{
-            //             $id_khoa_hoc = $_POST['id_khoa_hoc'];
-            //             echo '<script>alert("Vui lòng đăng nhập để đăng ký khóa học")</script>';
-            //             echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
-            //         }
-            //     }
-            //     break;
             case 'huydangky':
                 delete();
                 header("location: index.php?redirect=khoahoccuatoi");
@@ -206,16 +187,19 @@
                 break;
             case 'thanhtoan':
                 if($_POST['pttt'] == 1){
-                    if(isset($_POST['redirect'])){
+                    include("app/views/client/thanhtoan/vnpay_create_payment.php");
+                    if(isset($_SESSION['id_tai_khoan'])){
+                        $id_tai_khoan = $_POST['id_tai_khoan'];
                         $ho_va_ten = $_POST['ho_va_ten'];
                         $so_dien_thoai = $_POST['so_dien_thoai'];
                         $email = $_POST['email'];
-                        $ho_va_ten = $_POST['ho_va_ten'];
-                        $ho_va_ten = $_POST['ho_va_ten'];
-                        $ho_va_ten = $_POST['ho_va_ten'];
-                        $ho_va_ten = $_POST['ho_va_ten'];
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        $id_giang_vien = $_POST['id_giang_vien'];
+                        $thanh_tien = $_POST['thanh_tien'];
+                        $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
+                        $trang_thai = $_POST['trang_thai'];
+                        $id_khuyen_mai = $_POST['khuyen_mai'];
                     }
-                    include("app/views/client/thanhtoan/vnpay_create_payment.php");
                 }else{
                     if(isset($_SESSION['id_tai_khoan'])){
                         $id_tai_khoan = $_POST['id_tai_khoan'];
