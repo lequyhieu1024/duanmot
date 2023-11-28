@@ -80,7 +80,7 @@
                     $id_giang_vien = $_POST['id_giang_vien'];
                     $id_danh_muc = $_POST['id_danh_muc'];
                     $slideshow = $_POST['slideshow'];
-                    addkhoahoc($id_khoa_hoc,$ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$lo_trinh_hoc,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
+                    addkhoahoc($ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow);
                     header("location:index.php?act=allkhoahoc&table=khoa_hoc");
                 }
                 break;
