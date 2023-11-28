@@ -199,6 +199,10 @@
                         $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
                         $trang_thai = $_POST['trang_thai'];
                         $id_khuyen_mai = $_POST['khuyen_mai'];
+                    }else{
+                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
+                        echo '<script>alert("Vui lòng đăng nhập để đăng ký khóa học")</script>';
+                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
                     }
                 }else{
                     if(isset($_SESSION['id_tai_khoan'])){

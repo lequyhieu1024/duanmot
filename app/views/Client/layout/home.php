@@ -190,7 +190,7 @@
 
                         <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
                             <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(public/images/user-pattern.png);">
-                                <a href="index.php?redirect=setting" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                                <a href="index.php?redirect=default-settings" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
                                 <?php
                                  $info = myInfo();
                                  if($info != ""){

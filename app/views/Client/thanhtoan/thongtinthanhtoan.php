@@ -36,7 +36,7 @@
     <div class="tttt">
         <p> * Kiểm tra kĩ mục 1 , 2, 3 trước khi chọn "Tiếp tục"</p>
         <form method="POST" enctype="application/x-www-form-urlencoded"
-        action="app/views/client/thanhtoan/vnpay_create_payment.php" class="form-group">
+        action="index.php?redirect=thanhtoan" class="form-group">
             <div class="thongtinthanhtoan">
                 <div class="tthv">
                     <h1> 1 / Thông tin học viên</h1>
