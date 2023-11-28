@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="col-lg-12 mt-3">
+<?php 
+if($value ==1 ){
+    $khoahoc = trang_thai_cxn();
+}else if($value ==2 ){
+    $khoahoc = trang_thai_dcxl();
+}else if($value ==3 ){
+    $khoahoc = trang_thai_dktc();
+}
+?>
+<div class="col-lg-12 mt-3">
         <div class="col-lg-12 mt-3">
             <form action="index.php?act=lockhoahoc" method="post">
                 <select style="height:35px;width:200px;border: 1px solid #666;background-color:yellow " name="lockhoahoc" id="">
@@ -36,13 +37,12 @@
     </thead>
     <tbody>
         <?php
-        $khoahoc = QLkhdadangky();
         foreach($khoahoc as $row):
         extract($row); ?>
         <tr>
             <th scope="row"><?=$id_dang_ky_khoa_hoc ?></th>
             <td><?=$ten_khoa_hoc ?></td>
-            <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt ?>" alt=""></td>
+            <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
             <td><?=$thanh_tien ?></td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
@@ -56,5 +56,3 @@
         <?php endforeach; ?>
     </tbody>
     </table>
-</body>
-</html>

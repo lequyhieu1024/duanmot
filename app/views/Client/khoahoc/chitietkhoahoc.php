@@ -19,7 +19,12 @@
                             <p class="review-link font-xssss fw-600 text-grey-500 lh-3 mb-4"></p>
 
                              <?php echo ($danh_gia != "") ? '<a class="btn-round-lg ml-3 d-inline-block rounded-lg bg-greylight font-weight-bold">'. number_format($danh_gia, 1) .'<i class="fa fa-star" style="color: #f5cd3d;"></i>' : "<a class='text-white font-weight-bold ml-3'>Chưa có đánh giá</a>"; ?></a>
-                            <a href="#" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-inline-block mt-0 p-2 lh-34 text-center ls-3 w200">Quan tâm khóa học</a>
+                            <?php
+                                $khyt = checkYeuThich();  
+                                echo (empty($khyt)) ? '
+                                <a href="index.php?redirect=yeuthichkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'&id_danh_muc='.$id_danh_muc.'" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-inline-block mt-0 p-2 lh-34 text-center ls-3 w200">Yêu thích khóa học</a>'
+                                : '<a href="index.php?redirect=huyyeuthichkhoahoc&id_khoa_hoc='.$id_khoa_hoc.'&id_danh_muc='.$id_danh_muc.'" class="bg-primary-gradiant border-0 text-white fw-600 text-uppercase font-xssss float-left rounded-lg d-inline-block mt-0 p-2 lh-34 text-center ls-3 w200">Hủy yêu thích</a>'?>
+                            
                         </div>
                     </div>
                     <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4 alert-success">
@@ -61,7 +66,7 @@
                         <div class="card-body p-3 d-block text-left">
                             <h1 class="display1-size text-current fw-700 mb-4"> $ <?=number_format($tien_hoc,0,"." ,",")?> <span class="font-xssss text-grey-500 fw-500"> / Chưa tính khuyến mại</span></h1>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-bar-chart-2 font-lg text-current position-absolute left-0"></i> Lộ trình học <span class="d-block text-grey-500 mt-1 font-xssss"><?php $lt = lotrinh(); foreach($lt as $rows):extract($rows);echo ' - '. $thoi_gian ;endforeach?></span></h4>
-                                <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-layers font-lg text-current position-absolute left-0"></i> Số lượt đăng ký học  <span class="d-block text-grey-500 mt-1 font-xssss"><?=$so_luot_dang_ky?></span></h4>
+                                <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-layers font-lg text-current position-absolute left-0"></i> Số lượt yêu thích  <span class="d-block text-grey-500 mt-1 font-xssss"><?php   $so_luot_yeu_thich ?></span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-shuffle font-lg text-current position-absolute left-0"></i> Hướng học <span class="d-block text-grey-500 mt-1 font-xssss"><?=$ten_danh_muc?> </span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-book-open font-lg text-current position-absolute left-0"></i> Chuyên Ngành <span class="d-block text-grey-500 mt-1 font-xssss">Information Technology</span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-user font-lg text-current position-absolute left-0"></i> Giảng Viên <span class="d-block text-grey-500 mt-1 font-xssss"><img style="width:20px;" src="public/images/<?=$avt_gv?>" alt=""> <?=$ma_giang_vien?>-<?=$ten_giang_vien?> </span></h4>

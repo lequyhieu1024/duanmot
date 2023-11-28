@@ -323,6 +323,12 @@
                     echo '<h2 style="color: red">Thêm thành công!</h2>'; 
                 }
                 break;
+            case 'lockhoahoc':
+                if(isset($_POST['loc'])){
+                    $value = $_POST['lockhoahoc'];
+                    include('../../views/admin/khoahoc/locTheoTrangThai.php');
+                }
+                break;
             case 'contact':
                 include('../../views/admin/layout/contact.php');
                 break;

@@ -119,6 +119,41 @@ function khoahoclienquan(){
     $result = pdo_query($sql);
     return $result;
 }
+function yeu_thich_khoa_hoc($id_khoa_hoc,$id_tai_khoan){
+    $sql = "INSERT INTO khoa_hoc_yeu_thich(id_khoa_hoc,id_tai_khoan) VALUE('$id_khoa_hoc','$id_tai_khoan')";
+    pdo_execute($sql);
+}
+function huy_yeu_thich_khoa_hoc($id_khoa_hoc,$id_tai_khoan){
+    $sql = "DELETE FROM khoa_hoc_yeu_thich WHERE id_tai_khoan = $id_tai_khoan AND id_khoa_hoc=$id_khoa_hoc";
+    pdo_execute($sql);
+}
+function dem_luot_yeu_thich_khoa_hoc(){
+    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+    $sql = "SELECT COUNT(id_khoa_hoc_yeu_thich) as so_luot_yeu_thich FROM khoa_hoc_yeu_thich
+        JOIN khoa_hoc ON khoa_hoc_yeu_thich.id_khoa_hoc = khoa_hoc.id_khoa_hoc
+        WHERE khoa_hoc.id_khoa_hoc = $id_khoa_hoc";
+    $rows =pdo_query_one($sql);
+    $so_luot_yeu_thich = $rows['so_luot_yeu_thich'];
+    return $so_luot_yeu_thich;
+}
+function khoaHocYeuThichCuaToi(){
+    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $sql = "SELECT * FROM khoa_hoc_yeu_thich
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = khoa_hoc_yeu_thich.id_khoa_hoc
+    WHERE id_tai_khoan = $id_tai_khoan";
+    $result = pdo_query($sql);
+    return $result;
+}
+function checkYeuThich(){
+    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+    $sql = "SELECT * FROM khoa_hoc_yeu_thich
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = khoa_hoc_yeu_thich.id_khoa_hoc
+    WHERE id_tai_khoan = $id_tai_khoan AND khoa_hoc_yeu_thich.id_khoa_hoc = $id_khoa_hoc";
+    $result = pdo_query($sql);
+    return $result;
+}
+
 function lockhoahocgiagiamdan(){
     $sql = "SELECT * FROM khoa_hoc ORDER BY tien_hoc DESC";
     $result = pdo_query($sql);

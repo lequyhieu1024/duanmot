@@ -13,7 +13,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">Thêm thông tin <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
@@ -30,7 +30,7 @@
               <div class="icon">
                  <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">Thêm thông tin <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
@@ -38,14 +38,17 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44 $</h3>
+              <?php 
+                   $tongtien = tinhTongThu();
+                ?>
+                <h3>$ <?=$tongtien?></h3>
 
                 <p>Tổng Thu Ngày</p>
               </div>
               <div class="icon">
                   <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">Thêm thông tin <i class="fas fa-arrow-circle-right"></i></a>
+             
             </div>
           </div>
         </div>

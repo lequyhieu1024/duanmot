@@ -227,6 +227,23 @@
                 }
                 
                 break;
+                case 'khoahocyeuthich':
+                    include("app/views/client/khoahocyeuthich/khoahocyeuthich.php");
+                    break;
+                case 'yeuthichkhoahoc':
+                    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+                    $id_danh_muc = $_GET['id_danh_muc'];
+                    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                    yeu_thich_khoa_hoc($id_khoa_hoc, $id_tai_khoan);
+                    header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=$id_khoa_hoc&id_danh_muc=$id_danh_muc");
+                    break;
+                case 'huyyeuthichkhoahoc':
+                    $id_khoa_hoc = $_GET['id_khoa_hoc'];
+                    $id_danh_muc = $_GET['id_danh_muc'];
+                    $id_tai_khoan = $_SESSION['id_tai_khoan'];
+                    huy_yeu_thich_khoa_hoc($id_khoa_hoc, $id_tai_khoan);
+                    header("location: index.php?redirect=chitietkhoahoc&id_khoa_hoc=$id_khoa_hoc&id_danh_muc=$id_danh_muc");
+                    break;
             default:
                 include("app/views/client/layout/home.php");
                 break;

@@ -30,6 +30,12 @@ function dem_khoa_hoc() {
     $so_luong = $rows['so_luong'];
     return $so_luong;
 }
+function tinhTongThu() {
+    $sql = "SELECT SUM(thanh_tien) as tongtien FROM dang_ky_khoa_hoc WHERE trang_thai = 3";
+    $rows =pdo_query_one($sql);
+    $tongtien = $rows['tongtien'];
+    return $tongtien;
+}
 function addkhoahoc($ten_khoa_hoc,$avt,$tien_hoc,$mo_ta,$trang_thai,$id_giang_vien,$id_danh_muc,$slideshow) {
         $sql = "INSERT INTO khoa_hoc(ten_khoa_hoc, avt, tien_hoc, mo_ta ,trang_thai, id_giang_vien, id_danh_muc, slideshow) VALUES ('$ten_khoa_hoc','$avt','$tien_hoc','$mo_ta','$trang_thai','$id_giang_vien','$id_danh_muc','$slideshow')";
         pdo_execute($sql); 
@@ -74,5 +80,38 @@ function chitietkhcuatoi($id_dang_ky_khoa_hoc){
     WHERE dang_ky_khoa_hoc.id_dang_ky_khoa_hoc = '$id_dang_ky_khoa_hoc'";
     $results = pdo_query($sql);
     return $results;
+}
+function trang_thai_cxn(){
+    $sql = "SELECT *,khoa_hoc.avt as avt_kh FROM dang_ky_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    WHERE dang_ky_khoa_hoc.trang_thai = 1";
+    $result = pdo_query($sql);
+    return $result;
+}
+function trang_thai_dcxl(){
+    $sql = "SELECT *,khoa_hoc.avt as avt_kh FROM dang_ky_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    WHERE dang_ky_khoa_hoc.trang_thai = 2";
+    $result = pdo_query($sql);
+    return $result;
+}
+function trang_thai_dktc(){
+    $sql = "SELECT *,khoa_hoc.avt as avt_kh FROM dang_ky_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    WHERE dang_ky_khoa_hoc.trang_thai = 3";
+    $result = pdo_query($sql);
+    return $result;
 }
 ?>
