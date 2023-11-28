@@ -59,7 +59,7 @@
                     ?>
                     <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0 shadow-xss">
                         <div class="card-body p-3 d-block text-left">
-                            <h1 class="display1-size text-current fw-700 mb-4"> $ <?=$tien_hoc?> <span class="font-xssss text-grey-500 fw-500"> / Chưa tính khuyến mại</span></h1>
+                            <h1 class="display1-size text-current fw-700 mb-4"> $ <?=number_format($tien_hoc,0,"." ,",")?> <span class="font-xssss text-grey-500 fw-500"> / Chưa tính khuyến mại</span></h1>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-bar-chart-2 font-lg text-current position-absolute left-0"></i> Lộ trình học <span class="d-block text-grey-500 mt-1 font-xssss"><?php $lt = lotrinh(); foreach($lt as $rows):extract($rows);echo ' - '. $thoi_gian ;endforeach?></span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-layers font-lg text-current position-absolute left-0"></i> Số lượt đăng ký học  <span class="d-block text-grey-500 mt-1 font-xssss"><?=$so_luot_dang_ky?></span></h4>
                                 <h4 class="pl-35 mb-4 font-xsss fw-600 text-grey-900 position-relative"><i class="feather-shuffle font-lg text-current position-absolute left-0"></i> Hướng học <span class="d-block text-grey-500 mt-1 font-xssss"><?=$ten_danh_muc?> </span></h4>

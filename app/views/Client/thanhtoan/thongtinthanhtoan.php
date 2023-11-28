@@ -1,4 +1,4 @@
-
+<?php require_once("./config.php"); ?>             
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,7 @@
                         </tr>
                         <tr>
                             <td>Tiền học</td>
-                            <td>$ <?=$tien_hoc?></td>
+                            <td>$ <?= number_format($tien_hoc,0,"." ,",") ?></td>
                         </tr>
                         <tr>
                             <td>Khuyến mại</td>
@@ -94,7 +94,7 @@
             </div><br>
             <div class="phuongthucthanhtoan">
                 <h1>3 / Phương thức thanh toán</h1>
-                <input type="radio" name="pttt" checked value="1"> Thanh toán Online qua MOMO <br>
+                <input type="radio" name="pttt" checked value="1"> Thanh toán Online qua VNPAY <br>
                 <input type="radio" name="pttt" value="2"> Thanh toán sau
             </div><br>
             <div class="tieptuc text-center">

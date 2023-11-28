@@ -13,7 +13,7 @@ if(empty($_SESSION['ten_tai_khoan'])){
           <td><img style="width:200px;height:100px" src="public/images/<?=$avt_kh?>" alt=""></td>
           <td><h1><?=$ten_khoa_hoc?></h1></td>
           <td>Giảng viên:<?=$ma_giang_vien?></td>
-          <td><h2>$ <?=$thanh_tien?></h2></td>
+          <td><h2>$ <?=number_format($thanh_tien,0,"." ,",")?></h2></td>
           <td><a href="index.php?redirect=chitietkhcuatoi&id_khoa_hoc=<?=$id_khoa_hoc?>"> <?=$ten_trang_thai?></a></td>
         </tr>
         <?php endforeach; }?>

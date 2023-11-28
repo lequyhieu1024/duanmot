@@ -20,7 +20,7 @@
                         <h1>Khóa học: <b style="color:blue"><?=$ten_khoa_hoc?></b></h1>
                     </div>
                     <div class="gia">
-                        <h1> <del style>$<?=$tien_hoc?></del><b style="color:red"> $ <?=$thanh_tien?></b></h1>
+                        <h1> <del style>$<?=number_format($tien_hoc,0,"." ,",")?></del><b style="color:red"> $ <?=$thanh_tien?></b></h1>
                     </div>
                     <div class="gv">
                         <h2>GV: <b><?=$ma_giang_vien?></b></h2>
