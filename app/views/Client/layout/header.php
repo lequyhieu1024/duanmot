@@ -38,8 +38,8 @@
                     <div class="nav-caption fw-600 font-xssss text-grey-500"><span>-------------------------------------------- </span></div>
                     <ul class="mb-3">
                         <li class="logo d-none d-xl-block d-lg-block"></li>
-                        <li><a href="index.php" class="active nav-content-bttn open-font" data-tab="chats"><i class="feather-home mr-3"></i><span>Trang chủ</span></a></li>
-                        <li><a href="index.php?redirect=khoahoccuatoi" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học đã đăng ký <?php echo (empty($sl)) ? "" : "($sl)"  ?></span></a></li>
+                        <li><a href="index.php" class="nav-content-bttn open-font" data-tab="chats"><i class="feather-home mr-3"></i><span>Trang chủ</span></a></li>
+                        <li><a href="index.php?redirect=khoahoccuatoi" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học của tôi <?php echo (empty($sl)) ? "" : "($sl)"  ?></span></a></li>
                         <li><a href="index.php?redirect=khoahocyeuthich" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-book-open mr-3"></i><span>Khóa học Yêu Thích</span></a></li>
                         <li><a href="index.php?redirect=allkhuyenmai&table=khuyen_mai" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-gift mr-3"></i><span>Chương trình khuyến mãi</span></a></li>
                         <li><a href="index.php?redirect=lienhe" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-message-square mr-3"></i><span>Liên Hệ & Hỏi Đáp</span></a></li>                      
@@ -94,7 +94,7 @@
                     </div>
                 </form>
                 <ul class="d-flex ml-auto right-menu-icon">
-                    <li><a href="index.php?redirect=mycontact"><i class="feather-message-square font-xl text-current"></i></a></li>
+                    <!-- <li><a href="index.php?redirect=mycontact"><i class="feather-message-square font-xl text-current"></i></a></li> -->
                     <li>
                         <a href="#"><i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
                             <div class="menu-dropdown switchcolor-wrap">

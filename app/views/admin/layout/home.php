@@ -43,7 +43,7 @@
                 ?>
                 <h3>$ <?=$tongtien?></h3>
 
-                <p>Tổng Thu Ngày</p>
+                <p>Tổng Thu</p>
               </div>
               <div class="icon">
                   <i class="ion ion-stats-bars"></i>

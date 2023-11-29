@@ -35,7 +35,7 @@
 <body>
     <div class="tttt">
         <p> * Kiểm tra kĩ mục 1 , 2, 3 trước khi chọn "Tiếp tục"</p>
-        <form method="POST" enctype="application/x-www-form-urlencoded"
+        <form method="POST" id="paymentForm" enctype="application/x-www-form-urlencoded"
         action="index.php?redirect=thanhtoan" class="form-group">
             <div class="thongtinthanhtoan">
                 <div class="tthv">
@@ -63,6 +63,18 @@
                             <td>Tiền học</td>
                             <td>$ <?= number_format($tien_hoc,0,"." ,",") ?></td>
                         </tr>
+                        <tr>
+                            <td>Lộ trình</td>
+                            <td>  
+                                <select name="lo_trinh_hoc" id="">
+                                    <?php 
+                                    $lt = lo_trinh_khoa_hoc($id_khoa_hoc);
+                                    foreach($lt as $row):
+                                        extract($row);?>
+                                    <option value="<?=$thoi_gian?>"><?=$thoi_gian?></option>
+                                    <?php endforeach ?>
+                                </select><br>
+                            </td>
                         <tr>
                             <td>Khuyến mại</td>
                             <td>  
@@ -98,40 +110,55 @@
                 <input type="radio" name="pttt" value="2"> Thanh toán sau
             </div><br>
             <div class="tieptuc text-center">
-                <button name="redirect" class="btn btn-danger" type="submit">Tiếp tục</button>
+                <button name="redirect" class="btn btn-danger" onclick="preparePayment()" type="submit">Tiếp tục</button>
             </div>
         </form>  
     </div>
     <script>
-        document.getElementById("khuyen_mai_select").value = 0;
-        calculateTotal();
+    document.getElementById("khuyen_mai_select").addEventListener("change", calculateTotal);
+    calculateTotal();
 
-        function calculateTotal() {
-            var selectedKhuyenMai = document.getElementById("khuyen_mai_select").value;
-            if (selectedKhuyenMai == 0) {
-                document.getElementById("thanh_tien").innerHTML = <?php echo json_encode($tien_hoc); ?>;
-                return;
+    function calculateTotal() {
+        var selectedKhuyenMai = document.getElementById("khuyen_mai_select").value;
+        if (selectedKhuyenMai == 0) {
+            document.getElementById("thanh_tien_input").value = <?php echo $tien_hoc; ?>;
+            document.getElementById("thanh_tien_display").innerHTML = <?php echo $tien_hoc; ?>;
+            return;
+        }
+        var discountPercentage = getDiscountPercentage(selectedKhuyenMai);
+        var originalTienHoc = <?php echo json_encode($tien_hoc); ?>;
+        var discountedTotal = originalTienHoc - (originalTienHoc * discountPercentage / 100);
+
+        document.getElementById("thanh_tien_input").value = discountedTotal.toFixed(0);
+        document.getElementById("thanh_tien_display").innerHTML = discountedTotal.toFixed(0);
+    }
+    function getDiscountPercentage(selectedKhuyenMai) {
+        <?php 
+        $km = khuyen_mai();
+        ?>
+        <?php foreach($km as $ctkm): ?>
+            if (<?php echo json_encode($ctkm['id_khuyen_mai']); ?> == selectedKhuyenMai) {
+                return <?php echo json_encode($ctkm['noi_dung']); ?>;
             }
-            var discountPercentage = getDiscountPercentage(selectedKhuyenMai);
-            var originalTienHoc = <?php echo json_encode($tien_hoc); ?>;
-            var discountedTotal = originalTienHoc - (originalTienHoc * discountPercentage / 100);
-            document.getElementById("thanh_tien_input").value = discountedTotal.toFixed(0);
-            document.getElementById("thanh_tien_display").innerHTML = discountedTotal.toFixed(0);
+        <?php endforeach ?>
+
+        return 0;
+    }
+    function preparePayment() {
+        var paymentMethod = document.querySelector('input[name="pttt"]:checked').value;
+
+        if (paymentMethod === '1') {
+            document.getElementById('paymentForm').action = 'app/views/Client/thanhtoan/vnpay_create_payment.php';
+        } else {
+            document.getElementById('paymentForm').action = 'index.php?redirect=thanhtoan';
         }
 
-        function getDiscountPercentage(selectedKhuyenMai) {
-            <?php 
-            $km = khuyen_mai();
-            ?>
-            <?php foreach($km as $ctkm): ?>
-                if (<?php echo json_encode($ctkm['id_khuyen_mai']); ?> == selectedKhuyenMai) {
-                    return <?php echo json_encode($ctkm['noi_dung']); ?>;
-                }
-            <?php endforeach ?>
+        // Tiếp tục submit form
+        document.getElementById('paymentForm').submit();
+    }
 
-            return 0;
-        }
-    </script>
+</script>
+
 
 </body>
 </html>

@@ -74,9 +74,9 @@ if($value ==1){
                                         <option value="0" disabled selected hidden><h2>------Lọc khóa học------</h2></option>
                                         <option value="1">Giá giảm dần</option>
                                         <option value="2">Giá tăng dần</option>
-                                        <option value="3">Giá dưới 500$</option>
-                                        <option value="4">Giá từ 500$ - 1500$</option>
-                                        <option value="5">Giá trên 1500$</option>
+                                        <option value="3">Giá dưới 500000VNĐ</option>
+                                        <option value="4">Giá từ 500 000VNĐ - 1 000 000 VNĐ</option>
+                                        <option value="5">Giá trên 1 000 000 VNĐ</option>
                                     </select>
                                     <input style="height:35px;width:60px;background-color:yellow; border: 1px solid #666;" name="loc" type="submit" value="OK">
                                 </form>
