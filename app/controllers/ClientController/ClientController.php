@@ -156,10 +156,8 @@
                 include("app/views/client/khoahoc/khoahoccuatoi.php");
                 break;
             case 'chitietkhcuatoi':
-                if(isset($_GET['id_khoa_hoc'])){
-                    $id_khoa_hoc = $_GET['id_khoa_hoc'];
-                    chitietkhcuatoi($id_khoa_hoc);
-                }
+                $id_dang_ky_khoa_hoc = $_GET['id_dang_ky_khoa_hoc'];
+                $id_khoa_hoc = $_GET['id_khoa_hoc'];
                 include("app/views/client/khoahoc/chitietkhcuatoi.php");
                 break;
             case 'thongtinthanhtoan':
@@ -169,9 +167,6 @@
                     echo '<script>alert("Vui lòng đăng nhập")</script>';
                     echo '<script>window.location.href="app/views/client/taikhoan/login.php"</script>';
                 }
-                break;
-            case 'mycontact':
-                include("app/views/client/chucnangphu/mycontact.php");
                 break;
             case 'myinfo':
                 include("app/views/client/taikhoan/myinfo.php");
@@ -186,8 +181,6 @@
                 include("app/views/client/chucnangphu/default-settings.php");
                 break;
             case 'thanhtoan':
-                if($_POST['pttt'] == 1){
-                    include("app/views/client/thanhtoan/vnpay_create_payment.php");
                     if(isset($_SESSION['id_tai_khoan'])){
                         $id_tai_khoan = $_POST['id_tai_khoan'];
                         $ho_va_ten = $_POST['ho_va_ten'];
@@ -199,24 +192,8 @@
                         $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
                         $trang_thai = $_POST['trang_thai'];
                         $id_khuyen_mai = $_POST['khuyen_mai'];
-                    }else{
-                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
-                        echo '<script>alert("Vui lòng đăng nhập để đăng ký khóa học")</script>';
-                        echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
-                    }
-                }else{
-                    if(isset($_SESSION['id_tai_khoan'])){
-                        $id_tai_khoan = $_POST['id_tai_khoan'];
-                        $ho_va_ten = $_POST['ho_va_ten'];
-                        $so_dien_thoai = $_POST['so_dien_thoai'];
-                        $email = $_POST['email'];
-                        $id_khoa_hoc = $_POST['id_khoa_hoc'];
-                        $id_giang_vien = $_POST['id_giang_vien'];
-                        $thanh_tien = $_POST['thanh_tien'];
-                        $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
-                        $trang_thai = $_POST['trang_thai'];
-                        $id_khuyen_mai = $_POST['khuyen_mai'];
-                        dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email);
+                        $lo_trinh = $_POST['lo_trinh_hoc'];
+                        dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email);
                         echo '<script>alert("Đã đăng ký, chờ xác nhận")</script>';
                         echo '<script>window.location.href="index.php?redirect=khoahoccuatoi"</script>';
                     }else{
@@ -224,7 +201,6 @@
                         echo '<script>alert("Vui lòng đăng nhập để đăng ký khóa học")</script>';
                         echo '<script>window.location.href="index.php?redirect=chitietkhoahoc&id_khoa_hoc=' . $id_khoa_hoc . '"</script>';
                     }
-                }
                 
                 break;
                 case 'khoahocyeuthich':

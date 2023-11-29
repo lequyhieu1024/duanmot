@@ -72,7 +72,7 @@ function dem_kh_cua_toi(){
 }
 function khoahoccuatoi(){
     $id_tai_khoan = $_SESSION['id_tai_khoan'];
-    $sql = "SELECT dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
+    $sql = "SELECT dang_ky_khoa_hoc.lo_trinh,trang_thai.id_trang_thai as id_trang_thai_kh, dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc,id_dang_ky_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
     dang_ky_khoa_hoc.thanh_tien
     FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
@@ -81,12 +81,12 @@ function khoahoccuatoi(){
     JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
     LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
     WHERE dang_ky_khoa_hoc.id_tai_khoan = '$id_tai_khoan'
-    ORDER BY dang_ky_khoa_hoc.id_dang_ky_khoa_hoc DESC";
+    ORDER BY trang_thai.id_trang_thai ASC,dang_ky_khoa_hoc.id_dang_ky_khoa_hoc DESC";
     $results = pdo_query($sql);
     return $results;
 }
-function chitietkhcuatoi($id_khoa_hoc){
-    $sql = "SELECT dang_ky_khoa_hoc.id_dang_ky_khoa_hoc,dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai,trang_thai.id_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
+function chitietkhcuatoi($id_khoa_hoc,$id_dang_ky_khoa_hoc){
+    $sql = "SELECT dang_ky_khoa_hoc.lo_trinh,dang_ky_khoa_hoc.id_dang_ky_khoa_hoc,dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai,trang_thai.id_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
     khoa_hoc.tien_hoc,thanh_tien
     FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
@@ -94,12 +94,12 @@ function chitietkhcuatoi($id_khoa_hoc){
     JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
     JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
     LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
-    WHERE dang_ky_khoa_hoc.id_khoa_hoc = '$id_khoa_hoc'";
+    WHERE dang_ky_khoa_hoc.id_khoa_hoc = '$id_khoa_hoc' AND id_dang_ky_khoa_hoc = $id_dang_ky_khoa_hoc";
     $results = pdo_query($sql);
     return $results;
 }
-function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email){
-    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,trang_thai ,id_khuyen_mai,ho_va_ten, so_dien_thoai, email) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc', '$trang_thai' ,'$id_khuyen_mai','$ho_va_ten', '$so_dien_thoai', '$email')";
+function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email){
+    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,lo_trinh ,trang_thai ,id_khuyen_mai,ho_va_ten, so_dien_thoai, email) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc','$lo_trinh', '$trang_thai' ,'$id_khuyen_mai','$ho_va_ten', '$so_dien_thoai', '$email')";
     pdo_execute($sql);
 }
 function myskill(){
@@ -165,17 +165,24 @@ function lockhoahocgiatangdan(){
     return $result;
 }
 function lockhoahocduoi500(){
-    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc <=500";
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc <=500000";
     $result = pdo_query($sql);
     return $result;
 }
 function lockhoahocduoi1500(){
-    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >500 AND tien_hoc <=1500";
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >500000 AND tien_hoc <=1000000";
     $result = pdo_query($sql);
     return $result;
 }
 function lockhoahoctren1500(){
-    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >1500";
+    $sql = "SELECT * FROM khoa_hoc WHERE tien_hoc >1000000";
+    $result = pdo_query($sql);
+    return $result;
+}
+function lo_trinh_khoa_hoc($id_khoa_hoc){
+    $sql = "SELECT * FROM lo_trinh_khoa_hoc
+    join lo_trinh_hoc ON lo_trinh_hoc.id_lo_trinh = lo_trinh_khoa_hoc.id_lo_trinh
+    WHERE lo_trinh_khoa_hoc.id_khoa_hoc = $id_khoa_hoc";
     $result = pdo_query($sql);
     return $result;
 }

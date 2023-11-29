@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php  $myCources = chitietkhcuatoi($id_khoa_hoc);?> 
+    <?php 
+    $myCources = chitietkhcuatoi($id_khoa_hoc,$id_dang_ky_khoa_hoc);?> 
     <div style="margin:30px" class="container-ctkhct">
         <h1>Chi tiết khóa học đã đăng ký</h1><br>
         <?php  foreach($myCources as $mc):extract($mc); ?>   

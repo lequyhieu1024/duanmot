@@ -5,6 +5,8 @@ if($value ==1 ){
     $khoahoc = trang_thai_dcxl();
 }else if($value ==3 ){
     $khoahoc = trang_thai_dktc();
+}else{
+    header("location: index.php?act=qlkhdadangky");
 }
 ?>
 <div class="col-lg-12 mt-3">
@@ -23,15 +25,17 @@ if($value ==1 ){
     <table class="table">
     <thead>
         <tr>
-        <th scope="col">ID Đăng Ký Khóa Học</th>
+            <th scope="col">ID Đăng Ký Khóa Học</th>
             <th scope="col">Tên Khóa Học</th>
             <th scope="col">AVT</th>
             <th scope="col">Thành Tiền</th>
             <th scope="col">Người đăng ký</th>
             <th scope="col">Ngày đăng ký</th>
             <th scope="col">Trạng thái</th>
-            <th scope="col">Mã giảng viên</th>
-            <th scope="col">Áp dụng khuyến mãi</th>
+            <th scope="col">email</th>
+            <th scope="col">SĐT</th>
+            <th scope="col">Ho Tên</th>
+            <th scope="col">Lộ trình</th>
             <th scope="col">Thao tác</th>
         </tr>
     </thead>
@@ -39,19 +43,24 @@ if($value ==1 ){
         <?php
         foreach($khoahoc as $row):
         extract($row); ?>
-        <tr>
             <th scope="row"><?=$id_dang_ky_khoa_hoc ?></th>
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
             <td><?=$thanh_tien ?></td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
-            <td><b style="color:red"><?=$ten_trang_thai ?></b></td>
-            <td><?=$ma_giang_vien ?></td>  
-            <td><?php if ($ten_khuyen_mai != ""): echo $ten_khuyen_mai ;else:echo "Không áp km";endif; ?></td>       
-            <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-warning">Cập nhật trạng thái</button></a>
-                <!-- <a href="index.php?act=delete&header=qlkhdadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a> -->
-            </td>       
+            <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>">
+                <?php if($id_trang_thai_kh == 1){ ?> <button class="btn btn-warning"><?=$ten_trang_thai?>
+                </button><?php }else if($id_trang_thai_kh == 2){?><button class="btn btn-primary"><?=$ten_trang_thai?>
+                </button><?php }else{?><button class="btn btn-success"><?=$ten_trang_thai?></button><?php }?></a>
+            </td>
+            <td><?=$email_tk ?></td>  
+            <td><?=$sdt_tk ?></td>  
+            <td><?=$ho_va_ten_tk ?></td>  
+            <td><?=$lt?></td>       
+            <td>
+                <a href="index.php?act=delete&header=qlkhdadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&iddl=<?=$id_dang_ky_khoa_hoc;?>"><button style="margin-bottom: 10px;" class="btn btn-danger">Xóa</button></a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
