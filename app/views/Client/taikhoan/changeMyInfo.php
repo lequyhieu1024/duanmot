@@ -22,7 +22,7 @@
                 <label for="exampleInputEmail1">Avatar</label>
                 <input type="file" class="form-control" id="exampleInputEmail1" name="avt" >
             </div>
-            ảnh hiện tại: <img style="width:100px;height:80%;" src="public/images/<?=$avt?>" alt="">
+            Ảnh hiện tại: <img style="width:100px;height:80%;" src="public/images/<?=$avt?>" alt="">
             <div class="form-group">
                 <label for="exampleInputEmail1">Số điện thoại</label>
                 <input type="text" class="form-control" required value="<?=$so_dien_thoai?>" id="exampleInputEmail1" name="so_dien_thoai" placeholder="Số điện thoại tài khoản">

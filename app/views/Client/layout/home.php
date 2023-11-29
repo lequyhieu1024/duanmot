@@ -8,16 +8,16 @@
                                     <div class="form-group mt-lg-4 p-3 border-light border p-2 bg-white rounded-lg ">
                                         <div class="row">
                                             <div class="col-md-5">
-                                        <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
+                                                <form method="post" action="index.php?redirect=timkiem" class="form-group icon-input mb-0">
                                                     <i class="ti-search font-xs text-grey-400"></i>
-                                                    <input type="text" name="search_input" required class="style1-input bg-transparent border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500" placeholder="Nhập tìm kiếm...">
+                                                    <input type="text" name="search_input" style="color: black; font-size: 16px; width: 100%;" required class="style1-input bg-transparent border-0 pl-5  mb-0 fw-500" placeholder="Nhập tìm kiếm...">
                                             </div>
 
                                             <div class="col-md-4">
                                                 
                                             </div>
                                             <div class="col-md-3">
-                                                <button type="submit" name="tim_kiem" class="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</button>
+                                                <button type="submit" name="tim_kiem" style=" font-size: 16px;" class="w-100 d-block btn bg-current text-white fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">Search</button>
                                             </div>
                                         </form>
                                         </div>
@@ -52,7 +52,7 @@
                         <div class="col-lg-12 mt-3">
                             <div class="col-lg-12 mt-3">
                                 <form action="index.php?redirect=lockhoahoc" method="post">
-                                    <select style="height:35px;width:200px;border: 1px solid #666;background-color:yellow " name="lockhoahoc" id="">
+                                    <select style="height:35px;width:200px; border: 1px solid #1E74FD; border-radius: 5px;background-color:#1E74FD; color: white; " name="lockhoahoc" id="">
                                         <option value="0" disabled selected hidden><h2>------Lọc khóa học------</h2></option>
                                         <option value="1">Giá giảm dần</option>
                                         <option value="2">Giá tăng dần</option>
@@ -60,7 +60,7 @@
                                         <option value="4">Giá từ 500$ - 1500$</option>
                                         <option value="5">Giá trên 1500$</option>
                                     </select>
-                                    <input style="height:35px;width:60px;background-color:yellow; border: 1px solid #666;" name="loc" type="submit" value="OK">
+                                    <input style="height:35px;width:60px;background-color:#1E74FD; border: 1px solid #1E74FD; border-radius: 5px; color: white;" name="loc" type="submit" value="OK">
                                 </form>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                             <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
+                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1" style="max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center;"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=$tien_hoc?></span>
                                             <div style="max-height: 100px; width: 100%; overflow: hidden;"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?>... </div></h4></div>
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
@@ -113,7 +113,7 @@
                                             <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
+                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1" style="max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center;"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=number_format($tien_hoc,0,"." ,",")?></span>
                                             <div style="max-height: 100px; width: 100%; overflow: hidden;"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?></div></h4></div>
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
@@ -144,7 +144,7 @@
                                             <div class="position-relative d-block"><img style="height:150px" src="public/images/<?=$avt?>" alt="image" class="w-100"></div>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1"><?=$ten_khoa_hoc ?></span>
+                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1" style="max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center;"><?=$ten_khoa_hoc ?></span>
                                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> <?=number_format($tien_hoc,0,"." ,",")?></span>
                                             <div style="max-height: 100px; width: 100%; overflow: hidden;"><h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><div class="text-dark text-grey-900"> <?=$mo_ta?></div></h4></div>
                                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2">Lượt xem: <?=$so_luot_xem?></h6>
@@ -163,7 +163,7 @@
                         <div class="col-lg-12 pt-2">
                             <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">     
                                 <?php $gv = giang_vien();
-                                foreach($gv as $dsgv):
+                                foreach($gv as $dsgv){
                                 extract($dsgv);?>   
                                     <div class="item">
                                         <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
@@ -177,7 +177,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php endforeach ?>
+                                <?php } ?>
                             </div>
                         </div>
 
@@ -187,7 +187,6 @@
                 </div>
                 <div class="middle-sidebar-right right-scroll-bar">
                     <div class="middle-sidebar-right-content">
-
                         <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
                             <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(public/images/user-pattern.png);">
                                 <a href="index.php?redirect=default-settings" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
