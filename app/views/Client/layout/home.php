@@ -185,17 +185,18 @@
 
                     </div>
                 </div>
+                <?php
+                    $info = myInfo();
+                    if($info != ""){
+                    foreach($info as $tt):
+                extract($tt);
+                ?>
                 <div class="middle-sidebar-right right-scroll-bar">
                     <div class="middle-sidebar-right-content">
                         <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
                             <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(public/images/user-pattern.png);">
                                 <a href="index.php?redirect=default-settings" class="position-absolute right-0 mr-4" id="dropdownMenu2" ><i class="feather-edit text-grey-500 font-xs"></i></a>
-                                <?php
-                                 $info = myInfo();
-                                 if($info != ""){
-                                    foreach($info as $tt):
-                                extract($tt);
-                                ?>
+                                
                                 <figure class="avatar ml-auto mr-auto mb-0 mt-2 w90"><img src="public/images/<?=$avt?>" alt="image" class="float-right shadow-sm rounded-circle w-100"></figure>
                                 <div class="clearfix"></div>
                                 <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1"><?=$ho_va_ten?></h2>
