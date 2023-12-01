@@ -14,7 +14,7 @@
             <th scope="col">AVT</th>
             <th scope="col">Tiền Học</th>
             <th scope="col">Mô Tả</th>
-            <th scope="col">Số Lượt Xem</th>
+            <th scope="col">Lượt Xem</th>
             <th scope="col">Trạng thái</th>
             <th scope="col">Mã Giảng Viên</th>
             <th scope="col">Danh Mục</th>
@@ -33,7 +33,7 @@
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt ?>" alt=""></td>
             <td><?=$tien_hoc ?></td>
-            <td><?php echo nl2br($mo_ta) ?></td>
+            <td><p style="height: 100px; overflow: auto;"><?php echo nl2br($mo_ta) ?></p></td>
             <td><?=$so_luot_xem ?></td>
             <td><?=$trang_thai ?></td>
             <td><?=$ma_giang_vien ?></td>
