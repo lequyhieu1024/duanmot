@@ -19,11 +19,11 @@
 <div class="login-box">
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Đăng nhập</p>
 
       <form action="../../../../index.php?redirect=login" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" required name="ten_tai_khoan" placeholder="User Name">
+          <input type="text" class="form-control" required name="ten_tai_khoan" placeholder="Tên tài khoản">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" required name="mat_khau" placeholder="Password">
+          <input type="password" class="form-control" required name="mat_khau" placeholder="Mật khẩu">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -40,17 +40,9 @@
         </div>
         <span></span>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" name="remember" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" name="login" class="btn btn-primary btn-block">Nhập</button>
           </div>
           <!-- /.col -->
         </div>
@@ -59,19 +51,19 @@
       <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
         <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+          <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng Facebook
         </a>
         <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+          <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng Google+
         </a>
       </div>
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgotpass.php">I forgot my password</a>
+        <a href="forgotpass.php">Quên mật khẩu</a>
       </p>
       <p class="mb-0">
-        <a href="register.php" class="text-center">Register a new membership</a>
+        <a href="register.php" class="text-center">Đăng ký tài khoản mới</a>
       </p>
     </div>
     <!-- /.login-card-body -->
