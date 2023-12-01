@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Avatar</label>
-                <input type="file" class="form-control" id="exampleInputEmail1" name="avt" >
+                <input type="file" class="form-control" id="exampleInputEmail1" name="avt" style="height: 70px;">
             </div>
             Ảnh hiện tại: <img style="width:100px;height:80%;" src="public/images/<?=$avt?>" alt="">
             <div class="form-group">
