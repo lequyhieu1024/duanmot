@@ -82,9 +82,8 @@
                         <?php
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
-                                echo "<span style='color:blue'>GD Thanh cong</span>";
-                                
-                            } else {
+                                    echo "<span style='color:blue'>GD Thanh cong</span>";
+                            }else{
                                 echo "<span style='color:red'>GD Khong thanh cong</span>";
                             }
                         } else {
@@ -99,7 +98,7 @@
                 &nbsp;
             </p>
             <footer class="footer">
-                   <p>&copy; VNPAY <?php echo date('Y')?></p>
+                   <p>&copy; VNPAY <?php echo date('Y/m/d h:m:s')?></p>
             </footer>
         </div>  
     </body>
