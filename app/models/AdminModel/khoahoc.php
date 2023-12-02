@@ -81,6 +81,18 @@ function QLkhdadangky(){
     $result = pdo_query($sql);
     return $result;
 }
+function QLkhdadangkyTop3(){
+    $sql = "SELECT *,dang_ky_khoa_hoc.lo_trinh as lt,dang_ky_khoa_hoc.email as email_tk,dang_ky_khoa_hoc.so_dien_thoai as sdt_tk,dang_ky_khoa_hoc.ho_va_ten as ho_va_ten_tk,trang_thai.id_trang_thai as id_trang_thai_kh,dang_ky_khoa_hoc.id_khoa_hoc,khoa_hoc.ten_khoa_hoc,khoa_hoc.avt as avt_kh, trang_thai.ten_trang_thai,giang_vien.ma_giang_vien ,khuyen_mai.ten_khuyen_mai
+    FROM dang_ky_khoa_hoc
+    JOIN tai_khoan ON tai_khoan.id_tai_khoan = dang_ky_khoa_hoc.id_tai_khoan
+    JOIN trang_thai ON trang_thai.id_trang_thai = dang_ky_khoa_hoc.trang_thai
+    JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
+    LEFT JOIN khuyen_mai ON khuyen_mai.id_khuyen_mai = dang_ky_khoa_hoc.id_khuyen_mai
+    JOIN giang_vien ON giang_vien.id_giang_vien = dang_ky_khoa_hoc.id_giang_vien
+    WHERE dang_ky_khoa_hoc.trang_thai = 1 ";
+    $result = pdo_query($sql);
+    return $result;
+}
 function trang_thai_cxn(){
     $sql = "SELECT *,dang_ky_khoa_hoc.lo_trinh as lt,dang_ky_khoa_hoc.email as email_tk,dang_ky_khoa_hoc.so_dien_thoai as sdt_tk,
     dang_ky_khoa_hoc.ho_va_ten as ho_va_ten_tk,trang_thai.id_trang_thai as id_trang_thai_kh,

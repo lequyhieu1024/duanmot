@@ -11,5 +11,24 @@
                 }
                 pdo_execute($sql);
         }
+        function thongke_khoahoc(){
+                $sql = "SELECT 
+                            khoa_hoc.id_khoa_hoc,
+                            khoa_hoc.id_danh_muc,
+                            ten_danh_muc, 
+                            COUNT(*) as so_luong_khoahoc, 
+                            SUM(tien_hoc) as tong_tien_dm,
+                            MIN(tien_hoc) as gia_re_nhat,
+                            MAX(tien_hoc) as gia_dat_nhat
+                        FROM 
+                            khoa_hoc
+                            JOIN danh_muc_khoa_hoc ON danh_muc_khoa_hoc.id_danh_muc = khoa_hoc.id_danh_muc
+                        GROUP BY 
+                        danh_muc_khoa_hoc.id_danh_muc";
+            
+                $result = pdo_query($sql);
+                return $result;
+            }
+            
             
 ?>

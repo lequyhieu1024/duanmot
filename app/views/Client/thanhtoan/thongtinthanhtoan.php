@@ -107,7 +107,8 @@
             <div class="phuongthucthanhtoan">
                 <h1>3 / Phương thức thanh toán</h1>
                 <input type="radio" name="pttt" checked value="1"> Thanh toán Online qua VNPAY <br>
-                <input type="radio" name="pttt" value="2"> Thanh toán sau
+                <input type="radio" name="pttt" value="2"> Thanh toán sau<br>
+                <input type="radio" name="pttt" value="3"> Thanh toán Online qua MOMO
             </div><br>
             <div class="tieptuc text-center">
                 <button name="redirect" class="btn btn-danger" onclick="preparePayment()" type="submit">Tiếp tục</button>
@@ -149,8 +150,10 @@
 
         if (paymentMethod === '1') {
             document.getElementById('paymentForm').action = 'app/views/Client/thanhtoan/vnpay_create_payment.php';
-        } else {
+        } else if(paymentMethod === '2'){
             document.getElementById('paymentForm').action = 'index.php?redirect=thanhtoan';
+        }else{
+            document.getElementById('paymentForm').action = 'app/views/Client/thanhtoanmomo/atm_momo.php';
         }
 
         // Tiếp tục submit form
