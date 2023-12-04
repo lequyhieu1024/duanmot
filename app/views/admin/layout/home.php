@@ -72,14 +72,15 @@
           <tr>
             <td><?= $ten_danh_muc?></td>
             <td><?=$so_luong_khoahoc?></td>
-            <td><?=$tong_tien_dm?></td>
-            <td><?=$gia_re_nhat?></td>
-            <td><?=$gia_dat_nhat?></td>
+            <td><?=number_format($tong_tien_dm,0, ",",".")?> VNĐ</td>
+            <td><?=number_format($gia_re_nhat,0, ",",".")?> VNĐ</td>
+            <td><?=number_format($gia_dat_nhat,0, ",",".")?> VNĐ</td>
           </tr>
           <?php endforeach?>
         </table>
 <hr>
-        <!-- <div id="piechart"></div>
+<h2 class="text-center;" style="color:red">Biểu đồ thống kê danh mục</h2>
+        <div id="piechart"></div>
 
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -99,13 +100,13 @@
           ]);
 
             // Optional; add a title and set the width and height of the chart
-            var options = {'title':'Biểu đồ thống kê', 'width':1200, 'height':550};
+            var options = { 'width':1200, 'height':550};
 
             // Display the chart inside the <div> element with id="piechart"
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
             chart.draw(data, options);
           }
-          </script> -->
+          </script>
   <h2 class="text-center;" style="color:red">Biểu đồ thống kê danh mục</h2>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <canvas id="thongKeKhoaHocChart" width="600" height="400"></canvas>
@@ -219,7 +220,7 @@
             <th scope="row"><?=$id_dang_ky_khoa_hoc ?></th>
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
-            <td><?=$thanh_tien ?></td>
+            <td><?=number_format($thanh_tien,0,".") ?></td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
             <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>">

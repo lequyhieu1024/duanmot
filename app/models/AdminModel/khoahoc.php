@@ -137,8 +137,9 @@ function thong_ke()
 {
     $sql = "SELECT danh_muc_khoa_hoc.id_danh_muc, danh_muc_khoa_hoc.ten_danh_muc, COUNT(khoa_hoc.id_khoa_hoc) as so_luong_kh,
     SUM(khoa_hoc.tien_hoc) as thanh_tien_sum FROM danh_muc_khoa_hoc LEFT JOIN khoa_hoc 
-    ON danh_muc_khoa_hoc.id_danh_muc = khoa_hoc.id_khoa_hoc GROUP BY danh_muc_khoa_hoc.id_danh_muc";
+    ON danh_muc_khoa_hoc.id_danh_muc = khoa_hoc.id_danh_muc GROUP BY danh_muc_khoa_hoc.id_danh_muc";
     $result = pdo_query($sql);
     return $result;
 }
+
 ?>
