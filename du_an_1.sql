@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 07, 2023 lúc 08:55 AM
+-- Thời gian đã tạo: Th12 08, 2023 lúc 09:57 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -75,21 +75,21 @@ CREATE TABLE `dang_ky_khoa_hoc` (
   `id_khuyen_mai` int(11) NOT NULL,
   `ho_va_ten` varchar(50) DEFAULT NULL,
   `so_dien_thoai` varchar(15) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL
+  `email` varchar(50) DEFAULT NULL,
+  `pttt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `dang_ky_khoa_hoc`
 --
 
-INSERT INTO `dang_ky_khoa_hoc` (`id_dang_ky_khoa_hoc`, `id_tai_khoan`, `id_khoa_hoc`, `id_giang_vien`, `thanh_tien`, `ngay_dang_ky_hoc`, `lo_trinh`, `trang_thai`, `id_khuyen_mai`, `ho_va_ten`, `so_dien_thoai`, `email`) VALUES
-(45, 1, 30, 4, 899000, '2023-11-29', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(58, 1, 38, 4, 599000, '2023-11-29', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(66, 1, 37, 11, 470000, '2023-12-02', '3 tháng', '1', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(67, 1, 38, 4, 599000, '2023-12-02', '3 tháng', '1', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(68, 1, 23, 4, 299000, '2023-12-02', '3 tháng', '1', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(69, 1, 23, 4, 299000, '2023-12-02', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com'),
-(70, 1, 30, 4, 809100, '2023-12-02', '3 tháng', '2', 6, 'Hiếu Huân Tuấn new', '0338475943', 'codephpnguvl@gmail.com');
+INSERT INTO `dang_ky_khoa_hoc` (`id_dang_ky_khoa_hoc`, `id_tai_khoan`, `id_khoa_hoc`, `id_giang_vien`, `thanh_tien`, `ngay_dang_ky_hoc`, `lo_trinh`, `trang_thai`, `id_khuyen_mai`, `ho_va_ten`, `so_dien_thoai`, `email`, `pttt`) VALUES
+(45, 1, 30, 4, 899000, '2023-11-29', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com', 2),
+(58, 1, 38, 4, 599000, '2023-11-29', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com', 2),
+(67, 1, 38, 4, 599000, '2023-12-02', '3 tháng', '1', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com', 3),
+(69, 1, 23, 4, 299000, '2023-12-02', '3 tháng', '3', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com', 3),
+(70, 1, 30, 4, 809100, '2023-12-02', '3 tháng', '2', 6, 'Hiếu Huân Tuấn new', '0338475943', 'codephpnguvl@gmail.com', 2),
+(73, 1, 25, 4, 350000, '2023-12-08', '9 tháng', '1', 0, 'Hiếu Huân Tuấn', '0338475943', 'codephpnguvl@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,8 @@ CREATE TABLE `danh_gia` (
 INSERT INTO `danh_gia` (`id_danh_gia`, `id_tai_khoan`, `id_khoa_hoc`, `danh_gia`) VALUES
 (4, 1, 23, 5),
 (5, 1, 30, 5),
-(6, 1, 32, 4);
+(6, 1, 32, 4),
+(7, 1, 38, 5);
 
 -- --------------------------------------------------------
 
@@ -207,15 +208,15 @@ CREATE TABLE `khoa_hoc` (
 --
 
 INSERT INTO `khoa_hoc` (`id_khoa_hoc`, `ten_khoa_hoc`, `avt`, `tien_hoc`, `mo_ta`, `so_luot_xem`, `trang_thai`, `id_giang_vien`, `id_danh_muc`, `slideshow`) VALUES
-(23, 'PHP Nâng Cao', 'php nâng cao.png', 299000, 'PHP nâng cao là một ngành học trong lĩnh vực lập trình web, tập trung vào việc nâng cao kiến thức và kỹ năng về ngôn ngữ lập trình PHP. Kỹ thuật này được áp dụng rộng rãi trong phát triển các trang web động, trang web thương mại điện tử và các ứng dụng web khác.  Trong khóa học PHP nâng cao cho trang bán khóa học, bạn sẽ học được:  1. Kiến thức sâu về ngôn ngữ PHP: Bạn sẽ tìm hiểu về các khái niệm nâng cao trong PHP như hướng đối tượng, lập trình cơ sở dữ liệu, xử lý form, xử lý lỗi, mã hóa và bảo mật.  2. Framework PHP phổ biến: Bạn sẽ được giới thiệu với các framework PHP như Laravel, Symfony, CodeIgniter,... và học cách sử dụng chúng để phát triển các ứng dụng web mạnh mẽ và dễ bảo trì.  3. Tối ưu hóa và tăng hiệu suất: Bạn sẽ học cách tối ưu mã nguồn PHP và cơ sở dữ liệu để đảm bảo trang web hoạt động nhanh chóng và tiết kiệm tài nguyên máy chủ.  4. Tương tác với API và dịch vụ web: Bạn sẽ được hướng dẫn cách tương tác với các API của bên thứ ba, như thanh toán, xác thực người dùng, gửi email và các tích hợp khác trong trang web bán khóa học.  5. Quản lý phiên và đăng nhập người dùng: Bạn sẽ học cách quản lý phiên làm việc của người dùng, xác thực và quản lý quyền truy cập để bảo vệ dữ liệu của họ.', 470, 'yes', 4, 54, 'show'),
-(25, 'CTGL & GT', 'ctglgt.jpg', 350000, 'Tên khóa học: Bootstrap for Web Development  Mục tiêu khóa học:  Hiểu biết về Bootstrap: Học viên sẽ được giới thiệu về Bootstrap là gì, lịch sử phát triển của nó, và tại sao nó quan trọng trong phát triển web hiện đại.  Cơ bản về HTML và CSS: Nắm vững kiến thức cơ bản về HTML và CSS là quan trọng để hiểu rõ cách Bootstrap tương tác và làm việc với mã nguồn HTML và CSS.  Grid System: Hiểu về cách Bootstrap sử dụng grid system để tạo bố cục cho trang web, giúp làm cho trang web trở nên linh hoạt và đáp ứng.  Components và Utilities: Học cách sử dụng các thành phần và tiện ích có sẵn trong Bootstrap như buttons, forms, navigation bars, và các utilities để tối ưu hóa quá trình phát triển.  Responsive Design: Bootstrap được thiết kế để hỗ trợ phát triển giao diện đáp ứng trên nhiều thiết bị và kích thước màn hình. Khóa học sẽ giải thích cách Bootstrap giúp làm cho trang web trở nên đáp ứng.  Customization: Học cách tùy chỉnh Bootstrap để phù hợp với yêu cầu cụ thể của dự án.  Phương pháp học:  Bài giảng trực tuyế', 152, 'yes', 4, 54, 'show'),
+(23, 'PHP Nâng Cao', 'php nâng cao.png', 299000, 'PHP nâng cao là một ngành học trong lĩnh vực lập trình web, tập trung vào việc nâng cao kiến thức và kỹ năng về ngôn ngữ lập trình PHP. Kỹ thuật này được áp dụng rộng rãi trong phát triển các trang web động, trang web thương mại điện tử và các ứng dụng web khác.  Trong khóa học PHP nâng cao cho trang bán khóa học, bạn sẽ học được:  1. Kiến thức sâu về ngôn ngữ PHP: Bạn sẽ tìm hiểu về các khái niệm nâng cao trong PHP như hướng đối tượng, lập trình cơ sở dữ liệu, xử lý form, xử lý lỗi, mã hóa và bảo mật.  2. Framework PHP phổ biến: Bạn sẽ được giới thiệu với các framework PHP như Laravel, Symfony, CodeIgniter,... và học cách sử dụng chúng để phát triển các ứng dụng web mạnh mẽ và dễ bảo trì.  3. Tối ưu hóa và tăng hiệu suất: Bạn sẽ học cách tối ưu mã nguồn PHP và cơ sở dữ liệu để đảm bảo trang web hoạt động nhanh chóng và tiết kiệm tài nguyên máy chủ.  4. Tương tác với API và dịch vụ web: Bạn sẽ được hướng dẫn cách tương tác với các API của bên thứ ba, như thanh toán, xác thực người dùng, gửi email và các tích hợp khác trong trang web bán khóa học.  5. Quản lý phiên và đăng nhập người dùng: Bạn sẽ học cách quản lý phiên làm việc của người dùng, xác thực và quản lý quyền truy cập để bảo vệ dữ liệu của họ.', 472, 'yes', 4, 54, 'show'),
+(25, 'CTGL & GT', 'ctglgt.jpg', 350000, 'Tên khóa học: Bootstrap for Web Development  Mục tiêu khóa học:  Hiểu biết về Bootstrap: Học viên sẽ được giới thiệu về Bootstrap là gì, lịch sử phát triển của nó, và tại sao nó quan trọng trong phát triển web hiện đại.  Cơ bản về HTML và CSS: Nắm vững kiến thức cơ bản về HTML và CSS là quan trọng để hiểu rõ cách Bootstrap tương tác và làm việc với mã nguồn HTML và CSS.  Grid System: Hiểu về cách Bootstrap sử dụng grid system để tạo bố cục cho trang web, giúp làm cho trang web trở nên linh hoạt và đáp ứng.  Components và Utilities: Học cách sử dụng các thành phần và tiện ích có sẵn trong Bootstrap như buttons, forms, navigation bars, và các utilities để tối ưu hóa quá trình phát triển.  Responsive Design: Bootstrap được thiết kế để hỗ trợ phát triển giao diện đáp ứng trên nhiều thiết bị và kích thước màn hình. Khóa học sẽ giải thích cách Bootstrap giúp làm cho trang web trở nên đáp ứng.  Customization: Học cách tùy chỉnh Bootstrap để phù hợp với yêu cầu cụ thể của dự án.  Phương pháp học:  Bài giảng trực tuyế', 154, 'yes', 4, 54, 'show'),
 (26, 'Javascrip NângCao', 'Ảnh chụp màn hình 2023-11-26 150245.png', 289000, 'Môn Javascrip Nâng Cao là một môn học trong lĩnh vực lập trình web, tập trung vào việc nâng cao kỹ năng sử dụng ngôn ngữ lập trình JavaScript. Trong môn này, bạn sẽ học về các khái niệm và kỹ thuật nâng cao của JavaScript nhằm xây dựng các ứng dụng web phức tạp.  Các nội dung chính mà môn Javascrip Nâng Cao tập trung bao gồm:  1. Closure và Scope: Hiểu rõ về cách hoạt động của scope, biến toàn cục và biến cục bộ trong JavaScript, cùng với cơ chế closure để quản lý biến.  2. Đối tượng và lập trình hướng đối tượng: Học cách sử dụng các đối tượng, phương thức và thuộc tính trong JavaScript để xây dựng ứng dụng web theo hướng lập trình hướng đối tượng.  3. Asynchronous Programming: Tìm hiểu về cơ chế bất đồng bộ trong JavaScript, bao gồm sử dụng callbacks, Promises và async/await để xử lý các tác vụ không đồng bộ và tăng hiệu suất ứng dụng.  4. Modules và Packaging: Sử dụng các module để tổ chức và quản lý mã nguồn. Học cách sử dụng công cụ như NPM (Node Package Manager) để quản lý các gói thư viện.  5. Error Handling: Hiểu về xử lý lỗi và exception trong JavaScript, cách sử dụng try-catch để đảm bảo ứng dụng hoạt động một cách an toàn và ổn định.  6. Optimizing Performance: Tìm hiểu cách tối ưu mã nguồn JavaScript để tăng hiệu suất và tốc độ của ứng dụng web.  Môn Javascrip Nâng Cao giúp bạn trở thành một lập trình viên JavaScript thạo, có khả năng xây dựng ứng dụng web phức tạp và hiệu quả.', 58, 'no', 4, 54, 'show'),
 (30, 'React Native', 'React Native.png', 899000, 'Tên khóa học: React Native Mobile App Development  Mục tiêu khóa học:  Giới Thiệu về React Native:  Hiểu biết về React Native là gì và lý do nó trở thành một lựa chọn phổ biến để phát triển ứng dụng di động. So sánh ưu điểm của React Native so với phát triển truyền thống cho iOS và Android. Cài đặt và Môi Trường Phát Triển:  Hướng dẫn cài đặt môi trường phát triển cho React Native. Tìm hiểu về các công cụ hỗ trợ như Expo để giảm bớt sự phức tạp trong việc phát triển ứng dụng React Native. Components và JSX:  Học cách sử dụng components để tái sử dụng mã và xây dựng cấu trúc ứng dụng. Hiểu biết về JSX, ngôn ngữ mở rộng của JavaScript, được sử dụng trong React Native. State và Props:  Hiểu cách quản lý trạng thái (state) của ứng dụng và cách truyền dữ liệu giữa các components thông qua props. Navigation và Routing:  Học cách thực hiện điều hướng giữa các màn hình và cách xử lý định tuyến trong ứng dụng React Native. API và Thư Viện Bên Thứ Ba:  Tìm hiểu cách sử dụng các API tích hợp sẵn trong React Native cho việc truy cập cấu trúc điện thoại thông minh. Sử dụng thư viện bên thứ ba như Axios để thực hiện các yêu cầu mạng. Redux và Quản Lý Trạng Thái:  Hiểu cách sử dụng Redux để quản lý trạng thái ứng dụng và tối ưu hóa quá trình quản lý dữ liệu. Testing và Debugging:  Tìm hiểu về các kỹ thuật kiểm thử và gỡ lỗi trong ứng dụng React Native. Phương pháp học:  Bài giảng trực tuyến: Cung cấp video bài giảng để giới thiệu kiến thức và hướng dẫn thực hành. Dự án thực tế: Yêu cầu học viên xây dựng một ứng dụng thực tế để áp dụng kiến thức vào môi trường phát triển thực tế. Thảo luận và Hỗ trợ: Cung cấp diễn đàn hoặc cơ hội thảo luận để học viên có thể tương tác và hỗ trợ lẫn nhau. Yêu cầu tiên quyết:  Kiến thức cơ bản về JavaScript và React. Mục tiêu sau khi hoàn thành khóa học:  Có khả năng phát triển ứng dụng di động sử dụng React Native. Hiểu biết về cách quản lý trạng thái ứng dụng và tương tác với API. Thành thạo việc sử dụng Redux để quản lý trạng thái lớn trong ứng dụng. Có khả năng sử dụng công cụ và thư viện hỗ trợ để tối ưu hóa quá trình phát triển và kiểm thử.', 230, 'yes', 4, 62, 'show'),
 (32, 'Python Nâng Cao', 'python.png', 420000, 'Tên khóa học: Python Programming Fundamentals  Mục tiêu khóa học:  Giới Thiệu về Python:  Tìm hiểu về ngôn ngữ lập trình Python, lịch sử, và tại sao nó trở thành một trong những ngôn ngữ phổ biến nhất hiện nay. Cài Đặt và Môi Trường Phát Triển:  Hướng dẫn cách cài đặt Python và môi trường phát triển (IDE) như PyCharm hoặc Jupyter Notebook. Tìm hiểu cách sử dụng công cụ quản lý gói như pip để cài đặt thư viện và module. Cú Pháp Cơ Bản:  Học cú pháp Python cơ bản bao gồm biến, kiểu dữ liệu, toán tử, điều kiện, vòng lặp, và hàm. Cấu Trúc Dữ Liệu và Collections:  Hiểu cách sử dụng các cấu trúc dữ liệu như danh sách (lists), bộ (sets), và từ điển (dictionaries). Học cách làm việc với các collections module và thư viện như NumPy cho xử lý dữ liệu. Hàm và Module:  Hiểu cách định nghĩa và sử dụng hàm trong Python để tái sử dụng mã nguồn. Tìm hiểu về module và cách tổ chức mã nguồn thành các file và thư mục. Xử Lý Lỗi và Ngoại Lệ:  Học cách xử lý lỗi và ngoại lệ để tăng tính ổn định của chương trình. Lập Trình Hướng Đối Tượng (OOP):  Tìm hiểu về lập trình hướng đối tượng trong Python, bao gồm các khái niệm như class, object, inheritance, và encapsulation. Xử Lý Tệp Tin và Thư mục:  Hiểu cách đọc và ghi dữ liệu từ và vào tệp tin. Tìm hiểu cách thao tác với thư mục và các thư viện như os và shutil. Phương pháp học:  Bài giảng trực tuyến: Cung cấp video bài giảng để giới thiệu kiến thức và hướng dẫn thực hành. Bài thực hành: Yêu cầu học viên thực hành qua các bài tập và dự án nhỏ. Dự án Thực Tế: Xây dựng một dự án thực tế để học viên có thể áp dụng kiến thức vào môi trường phát triển thực tế. Thảo luận và Hỗ trợ: Cung cấp diễn đàn hoặc cơ hội thảo luận để học viên có thể tương tác và hỗ trợ lẫn nhau. Yêu cầu tiên quyết:  Không yêu cầu kiến thức lập trình trước đây. Mục tiêu sau khi hoàn thành khóa học:  Có khả năng viết mã Python cơ bản và hiểu cú pháp cơ bản của ngôn ngữ. Hiểu cách sử dụng cấu trúc dữ liệu và collections trong Python. Có khả năng áp dụng lập trình hướng đối tượng vào dự án của mình. Thành thạo việc xử lý lỗi, ngoại lệ, và thao tác với tệp tin và thư mục.', 34, 'yes', 4, 59, 'show'),
 (33, 'SASS(Cơ bản)', 'sass.png', 200000, 'Sass (Syntactically Awesome Stylesheets) là một ngôn ngữ mở rộng của CSS, giúp làm cho mã CSS trở nên dễ đọc hơn, linh hoạt hơn và dễ bảo trì hơn. Sass cung cấp một số tính năng mạnh mẽ mà CSS không có, bao gồm biến, nesting, mixins, và nhiều hơn nữa. Dưới đây là mô tả chi tiết về các tính năng quan trọng của Sass:', 32, 'yes', 4, 58, 'show'),
-(34, 'Chip-Vi Mạch', 'Ảnh chụp màn hình 2023-11-26 153632.png', 300000, 'Trong lĩnh vực tự động hóa, chip điện tử chơi một vai trò quan trọng, đóng vai trò như bộ não của các hệ thống tự động hóa. Dưới đây là một số ứng dụng cụ thể của chip điện tử trong tự động hóa:  PLC (Programmable Logic Controller):  PLCs là các thiết bị điều khiển chương trình có thể lập trình để kiểm soát quy trình sản xuất, hệ thống máy móc, và các hệ thống tự động hóa khác. Chúng sử dụng chip điện tử để thực hiện các chương trình logic và kiểm soát các thiết bị đầu ra. Vi xử lý (Microcontrollers):  Các vi xử lý nhỏ như Arduino, Raspberry Pi, hay ESP32 thường được sử dụng để kiểm soát và giám sát các thiết bị trong các ứng dụng tự động hóa nhỏ và phức tạp. Chúng có khả năng xử lý tác vụ điều khiển và thu thập dữ liệu từ các cảm biến. Cảm Biến và Giao Tiếp:  Chip điện tử thường được tích hợp vào cảm biến để thu thập thông tin về môi trường xung quanh. Các giao tiếp như I2C, SPI, hay UART giúp chúng tương tác với các thiết bị khác như vi xử lý, máy tính, hoặc PLC. Hệ Thống Điều Khiển Tự Động (ACS):  Các hệ thống điều khiển tự động sử dụng chip điện tử để thực hiện các thuật toán điều khiển và kiểm soát quá trình sản xuất hoặc hệ thống tự động hóa khác. Chúng có thể điều khiển động cơ, van, cảm biến, và các thành phần khác của hệ thống. HMI (Human-Machine Interface):  Các màn hình HMI thường sử dụng chip điện tử để hiển thị thông tin và tương tác với người điều khiển. Chúng có thể bao gồm màn hình cảm ứng và các chức năng giao tiếp để người điều khiển có thể tương tác với hệ thống tự động hóa. Mạch Điều Khiển Động Cơ:  Chip điện tử được tích hợp vào các mạch điều khiển động cơ để điều khiển tốc độ, hướng, và vị trí của động cơ trong các ứng dụng như hệ thống máy móc tự động, robot công nghiệp, và máy in 3D. Mạch Điều Khiển Nhiệt Độ và Điều Hòa:  Trong các hệ thống điều khiển nhiệt độ và điều hòa, chip điện tử được sử dụng để kiểm soát các thiết bị như van, quạt, và cảm biến nhiệt độ để duy trì điều kiện nhiệt độ ổn định. Các chip điện tử trong lĩnh vực tự động hóa chủ yếu tập trung vào việc thực hiện các nhiệm vụ điều khiển, thu thập dữ liệu và giao tiếp, giúp tăng cường hiệu suất, đồng thời giảm chi phí và tăng tính linh hoạt trong quá trình sản xuất và quy trình tự động hóa.', 108, 'yes', 4, 61, 'show'),
-(37, 'C#', 'Ảnh chụp màn hình 2023-11-26 154635.png', 470000, 'C# là một ngôn ngữ lập trình hướng đối tượng được phát triển bởi Microsoft. Được giới thiệu lần đầu vào năm 2000, C# được thiết kế để xây dựng ứng dụng đa nền tảng chạy trên hệ điều hành Windows. C# có cú pháp tương tự với ngôn ngữ C++ nhưng có thêm nhiều tính năng tiện ích và an toàn hơn.  C# được sử dụng rộng rãi trong phát triển ứng dụng desktop, ứng dụng di động (bao gồm cả Windows Phone và Xamarin), ứng dụng web và phần mềm dựa trên nền tảng .NET. Với C#, bạn có thể xây dựng các ứng dụng Windows, trò chơi, ứng dụng web, dịch vụ web, ứng dụng di động và nhiều loại ứng dụng khác.  Một số đặc điểm và tính năng chính của C# bao gồm: hướng đối tượng, thuộc tính, quản lý bộ nhớ tự động, xử lý ngoại lệ, sự kiện và delegate, LINQ (Language Integrated Query), đa luồng, và nhiều hơn nữa. C# có một cộng đồng lớn và mạnh mẽ, cung cấp nhiều tài liệu, thư viện và công cụ hỗ trợ cho việc phát triển.', 77, 'yes', 11, 57, 'show'),
-(38, 'PHP Cơ Bản', 'php.avif', 599000, 'PHP (Hypertext Preprocessor) là một ngôn ngữ lập trình phía máy chủ mã nguồn mở được sử dụng phổ biến để phát triển các ứng dụng web động và tương tác. PHP chủ yếu được sử dụng để xử lý và tạo ra nội dung động trên các trang web, cho phép tương tác với cơ sở dữ liệu và thực hiện các tác vụ phức tạp khác như đăng nhập, đăng ký, xử lý biểu mẫu và quản lý phiên.  PHP có thể được nhúng vào mã HTML hoặc được sử dụng như một ngôn ngữ độc lập để tạo ra nội dung động. Với cú pháp dễ hiểu và cấu trúc linh hoạt, PHP cho phép lập trình viên tạo ra các trang web mạnh mẽ và đáng tin cậy.  Một số tính năng nổi bật của PHP bao gồm: 1. Hỗ trợ đa nền tảng: PHP có thể chạy trên nhiều hệ điều hành như Windows, Linux, macOS, v.v. 2. Sự tích hợp với cơ sở dữ liệu: PHP hỗ trợ các loại cơ sở dữ liệu phổ biến như MySQL, PostgreSQL, và Oracle. 3. Thư viện đa dạng: PHP đi kèm với một số thư viện mạnh mẽ để hỗ trợ phát triển nhanh chóng và dễ dàng, như PDO, GD, và XML. 4. Khả năng mở rộng: PHP có thể mở rộng thông qua các module và extension để tăng tính năng của nó. 5. Cộng đồng phát triển mạnh mẽ: PHP có một cộng đồng lớn và chuyên nghiệp, luôn cung cấp tài liệu và hỗ trợ trong việc phát triển ứng dụng.  PHP là một công nghệ phổ biến và được sử dụng rộng rãi trong ngành phát triển web, với khả năng mạnh mẽ để xây dựng các ứng dụng web động và tương tác. search ', 133, 'yes', 4, 57, 'show');
+(34, 'Chip-Vi Mạch', 'Ảnh chụp màn hình 2023-11-26 153632.png', 300000, 'Trong lĩnh vực tự động hóa, chip điện tử chơi một vai trò quan trọng, đóng vai trò như bộ não của các hệ thống tự động hóa. Dưới đây là một số ứng dụng cụ thể của chip điện tử trong tự động hóa:  PLC (Programmable Logic Controller):  PLCs là các thiết bị điều khiển chương trình có thể lập trình để kiểm soát quy trình sản xuất, hệ thống máy móc, và các hệ thống tự động hóa khác. Chúng sử dụng chip điện tử để thực hiện các chương trình logic và kiểm soát các thiết bị đầu ra. Vi xử lý (Microcontrollers):  Các vi xử lý nhỏ như Arduino, Raspberry Pi, hay ESP32 thường được sử dụng để kiểm soát và giám sát các thiết bị trong các ứng dụng tự động hóa nhỏ và phức tạp. Chúng có khả năng xử lý tác vụ điều khiển và thu thập dữ liệu từ các cảm biến. Cảm Biến và Giao Tiếp:  Chip điện tử thường được tích hợp vào cảm biến để thu thập thông tin về môi trường xung quanh. Các giao tiếp như I2C, SPI, hay UART giúp chúng tương tác với các thiết bị khác như vi xử lý, máy tính, hoặc PLC. Hệ Thống Điều Khiển Tự Động (ACS):  Các hệ thống điều khiển tự động sử dụng chip điện tử để thực hiện các thuật toán điều khiển và kiểm soát quá trình sản xuất hoặc hệ thống tự động hóa khác. Chúng có thể điều khiển động cơ, van, cảm biến, và các thành phần khác của hệ thống. HMI (Human-Machine Interface):  Các màn hình HMI thường sử dụng chip điện tử để hiển thị thông tin và tương tác với người điều khiển. Chúng có thể bao gồm màn hình cảm ứng và các chức năng giao tiếp để người điều khiển có thể tương tác với hệ thống tự động hóa. Mạch Điều Khiển Động Cơ:  Chip điện tử được tích hợp vào các mạch điều khiển động cơ để điều khiển tốc độ, hướng, và vị trí của động cơ trong các ứng dụng như hệ thống máy móc tự động, robot công nghiệp, và máy in 3D. Mạch Điều Khiển Nhiệt Độ và Điều Hòa:  Trong các hệ thống điều khiển nhiệt độ và điều hòa, chip điện tử được sử dụng để kiểm soát các thiết bị như van, quạt, và cảm biến nhiệt độ để duy trì điều kiện nhiệt độ ổn định. Các chip điện tử trong lĩnh vực tự động hóa chủ yếu tập trung vào việc thực hiện các nhiệm vụ điều khiển, thu thập dữ liệu và giao tiếp, giúp tăng cường hiệu suất, đồng thời giảm chi phí và tăng tính linh hoạt trong quá trình sản xuất và quy trình tự động hóa.', 110, 'yes', 4, 61, 'show'),
+(37, 'C#', 'Ảnh chụp màn hình 2023-11-26 154635.png', 470000, 'C# là một ngôn ngữ lập trình hướng đối tượng được phát triển bởi Microsoft. Được giới thiệu lần đầu vào năm 2000, C# được thiết kế để xây dựng ứng dụng đa nền tảng chạy trên hệ điều hành Windows. C# có cú pháp tương tự với ngôn ngữ C++ nhưng có thêm nhiều tính năng tiện ích và an toàn hơn.  C# được sử dụng rộng rãi trong phát triển ứng dụng desktop, ứng dụng di động (bao gồm cả Windows Phone và Xamarin), ứng dụng web và phần mềm dựa trên nền tảng .NET. Với C#, bạn có thể xây dựng các ứng dụng Windows, trò chơi, ứng dụng web, dịch vụ web, ứng dụng di động và nhiều loại ứng dụng khác.  Một số đặc điểm và tính năng chính của C# bao gồm: hướng đối tượng, thuộc tính, quản lý bộ nhớ tự động, xử lý ngoại lệ, sự kiện và delegate, LINQ (Language Integrated Query), đa luồng, và nhiều hơn nữa. C# có một cộng đồng lớn và mạnh mẽ, cung cấp nhiều tài liệu, thư viện và công cụ hỗ trợ cho việc phát triển.', 85, 'yes', 11, 57, 'show'),
+(38, 'PHP Cơ Bản', 'php.avif', 599000, 'PHP (Hypertext Preprocessor) là một ngôn ngữ lập trình phía máy chủ mã nguồn mở được sử dụng phổ biến để phát triển các ứng dụng web động và tương tác. PHP chủ yếu được sử dụng để xử lý và tạo ra nội dung động trên các trang web, cho phép tương tác với cơ sở dữ liệu và thực hiện các tác vụ phức tạp khác như đăng nhập, đăng ký, xử lý biểu mẫu và quản lý phiên.  PHP có thể được nhúng vào mã HTML hoặc được sử dụng như một ngôn ngữ độc lập để tạo ra nội dung động. Với cú pháp dễ hiểu và cấu trúc linh hoạt, PHP cho phép lập trình viên tạo ra các trang web mạnh mẽ và đáng tin cậy.  Một số tính năng nổi bật của PHP bao gồm: 1. Hỗ trợ đa nền tảng: PHP có thể chạy trên nhiều hệ điều hành như Windows, Linux, macOS, v.v. 2. Sự tích hợp với cơ sở dữ liệu: PHP hỗ trợ các loại cơ sở dữ liệu phổ biến như MySQL, PostgreSQL, và Oracle. 3. Thư viện đa dạng: PHP đi kèm với một số thư viện mạnh mẽ để hỗ trợ phát triển nhanh chóng và dễ dàng, như PDO, GD, và XML. 4. Khả năng mở rộng: PHP có thể mở rộng thông qua các module và extension để tăng tính năng của nó. 5. Cộng đồng phát triển mạnh mẽ: PHP có một cộng đồng lớn và chuyên nghiệp, luôn cung cấp tài liệu và hỗ trợ trong việc phát triển ứng dụng.  PHP là một công nghệ phổ biến và được sử dụng rộng rãi trong ngành phát triển web, với khả năng mạnh mẽ để xây dựng các ứng dụng web động và tương tác. search ', 135, 'yes', 4, 57, 'show');
 
 -- --------------------------------------------------------
 
@@ -236,14 +237,14 @@ CREATE TABLE `khoa_hoc_yeu_thich` (
 INSERT INTO `khoa_hoc_yeu_thich` (`id_khoa_hoc_yeu_thich`, `id_khoa_hoc`, `id_tai_khoan`) VALUES
 (8, 25, 1),
 (10, 33, 1),
-(11, 37, 1),
 (12, 38, 1),
 (13, 23, 12),
 (14, 26, 12),
 (15, 25, 12),
 (16, 38, 12),
 (17, 37, 12),
-(18, 30, 1);
+(18, 30, 1),
+(20, 37, 1);
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,8 @@ INSERT INTO `lo_trinh_hoc` (`id_lo_trinh`, `thoi_gian`) VALUES
 (1, '3 tháng'),
 (2, '6 tháng'),
 (3, '9 tháng'),
-(5, '12 tháng');
+(5, '12 tháng'),
+(8, '24 tháng');
 
 -- --------------------------------------------------------
 
@@ -349,7 +351,8 @@ INSERT INTO `lo_trinh_khoa_hoc` (`id_lo_trinh_khoa_hoc`, `id_lo_trinh`, `id_khoa
 (34, 2, 38),
 (35, 2, 23),
 (36, 3, 25),
-(37, 1, 25);
+(37, 1, 25),
+(38, 8, 37);
 
 -- --------------------------------------------------------
 
@@ -418,7 +421,7 @@ CREATE TABLE `trang_thai` (
 INSERT INTO `trang_thai` (`id_trang_thai`, `ten_trang_thai`) VALUES
 (1, 'Chờ Xác  Nhận'),
 (2, 'Đang Chờ Xử Lý'),
-(3, 'Đăng Ký Thành Công');
+(3, 'Đăng Ký Thành Công,Chờ Liên Hệ');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -522,13 +525,13 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT cho bảng `dang_ky_khoa_hoc`
 --
 ALTER TABLE `dang_ky_khoa_hoc`
-  MODIFY `id_dang_ky_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_dang_ky_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT cho bảng `danh_gia`
 --
 ALTER TABLE `danh_gia`
-  MODIFY `id_danh_gia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_danh_gia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `danh_muc_khoa_hoc`
@@ -552,7 +555,7 @@ ALTER TABLE `khoa_hoc`
 -- AUTO_INCREMENT cho bảng `khoa_hoc_yeu_thich`
 --
 ALTER TABLE `khoa_hoc_yeu_thich`
-  MODIFY `id_khoa_hoc_yeu_thich` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_khoa_hoc_yeu_thich` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyen_mai`
@@ -570,13 +573,13 @@ ALTER TABLE `lien_he`
 -- AUTO_INCREMENT cho bảng `lo_trinh_hoc`
 --
 ALTER TABLE `lo_trinh_hoc`
-  MODIFY `id_lo_trinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_lo_trinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `lo_trinh_khoa_hoc`
 --
 ALTER TABLE `lo_trinh_khoa_hoc`
-  MODIFY `id_lo_trinh_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_lo_trinh_khoa_hoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `role`

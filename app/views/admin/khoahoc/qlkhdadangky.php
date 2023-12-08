@@ -22,7 +22,6 @@
     <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID Đăng Ký Khóa Học</th>
             <th scope="col">Tên Khóa Học</th>
             <th scope="col">AVT</th>
             <th scope="col">Thành Tiền</th>
@@ -42,10 +41,11 @@
         foreach($khoahoc as $row):
         extract($row); ?>
         <tr>
-            <th scope="row"><?=$id_dang_ky_khoa_hoc ?></th>
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
-            <td><?=$thanh_tien ?></td>
+            <td><?=number_format($thanh_tien,0, ",") ?><br><br>
+                <?= $pttt == 2 ? "<b class='text-danger'>Tiền mặt</b>" : "<b class='text-danger'>MOMO</b>";?>
+            </td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
             <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>">

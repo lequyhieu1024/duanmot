@@ -72,7 +72,7 @@ function dem_kh_cua_toi(){
 }
 function khoahoccuatoi(){
     $id_tai_khoan = $_SESSION['id_tai_khoan'];
-    $sql = "SELECT dang_ky_khoa_hoc.lo_trinh,trang_thai.id_trang_thai as id_trang_thai_kh, dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc,id_dang_ky_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
+    $sql = "SELECT dang_ky_khoa_hoc.pttt,dang_ky_khoa_hoc.lo_trinh,trang_thai.id_trang_thai as id_trang_thai_kh, dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc,id_dang_ky_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
     dang_ky_khoa_hoc.thanh_tien
     FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
@@ -86,7 +86,7 @@ function khoahoccuatoi(){
     return $results;
 }
 function chitietkhcuatoi($id_khoa_hoc,$id_dang_ky_khoa_hoc){
-    $sql = "SELECT dang_ky_khoa_hoc.lo_trinh,dang_ky_khoa_hoc.id_dang_ky_khoa_hoc,dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai,trang_thai.id_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
+    $sql = "SELECT pttt,dang_ky_khoa_hoc.lo_trinh,dang_ky_khoa_hoc.id_dang_ky_khoa_hoc,dang_ky_khoa_hoc.trang_thai,khoa_hoc.id_khoa_hoc, khoa_hoc.avt as avt_kh,trang_thai.ten_trang_thai,trang_thai.id_trang_thai, khoa_hoc.ten_khoa_hoc,giang_vien.ma_giang_vien,
     khoa_hoc.tien_hoc,thanh_tien
     FROM dang_ky_khoa_hoc
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = dang_ky_khoa_hoc.id_khoa_hoc
@@ -98,8 +98,8 @@ function chitietkhcuatoi($id_khoa_hoc,$id_dang_ky_khoa_hoc){
     $results = pdo_query($sql);
     return $results;
 }
-function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email){
-    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,lo_trinh ,trang_thai ,id_khuyen_mai,ho_va_ten, so_dien_thoai, email) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc','$lo_trinh', '$trang_thai' ,'$id_khuyen_mai','$ho_va_ten', '$so_dien_thoai', '$email')";
+function dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email,$pttt){
+    $sql = "INSERT INTO dang_ky_khoa_hoc(id_tai_khoan, id_khoa_hoc,id_giang_vien, thanh_tien, ngay_dang_ky_hoc,lo_trinh ,trang_thai ,id_khuyen_mai,ho_va_ten, so_dien_thoai, email, pttt) VALUES ('$id_tai_khoan', '$id_khoa_hoc','$id_giang_vien', '$thanh_tien', '$ngay_dang_ky_hoc','$lo_trinh', '$trang_thai' ,'$id_khuyen_mai','$ho_va_ten', '$so_dien_thoai', '$email','$pttt')";
     pdo_execute($sql);
 }
 function myskill(){

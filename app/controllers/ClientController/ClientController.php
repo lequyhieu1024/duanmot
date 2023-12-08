@@ -193,7 +193,8 @@
                         $trang_thai = $_POST['trang_thai'];
                         $id_khuyen_mai = $_POST['khuyen_mai'];
                         $lo_trinh = $_POST['lo_trinh_hoc'];
-                        dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email);
+                        $pttt = $_POST['pttt'];
+                        dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email,$pttt);
                         echo '<script>alert("Đã đăng ký, chờ xác nhận")</script>';
                         echo '<script>window.location.href="index.php?redirect=khoahoccuatoi"</script>';
                     }else{
