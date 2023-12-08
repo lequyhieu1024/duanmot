@@ -140,7 +140,8 @@ function khoaHocYeuThichCuaToi(){
     $id_tai_khoan = $_SESSION['id_tai_khoan'];
     $sql = "SELECT * FROM khoa_hoc_yeu_thich
     JOIN khoa_hoc ON khoa_hoc.id_khoa_hoc = khoa_hoc_yeu_thich.id_khoa_hoc
-    WHERE id_tai_khoan = $id_tai_khoan";
+    WHERE id_tai_khoan = $id_tai_khoan
+    ORDER BY khoa_hoc_yeu_thich.id_khoa_hoc_yeu_thich DESC";
     $result = pdo_query($sql);
     return $result;
 }
