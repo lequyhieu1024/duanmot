@@ -69,18 +69,15 @@
 
       <div class="social-auth-links text-center">
         <p>- Hoặc -</p>
-        
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i>
           Đăng ký bằng Facebook
         </a>
-
         <a href="#" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i>
           Đăng ký bằng Google+
         </a>
       </div>
-
       <a href="login.php" class="text-center">Tôi đã có tài khoản</a>
     </div>
     <!-- /.form-box -->
