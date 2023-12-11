@@ -4,6 +4,7 @@ http_response_code(200); //200 - Everything will be 200 Oke
 if (!empty($_POST)) {
     $response = array();
     try {
+        
         $partnerCode = $_POST["partnerCode"];
         $accessKey = $_POST["accessKey"];
         $serectkey = '';

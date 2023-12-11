@@ -2,14 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+
 <body>
+
     <table class="table">
+
     <thead>
+
         <tr>
+
             <th scope="col">Mã Bình Luận</th>
             <th scope="col">Tên Tài Khoản</th>
             <th scope="col">Tên Khóa Học</th>
@@ -17,8 +24,11 @@
             <th scope="col">Ngày Bình Luận</th>
             <th scope="col">Thao tác</th>
         </tr>
+
     </thead>
+
     <tbody>
+
         <?php
         $binhluan = all_binh_luan();
         foreach($binhluan as $row):
@@ -31,8 +41,13 @@
             <td><?=$ngay_binh_luan ?></td>           
             <td><a href="index.php?act=delete&header=allbinhluan&id=id_binh_luan&table=binh_luan&iddl=<?=$id_binh_luan;?>"><button class="btn btn-danger">Xóa</button></a></td>       
         </tr>
+
         <?php endforeach; ?>
+
     </tbody>
+
     </table>
+
 </body>
+
 </html>

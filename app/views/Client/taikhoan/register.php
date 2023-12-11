@@ -78,7 +78,6 @@
           Đăng ký bằng Google+
         </a>
       </div>
-
       <a href="login.php" class="text-center">Tôi đã có tài khoản</a>
     </div>
     <!-- /.form-box -->

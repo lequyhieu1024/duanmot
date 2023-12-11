@@ -4,6 +4,7 @@ header('Content-type: text/html; charset=utf-8');
 
 function execPostRequest($url, $data)
 {
+
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -20,6 +21,7 @@ function execPostRequest($url, $data)
     curl_close($ch);
     return $result;
 }
+
 
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/query";
 $partnerCode = 'MOMOBKUN20180529';

@@ -14,14 +14,18 @@
             </div>
           </div>
         </div>
+
         <input type="hidden" name="ngay_lien_he" value="<?php echo date('Y-m-d H:i:s'); ?>">
         <input type="hidden" name="id_tai_khoan" value="<?php echo $_SESSION['id_tai_khoan'];?>">
         <input type="hidden" name="trang_thai" value="Chưa phản hồi">
+
         <div class="row">
           <!-- /.col -->
           <div class="col-3">
+
             <button type="submit" name="sendmesage" class="btn btn-primary btn-block">Send Message Contact</button>
           </div>
+          
           <!-- /.col -->
         </div>
       </form>

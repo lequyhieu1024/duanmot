@@ -22,8 +22,11 @@
                         $ten_danh_muc = $_POST['ten_danh_muc'];
                         adddanhmuc($ten_danh_muc,$mo_ta,$avt,$trang_thai);
                         header("location:index.php?act=alldanhmuc&table=danh_muc_khoa_hoc");
+
                 }
-            }           
+                
+            }       
+
                 break;
             case 'editdanhmuc':
                 include('../../views/admin/danhmuc/editdanhmuc.php');

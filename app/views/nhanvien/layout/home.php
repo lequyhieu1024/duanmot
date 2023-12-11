@@ -24,12 +24,14 @@
                 <?php 
                    $so_luong = dem_tai_khoan();
                 ?>
+
                 <h3><?=$so_luong ?></h3>
                 <p>Số Lượng Tài Khoản Đăng Ký</p>
               </div>
               <div class="icon">
                  <i class="ion ion-person-add"></i>
               </div>
+
               <a href="#" class="small-box-footer">Thêm thông tin <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -38,6 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
+                
                 <h3>44 $</h3>
 
                 <p>Tổng Thu Ngày</p>

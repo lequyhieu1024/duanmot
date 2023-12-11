@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh toán</title>
     <style>
+        
         .tttt{
             margin-top: 100px;
             margin-left: 20px;

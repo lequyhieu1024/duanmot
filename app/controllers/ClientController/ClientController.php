@@ -9,12 +9,14 @@
                         $mat_khau = $_POST['mat_khau'];
                         login($ten_tai_khoan, $mat_khau);
                         }
+
                 break;
             
             case 'logout':
                 include("app/views/client/taikhoan/logout.php");
                 break;
             case 'register':
+
                 include("app/views/client/taikhoan/register.php");
                     if(isset($_POST['register'])){
                         $success = $err= "";
@@ -36,6 +38,7 @@
                             echo '<script> window.location.href ="app/views/client/taikhoan/register.php"</script>';
                     }
                 }
+                
                 break;
             case 'changepassword':
                 if(isset($_POST['changepassword'])){
