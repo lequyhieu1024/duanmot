@@ -12,7 +12,9 @@
         <input type="submit" class="btn btn-primary" value="Đánh giá" name="adddanhgia">
     </form>
 </div>
+
 <script>
+
     document.addEventListener('DOMContentLoaded', function () {
         const stars = document.querySelectorAll('.stars i');
         const ratingInput = document.getElementById('ratingInput');
@@ -29,11 +31,13 @@
                 for (let i = 0; i < value; i++) {
                     stars[i].classList.add('active');
                 }
+
             });
         });
     });
 </script>
 <style>
+    
         .stars i.active,
         .stars i:hover {
             color: gold;
