@@ -10,6 +10,7 @@
                         login($ten_tai_khoan, $mat_khau);
                         }
                 break;
+            
             case 'logout':
                 include("app/views/client/taikhoan/logout.php");
                 break;
@@ -22,7 +23,8 @@
                         $mat_khau = $_POST['mat_khau'];
                         $id_role = $_POST['id_role'];
                         $xn_mat_khau = $_POST['xn_mat_khau'];
-                        if($mat_khau === $xn_mat_khau){
+                        $checkRegister = checkRegister($ten_tai_khoan,$email);
+                        if($mat_khau === $xn_mat_khau && empty($checkRegister)){
                             register($ten_tai_khoan,$email,$mat_khau,$id_role);
                             echo '<script>
                                     var xacNhan = confirm("Đăng ký thành công. Mời đăng nhập");
@@ -30,7 +32,7 @@
                                             window.location.href ="app/views/client/taikhoan/login.php"}
                                     </script>';                              
                         }else{
-                            echo '<script>alert("Đăng ký thất bại")</script>';
+                            echo '<script>alert("Đăng ký tên người dùng,email đã tồn tại hoặc mật khẩu không khớp")</script>';
                             echo '<script> window.location.href ="app/views/client/taikhoan/register.php"</script>';
                     }
                 }

@@ -20,7 +20,7 @@ function login($ten_tai_khoan,$mat_khau) {
     }
 }
 function checkRegister() {
-    $sql = "SELECT ten_tai_khoan FROM tai_khoan";
+    $sql = "SELECT ten_tai_khoan,email FROM tai_khoan";
     $result = pdo_query($sql);
     return $result;
 }
@@ -49,3 +49,16 @@ function changeMyInfo($id_tai_khoan,$ho_va_ten,$email,$nam_sinh,$avt,$so_dien_th
     }
     pdo_execute($sql);
     }
+
+function quenmk ($email){
+    $sql = "SELECT mat_khau FROM tai_khoan WHERE email = '$email'";
+    $result = pdo_query($sql);
+    return $result;
+}
+function updatePass($email){
+    $sql = "UPDATE tai_khoan SET mat_khau = 'nhbbmncmwypfljhd' WHERE email = '$email'";
+    pdo_execute($sql);
+    echo '<script>alert("Kiểm tra email và đăng nhập lại")</script>';
+    echo '<script>window.location.href="forgotpass.php"</script>';
+    
+}

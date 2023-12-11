@@ -104,5 +104,5 @@ function giang_vien() {
     $result = pdo_query($sql);
     return $result;
 }
-
+$quenmk = "";
 ?>
