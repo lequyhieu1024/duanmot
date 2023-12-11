@@ -1,7 +1,6 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 
-
 function execPostRequest($url, $data)
 {
     $ch = curl_init($url);
@@ -20,11 +19,7 @@ function execPostRequest($url, $data)
     curl_close($ch);
     return $result;
 }
-
-
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
-
-
 $partnerCode = 'MOMOBKUN20180529';
 $accessKey = 'klm05TvNBzhg7h7j';
 $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
@@ -51,6 +46,7 @@ $lo_trinh = $_POST['lo_trinh_hoc'];
 $pttt = $_POST['pttt'];
 dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email,$pttt);
 
+
     $partnerCode = $partnerCode;
     $accessKey = $accessKey;
     $serectkey = $secretKey;
@@ -61,6 +57,7 @@ dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_da
     $redirectUrl = $redirectUrl;
     $extraData = $extraData;
 
+    
     $requestId = time() . "";
     $requestType = "payWithATM";
     $extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
