@@ -22,6 +22,7 @@
                                 <li class="list-inline-item"><a href="#"><i class="ti-instagram"></i></a></li>
                             </ul>
                             </div>
+
                             <div class="col-md-3 col-lg-2 col-sm-3 col-xs-6 md-mb-2">
                                 <h5>Language</h5>
                                 <ul>
@@ -32,6 +33,7 @@
                                     <li><a href="#">VietNamMese</a></li>
                                 </ul>
                             </div>
+
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6">
                                 <h5>Source</h5>
                                 <ul>
@@ -42,6 +44,7 @@
                                     <li><a href="#">GROUP 7</a></li>
                                 </ul>
                             </div>
+
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6">
                                 <h5>About</h5>
                                 <ul>
@@ -52,14 +55,17 @@
                                     <li><a href="#">Careers</a></li>
                                 </ul>
                             </div>
+
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-6">
                                 <h5 class="mb-3">Office</h5>
                                 <p style="width: 100%;">132/86/30 NguyenXa ,BacTuLiem</p>
                                 <p style="width: 100%;">so9 TrinhVanBo Street <br></p>
                             </div>
                         </div>
+
                         <div class="middle-footer mt-5 pt-4"></div>
                     </div>
+                    
                     <div class="col-sm-12 lower-footer pt-0"></div>
                     <div class="col-sm-6 col-xs-12">
                         <p class="copyright-text">© 2023 copyright. All rights reserved.</p>
