@@ -19,6 +19,7 @@ $vnp_Locale = "VN";
 $vnp_BankCode = "NCB";
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 
+
 $id_tai_khoan = $_POST['id_tai_khoan'];
 $ho_va_ten = $_POST['ho_va_ten'];
 $so_dien_thoai = $_POST['so_dien_thoai'];
