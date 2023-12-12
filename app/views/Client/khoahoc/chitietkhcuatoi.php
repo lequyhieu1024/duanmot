@@ -29,7 +29,14 @@
                 </div>
                 <div class="gv">
                     <h2><i class="fas fa-user"> : </i><b><?=$ma_giang_vien?></b></h2>
-                    <td>PTTT: <br> <?=$pttt == 2 ? "<h1>Thanh toán sau</h1>" : "<h1><b>Thanh toán qua MOMO</b></h1>"?></td>
+                    <td>PTTT: <br> <?php if($pttt == 1){
+                        echo '<h1><b>Thanh toán qua VNPAY</b></h1>';
+                    }else if($pttt == 3){
+                        echo '<h1><b>Thanh toán qua MOMO</b></h1>';
+                    }else{
+                        echo '<h1>Thanh toán sau</h1>';
+                    }
+                    ?></td>
                 </div>
                 <div class="thaotac"><br>
                     <button class="btn btn-primary"><?=$ten_trang_thai?></button><br><br>

@@ -44,7 +44,14 @@
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
             <td><?=number_format($thanh_tien,0, ",") ?><br><br>
-                <?= $pttt == 2 ? "<b class='text-danger'>Tiền mặt</b>" : "<b class='text-danger'>MOMO</b>";?>
+            PTTT: <br> <?php if($pttt == 1){
+                        echo '<b class="text-danger">VNPAY</b>';
+                    }else if($pttt == 3){
+                        echo '<b class="text-danger">MOMO</b>';
+                    }else{
+                        echo '<b class="text-danger">Tiền mặt</b>';
+                    }
+                    ?>
             </td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>

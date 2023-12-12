@@ -220,7 +220,16 @@
             <th scope="row"><?=$id_dang_ky_khoa_hoc ?></th>
             <td><?=$ten_khoa_hoc ?></td>
             <td><img style="width:100px;height:80px" src="../../../public/images/<?=$avt_kh ?>" alt=""></td>
-            <td><?=number_format($thanh_tien,0,".") ?></td>
+            <td><?=number_format($thanh_tien,0, ",") ?><br>
+            PTTT: <br> <?php if($pttt == 1){
+                        echo '<b class="text-danger">VNPAY</b>';
+                    }else if($pttt == 3){
+                        echo '<b class="text-danger">MOMO</b>';
+                    }else{
+                        echo '<b class="text-danger">Tiền mặt</b>';
+                    }
+                    ?>
+            </td>
             <td><?=$ten_tai_khoan ?></td>
             <td><?=$ngay_dang_ky_hoc ?></td>
             <td><a href="index.php?act=edit_ql_kh_dadangky&table=dang_ky_khoa_hoc&id=id_dang_ky_khoa_hoc&id_edit=<?=$id_dang_ky_khoa_hoc;?>">

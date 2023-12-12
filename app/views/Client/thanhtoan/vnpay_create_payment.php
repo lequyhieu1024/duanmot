@@ -19,7 +19,6 @@ $vnp_Locale = "VN";
 $vnp_BankCode = "NCB";
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 
-
 $id_tai_khoan = $_POST['id_tai_khoan'];
 $ho_va_ten = $_POST['ho_va_ten'];
 $so_dien_thoai = $_POST['so_dien_thoai'];
@@ -31,7 +30,9 @@ $ngay_dang_ky_hoc = $_POST['ngay_dang_ky_hoc'];
 $trang_thai = $_POST['trang_thai'];
 $id_khuyen_mai = $_POST['khuyen_mai'];
 $lo_trinh = $_POST['lo_trinh_hoc'];
-dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email);
+$pttt = $_POST['pttt'];
+dangkykhoahoc($id_tai_khoan, $id_khoa_hoc, $id_giang_vien, $thanh_tien, $ngay_dang_ky_hoc,$lo_trinh, $trang_thai ,$id_khuyen_mai,$ho_va_ten, $so_dien_thoai, $email,$pttt);
+
 //Add Params of 2.0.1 Version
 //$vnp_ExpireDate = $_POST['txtexpire'];
 //Billing
