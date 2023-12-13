@@ -19,8 +19,8 @@ function login($ten_tai_khoan,$mat_khau) {
         echo '<script>window.location.href= "app/views/client/taikhoan/login.php"</script>';
     }
 }
-function checkRegister() {
-    $sql = "SELECT ten_tai_khoan,email FROM tai_khoan";
+function checkRegister($ten_tai_khoan,$email) {
+    $sql = "SELECT ten_tai_khoan,email FROM tai_khoan WHERE email = '$email' and ten_tai_khoan = '$ten_tai_khoan'";
     $result = pdo_query($sql);
     return $result;
 }
